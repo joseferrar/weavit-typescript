@@ -1,5 +1,10 @@
+html {
+  background-color: rgb(211, 219, 226);
+  height: 100%;
+}
 .App {
-  text-align: center;
+  background-color: rgb(211, 219, 226);
+  background-size: cover;
 }
 
 .App-logo {
@@ -27,7 +32,9 @@
 .App-link {
   color: #61dafb;
 }
-
+.MuiTabs-indicator {
+  background-color: transparent !important;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
