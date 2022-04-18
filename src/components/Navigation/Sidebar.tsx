@@ -13,13 +13,13 @@ const Sidebar = () => {
         direction="column"
         spacing={1}
         marginTop={0}
-        marginLeft={4}
+        marginLeft={2}
         marginBottom={3}
       >
-        <Avatar alt="Remy Sharp" src={logo} sx={{ width: 120, height: 120 }} />
+        <Avatar alt="logo" src={logo} sx={{ width: 120, height: 120 }} />
       </Stack>
 
-      <List >
+      <List>
         <MainPanel />
       </List>
     </div>

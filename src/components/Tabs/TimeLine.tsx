@@ -26,7 +26,7 @@ function TimelineTab() {
           <Typography
             variant="body2"
             style={{
-              marginLeft: 12,
+              marginLeft: 18,
               textAlign: "left",
               fontSize: 16,
               fontWeight: "bold",

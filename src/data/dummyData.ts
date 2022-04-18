@@ -26,9 +26,9 @@ export const Data: DummyData[] = [
       "https://cdn.vox-cdn.com/thumbor/Yq1Vd39jCBGpTUKHUhEx5FfxvmM=/39x0:3111x2048/1200x800/filters:focal(39x0:3111x2048)/cdn.vox-cdn.com/uploads/chorus_image/image/49901753/netflixlogo.0.0.png",
     title: "Netflix & Blockbuster",
     desc: [
-      { sub: "Netflix Recite what you know soa you can truly learn it." },
-      { sub: "Netflix Recite what you know soa you can truly learn it." },
-      { sub: "Netflix Recite what you know soa you can truly learn it." },
+      { sub: "Netflix Recite what you know soa you can truly yesterday learn it." },
+      { sub: "Netflix Recite what you know soa you can truly yesterday learn it." },
+      { sub: "Netflix Recite what you know soa you can truly yesterday learn it." },
     ],
     dateTime: "Thursday, Jan 22, 2021",
   },

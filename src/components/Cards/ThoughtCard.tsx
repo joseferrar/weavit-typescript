@@ -1,5 +1,4 @@
-import React from "react";
-import Draggable from "react-draggable";
+import React, { useState } from "react";
 import DraggableList from "react-draggable-lists";
 import { experimentalStyled as styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
@@ -32,7 +31,7 @@ function ThoughtCard() {
         spacing={{ xs: 2, md: 3 }}
         columns={{ xs: 4, sm: 8, md: 12 }}
       >
-        <DraggableList width={500} height={50} rowSize={3}>
+        <DraggableList width={500} height={150} rowSize={3}>
           {data.map((item, index) => (
             <Grid
               item
@@ -47,7 +46,7 @@ function ThoughtCard() {
                 <Grid
                   style={{
                     background:
-                      "linear-gradient(to top left, #538FFB, #5B54FA)",
+                      "linear-gradient(129.37deg, rgba(32, 0, 173, 0.5) -12.98%, rgba(57, 137, 238, 0.5) 91.72%)",
                     marginTop: -16,
                     borderEndStartRadius: 60,
                     borderEndEndRadius: 60,
