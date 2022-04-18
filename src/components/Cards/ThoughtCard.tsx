@@ -19,6 +19,7 @@ const Item = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(2),
   textAlign: "center",
   borderRadius: 14,
+  width: 400,
 }));
 
 function ThoughtCard() {
@@ -31,9 +32,17 @@ function ThoughtCard() {
         spacing={{ xs: 2, md: 3 }}
         columns={{ xs: 4, sm: 8, md: 12 }}
       >
-        {data.map((item, index) => (
-          <Draggable>
-            <Grid item xs={12} sm={4} md={4} key={index}>
+        <DraggableList width={500} height={50} rowSize={3}>
+          {data.map((item, index) => (
+            <Grid
+              item
+              xs={12}
+              sm={4}
+              md={4}
+              key={index}
+              marginTop={4}
+              marginLeft={4}
+            >
               <Item elevation={3}>
                 <Grid
                   style={{
@@ -122,8 +131,8 @@ function ThoughtCard() {
                 ))}
               </Item>
             </Grid>
-          </Draggable>
-        ))}
+          ))}
+        </DraggableList>
       </Grid>
     </Box>
   );
