@@ -14,7 +14,7 @@ const theme = createTheme({
       lightGreen: green[100],
     },
     secondary: {
-      main: purple[500],
+      main: "#2000AD",
     },
     success: {
       main: "#1FAA59",

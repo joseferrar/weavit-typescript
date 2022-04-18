@@ -12,7 +12,8 @@ import Menu from "@mui/material/Menu";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
-const drawerWidth = 300;
+
+const drawerWidth = 350;
 
 interface Props {
   window?: () => Window;
@@ -78,6 +79,7 @@ function Header(props: Props) {
   return (
     <Box sx={{ display: "flex", backgroundColor: "#fff" }}>
       <AppBar
+      style={{height: 30}}
         elevation={0}
         sx={{
           bgcolor: "rgb(211, 219, 226)",

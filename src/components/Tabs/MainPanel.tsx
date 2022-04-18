@@ -68,7 +68,7 @@ export default function MainPanel() {
       <TabPanel value={value} index={3}>
         <ProfileTab />
       </TabPanel>
-      <Box sx={{ width: 300, position: "fixed", left: 0, bottom: 10 }}>
+      <Box sx={{ width: 330, position: "fixed", left: 0, bottom: 10, marginLeft: 1 }}>
         <Box>
           <Tabs
             textColor="secondary"
@@ -90,7 +90,7 @@ export default function MainPanel() {
               {...a11yProps(0)}
             />
             <Tab
-              style={{ marginLeft: -20 }}
+              style={{ marginLeft: -10 }}
               label={
                 <Typography
                   style={{ textTransform: "capitalize", fontSize: 14 }}
@@ -102,7 +102,7 @@ export default function MainPanel() {
               {...a11yProps(1)}
             />
             <Tab
-              style={{ marginLeft: -20 }}
+              style={{ marginLeft: -10 }}
               label={
                 <Typography
                   style={{ textTransform: "capitalize", fontSize: 14 }}
@@ -114,7 +114,7 @@ export default function MainPanel() {
               {...a11yProps(2)}
             />
             <Tab
-              style={{ marginLeft: -20 }}
+              style={{ marginLeft: -10 }}
               label={
                 <Typography
                   style={{ textTransform: "capitalize", fontSize: 14 }}
