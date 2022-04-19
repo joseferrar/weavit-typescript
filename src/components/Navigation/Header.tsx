@@ -79,7 +79,7 @@ function Header(props: Props) {
   return (
     <Box sx={{ display: "flex", backgroundColor: "#fff" }}>
       <AppBar
-      style={{height: 30}}
+      style={{height: 20}}
         elevation={0}
         sx={{
           bgcolor: "rgb(211, 219, 226)",

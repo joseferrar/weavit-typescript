@@ -15,9 +15,9 @@ export default function MainLayout(props: MainLayoutProps) {
         style={{
           width: "100%",
           left: 0,
-          height: 835,
+          height: 880,
           overflowX: "scroll",
-          marginTop: 85,
+          marginTop: 40,
           padding: theme.spacing(3),
         }}
       >

@@ -13,11 +13,11 @@ function TimelineTab() {
   return (
     <SideLayout>
       <Typography
-        fontWeight="bold"
         fontSize={26}
         textAlign="left"
         marginLeft={2}
         marginTop={2}
+        fontFamily="DMSans-Bold"
       >
         Timeline
       </Typography>
@@ -30,6 +30,7 @@ function TimelineTab() {
               textAlign: "left",
               fontSize: 16,
               fontWeight: "bold",
+              fontFamily: "DMSans-Medium",
               marginTop: 20,
               marginBottom: 2,
             }}
@@ -48,7 +49,7 @@ function TimelineTab() {
               <Grid style={{ display: "flex", marginBottom: 10 }}>
                 <Typography
                   variant="body2"
-                  style={{ textAlign: "left", fontSize: 12 }}
+                  style={{ textAlign: "left", fontSize: 14, fontFamily: "DMSans-Medium" }}
                 >
                   {Object.values(sub).map((a) => a)}
                 </Typography>
@@ -73,6 +74,7 @@ function TimelineTab() {
                   marginTop: 12,
                   height: 32,
                   marginBottom: 12,
+                  fontFamily: "DMSans-Regular"
                 }}
               >
                 Note Block

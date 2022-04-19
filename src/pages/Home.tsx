@@ -19,9 +19,9 @@ function Home() {
 
   return (
     <div>
-      <div style={{ display: "flex", marginTop: -30 }}>
+      <div style={{ display: "flex", marginTop: -30, marginLeft: 22}}>
         <CloudQueueIcon sx={{ fontSize: 30 }} />
-        <Typography style={{ marginLeft: 6, fontSize: 22 }}>
+        <Typography style={{ marginLeft: 6, fontSize: 22, fontFamily: "DMSans-Regular"}}>
           Your Thought Space
         </Typography>
       </div>
@@ -31,7 +31,7 @@ function Home() {
           deleteIcon={<CloseIcon style={{ fontSize: 20 }} />}
           label={item.title}
           onDelete={() => deleteItem(index)}
-          style={{ marginLeft: 22, marginTop: 12 }}
+          style={{ marginLeft: 22, marginTop: 12,fontFamily: "DMSans-Medium" }}
         />
       ))}
       <Stack direction="row" spacing={-2} marginTop={-2}>

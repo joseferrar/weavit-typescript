@@ -16,15 +16,14 @@ const Item = styled(Paper)(({ theme }) => ({
   textAlign: "center",
   borderRadius: 14,
   width: 300,
+  height: "600px"
 }));
 
 function ThoughtCard(props: any) {
   console.log(props);
   return (
     <Grid item xs={12} sm={4} md={4} marginTop={4} marginLeft={4}>
-          
       <Item elevation={3}>
-    
         <Grid
           style={{
             background:
@@ -51,30 +50,30 @@ function ThoughtCard(props: any) {
             alt="B"
           />
         </Grid>
-        <Typography style={{ fontWeight: "bold", fontSize: 20, marginTop: 6 }}>
+        <Typography style={{ fontWeight: "bold", fontSize: 20, marginTop: 6, fontFamily: "DMSans-Medium" }}>
           {props.item.title}
         </Typography>
         <Grid style={{ display: "inline-flex", color: "gray" }}>
-          <Typography style={{ fontSize: 14, marginTop: 6 }}>
+          <Typography style={{ fontSize: 14, marginTop: 6,fontFamily: "DMSans-Regular" }}>
             {"<Time>"}
           </Typography>
-          <Typography style={{ fontSize: 14, marginTop: 6, marginLeft: 6 }}>
+          <Typography style={{ fontSize: 14, marginTop: 6, marginLeft: 6,fontFamily: "DMSans-Regular" }}>
             {"<Calender Name>"}
           </Typography>
         </Grid>
         <br />
         <Grid style={{ display: "inline-flex", color: "gray" }}>
-          <Typography style={{ fontSize: 14, marginTop: 6 }}>
+          <Typography style={{ fontSize: 14, marginTop: 6,fontFamily: "DMSans-Regular" }}>
             {"<Location>"}
           </Typography>
-          <Typography style={{ fontSize: 14, marginTop: 6, marginLeft: 6 }}>
+          <Typography style={{ fontSize: 14, marginTop: 6, marginLeft: 6,fontFamily: "DMSans-Regular" }}>
             {"<Status>"}
           </Typography>
         </Grid>
         {props.item.desc.map((sub: any, i: any) => (
           <Grid key={i}>
             <Grid style={{ display: "flex", marginBottom: 10 }}>
-              <Typography variant="body2" style={{ textAlign: "left" }}>
+              <Typography variant="body2" style={{ textAlign: "left",fontFamily: "DMSans-Regular" }}>
                 {Object.values(sub).map((a: any) => a)}
               </Typography>
               <MoreHorizIcon
@@ -87,7 +86,7 @@ function ThoughtCard(props: any) {
             </Grid>
             <Divider />
             <Button
-              onClick={() => alert("item.desc")}
+              onClick={() => alert("test click")}
               variant="outlined"
               startIcon={<MenuBookOutlinedIcon />}
               style={{
@@ -100,16 +99,14 @@ function ThoughtCard(props: any) {
                 marginTop: 12,
                 height: 32,
                 marginBottom: 12,
-                WebkitTouchCallout: "none",
+                fontFamily: "DMSans-Regular",
               }}
             >
               Note Block
             </Button>
           </Grid>
-        
         ))}
       </Item>
-      
     </Grid>
   );
 }

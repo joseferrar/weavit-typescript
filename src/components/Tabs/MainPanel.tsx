@@ -81,7 +81,7 @@ export default function MainPanel() {
             <Tab
               label={
                 <Typography
-                  style={{ textTransform: "capitalize", fontSize: 14 }}
+                  style={{ textTransform: "capitalize", fontSize: 14, fontFamily: "DMSans-Medium" }}
                 >
                   Timeline
                 </Typography>
@@ -93,7 +93,7 @@ export default function MainPanel() {
               style={{ marginLeft: -10 }}
               label={
                 <Typography
-                  style={{ textTransform: "capitalize", fontSize: 14 }}
+                  style={{ textTransform: "capitalize", fontSize: 14, fontFamily: "DMSans-Medium" }}
                 >
                   Inbox
                 </Typography>
@@ -105,7 +105,7 @@ export default function MainPanel() {
               style={{ marginLeft: -10 }}
               label={
                 <Typography
-                  style={{ textTransform: "capitalize", fontSize: 14 }}
+                  style={{ textTransform: "capitalize", fontSize: 14, fontFamily: "DMSans-Medium" }}
                 >
                   Search
                 </Typography>
@@ -117,7 +117,7 @@ export default function MainPanel() {
               style={{ marginLeft: -10 }}
               label={
                 <Typography
-                  style={{ textTransform: "capitalize", fontSize: 14 }}
+                  style={{ textTransform: "capitalize", fontSize: 14, fontFamily: "DMSans-Medium" }}
                 >
                   Profile
                 </Typography>
