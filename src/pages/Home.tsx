@@ -7,7 +7,7 @@ import Stack from "@mui/material/Stack";
 import ThoughtCard from "../components/Cards/ThoughtCard";
 import { getData } from "../data/dummyData";
 import cloudlogo from "../images/Icon.png";
-
+import FindSection from "../components/sections/FindSection";
 
 function Home() {
   const data = getData();
@@ -34,21 +34,28 @@ function Home() {
         </Typography>
       </div>
 
-      {post.map((item, index) => (
-        <Chip
-          deleteIcon={<CloseIcon style={{ fontSize: 20 }} />}
-          label={item.title}
-          onDelete={() => deleteItem(index)}
-          style={{ marginLeft: 22, marginTop: 14, fontFamily: "DMSans-Medium" }}
-        />
-      ))}
-      <Stack direction="row" spacing={-2} marginTop={-2}>
-        {post.map((item, index) => (
-          <div key={index}>
-            <ThoughtCard item={item} />
-          </div>
+      {post &&
+        post.map((item, index) => (
+          <Chip
+            deleteIcon={<CloseIcon style={{ fontSize: 20 }} />}
+            label={item.title}
+            onDelete={() => deleteItem(index)}
+            style={{
+              marginLeft: 22,
+              marginTop: 14,
+              fontFamily: "DMSans-Medium",
+            }}
+          />
         ))}
+      <Stack direction="row" spacing={-2} marginTop={-2}>
+        {post &&
+          post.map((item, index) => (
+            <div key={index}>
+              <ThoughtCard item={item} />
+            </div>
+          ))}
       </Stack>
+      {post.length === 0 && <FindSection />}
     </div>
   );
 }

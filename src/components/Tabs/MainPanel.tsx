@@ -14,6 +14,13 @@ import InboxTab from "./Inbox";
 import SearchTab from "./Search";
 import ProfileTab from "./Profile";
 import TimelineIcon from "@mui/icons-material/Timeline";
+import searchblack from "../../images/search-black.png";
+import searchblue from "../../images/search-blue.png";
+import inboxblack from "../../images/inbox-black.png";
+import inboxblue from "../../images/inbox-blue.png";
+import timelineblack from "../../images/timeline-black.png";
+import timelineblue from "../../images/timeline-blue.png";
+import userlogo from "../../images/av1.png";
 
 function TabPanel(props: any) {
   const { children, value, index, ...other } = props;
@@ -54,7 +61,7 @@ export default function MainPanel() {
   const handleChange = (event: any, newValue: any) => {
     setValue(newValue);
   };
-
+  console.log(value);
   return (
     <Fragment>
       <TabPanel value={value} index={0}>
@@ -99,7 +106,13 @@ export default function MainPanel() {
                   Timeline
                 </Typography>
               }
-              icon={<TimelineIcon style={{ width: 20 }} />}
+              icon={
+                <Avatar
+                  alt="Remy Sharp"
+                  src={value !== 0 ? timelineblack : timelineblue}
+                  sx={{ width: 25, height: 25, marginTop: 1, borderRadius: 0 }}
+                />
+              }
               {...a11yProps(0)}
             />
             <Tab
@@ -115,7 +128,13 @@ export default function MainPanel() {
                   Inbox
                 </Typography>
               }
-              icon={<InboxIcon style={{ width: 20 }} />}
+              icon={
+                <Avatar
+                  alt="Remy Sharp"
+                  src={value !== 1 ? inboxblack : inboxblue}
+                  sx={{ width: 25, height: 25, marginTop: 1 }}
+                />
+              }
               {...a11yProps(1)}
             />
             <Tab
@@ -131,7 +150,13 @@ export default function MainPanel() {
                   Search
                 </Typography>
               }
-              icon={<SearchIcon style={{ width: 20 }} />}
+              icon={
+                <Avatar
+                  alt="Remy Sharp"
+                  src={value !== 2 ? searchblack : searchblue}
+                  sx={{ width: 25, height: 25, marginTop: 1 }}
+                />
+              }
               {...a11yProps(2)}
             />
             <Tab
@@ -147,7 +172,13 @@ export default function MainPanel() {
                   Profile
                 </Typography>
               }
-              icon={<PersonIcon style={{ width: 20 }} />}
+              icon={
+                <Avatar
+                  alt="Remy Sharp"
+                  src={userlogo}
+                  sx={{ width: 25, height: 25, marginTop: 1, borderRadius: 0 }}
+                />
+              }
               {...a11yProps(3)}
             />
           </Tabs>

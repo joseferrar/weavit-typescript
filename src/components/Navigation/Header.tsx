@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import AppBar from "@mui/material/AppBar";
+import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
@@ -9,6 +10,8 @@ import Toolbar from "@mui/material/Toolbar";
 import Sidebar from "./Sidebar";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
+import arrowleft from "../../images/arrow-left.png";
+import arrowright from "../../images/arrow-right.png";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
@@ -118,7 +121,11 @@ function Header(props: Props) {
               aria-label="account of current user"
               aria-haspopup="true"
             >
-              <KeyboardArrowLeftIcon />
+              <Avatar
+                alt="Remy Sharp"
+                src={arrowleft}
+                sx={{ width: 15, height: 15 }}
+              />
             </IconButton>
             <IconButton
               size="large"
@@ -126,7 +133,11 @@ function Header(props: Props) {
               aria-label="account of current user"
               aria-haspopup="true"
             >
-              <KeyboardArrowRightIcon />
+              <Avatar
+                alt="Remy Sharp"
+                src={arrowright}
+                sx={{ width: 20, height: 20 }}
+              />
             </IconButton>
           </Box>
 

@@ -20,14 +20,14 @@ const Sidebar = () => {
         <Avatar
           alt="logo"
           src={logo}
-          sx={{ width: 30, height: 30 }}
+          sx={{ width: 25, height: 25 }}
           variant="square"
         />
         <Typography
           style={{
             fontWeight: "bold",
             fontSize: 26,
-            
+            marginTop: -5,
             fontFamily: "DMSans-Medium",
           }}
         >

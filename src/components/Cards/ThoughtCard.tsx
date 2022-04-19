@@ -12,17 +12,18 @@ import ellipsis from "../../images/Ellipsis.png";
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: "#f7f7fb",
   ...theme.typography.body2,
-  padding: theme.spacing(2),
+  paddingLeft: theme.spacing(0),
+  paddingRight: theme.spacing(0),
   textAlign: "center",
   borderRadius: 14,
   width: 350,
-  height: "600px",
+  height: "630px",
 }));
 
 function ThoughtCard(props: any) {
   console.log(props);
   return (
-    <Grid item xs={12} sm={4} md={4} marginTop={4} marginLeft={4}>
+    <Grid item xs={12} sm={4} md={4} marginTop={6} marginLeft={4}>
       <Item elevation={3}>
         <Grid
           style={{
@@ -105,6 +106,8 @@ function ThoughtCard(props: any) {
               borderRadius: 12,
               borderWidth: 4,
               marginTop: 12,
+              marginLeft: 12,
+              marginRight: 12,
               backgroundColor: "#fff",
               borderColor: "#fff",
               padding: 4,
@@ -115,7 +118,7 @@ function ThoughtCard(props: any) {
                 variant="body2"
                 style={{
                   textAlign: "left",
-                  paddingLeft: "12px",
+                  paddingLeft: "8px",
                   fontFamily: "DMSans-Regular",
                 }}
               >
