@@ -42,8 +42,7 @@ function TimelineTab() {
               marginLeft={2}
               marginRight={2}
               marginTop={4}
-           style={{borderColor: "gray", borderWidth: 1, borderRadius: 22}}
-            
+              style={{ borderColor: "gray", borderWidth: 1, borderRadius: 22 }}
               key={i}
             >
               <Grid style={{ display: "flex", marginBottom: 10 }}>

@@ -98,7 +98,7 @@ function ThoughtCard(props: any) {
                 textTransform: "capitalize",
                 display: "flex",
                 marginTop: 12,
-
+                height: 32,
                 marginBottom: 12,
                 WebkitTouchCallout: "none",
               }}
