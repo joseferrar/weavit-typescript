@@ -13,7 +13,7 @@ import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 
-const drawerWidth = 350;
+const drawerWidth = 380;
 
 interface Props {
   window?: () => Window;

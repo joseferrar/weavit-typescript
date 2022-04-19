@@ -68,7 +68,7 @@ export default function MainPanel() {
       <TabPanel value={value} index={3}>
         <ProfileTab />
       </TabPanel>
-      <Box sx={{ width: 330, position: "fixed", left: 0, bottom: 10, marginLeft: 1 }}>
+      <Box sx={{ width: 340, position: "fixed", left: 0, bottom: 10, marginLeft: 1.5 }}>
         <Box>
           <Tabs
             textColor="secondary"
