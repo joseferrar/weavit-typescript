@@ -5,7 +5,7 @@ import Tab from "@mui/material/Tab";
 import Paper from "@mui/material/Paper";
 import InboxIcon from "@mui/icons-material/Inbox";
 import SearchIcon from "@mui/icons-material/Search";
-import TimelineIcon from "@mui/icons-material/Timeline";
+import Avatar from "@mui/material/Avatar";
 import PersonIcon from "@mui/icons-material/Person";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
@@ -13,6 +13,8 @@ import TimelineTab from "./TimeLine";
 import InboxTab from "./Inbox";
 import SearchTab from "./Search";
 import ProfileTab from "./Profile";
+import timeline from "../../images/Ico.png";
+
 
 function TabPanel(props: any) {
   const { children, value, index, ...other } = props;
@@ -74,7 +76,7 @@ export default function MainPanel() {
             textColor="secondary"
             component={Paper}
             elevation={4}
-            style={{ borderRadius: 20, marginLeft: 5, marginRight: 5 }}
+            style={{ borderRadius: 20, marginLeft: 1, marginRight: 5 }}
             value={value}
             onChange={handleChange}
           >
@@ -86,7 +88,11 @@ export default function MainPanel() {
                   Timeline
                 </Typography>
               }
-              icon={<TimelineIcon style={{ width: 20 }} />}
+              icon={  <Avatar
+                alt="Remy Sharp"
+                src={timeline}
+                sx={{ width: 25, height: 25 }}
+              />}
               {...a11yProps(0)}
             />
             <Tab

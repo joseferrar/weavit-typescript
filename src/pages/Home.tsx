@@ -1,11 +1,12 @@
 import React, { useState } from "react";
+import Avatar from "@mui/material/Avatar";
 import CloseIcon from "@mui/icons-material/Close";
 import Chip from "@mui/material/Chip";
 import Typography from "@mui/material/Typography";
-import CloudQueueIcon from "@mui/icons-material/CloudQueue";
 import Stack from "@mui/material/Stack";
 import ThoughtCard from "../components/Cards/ThoughtCard";
 import { getData } from "../data/dummyData";
+import cloudlogo from "../images/Icon.png";
 
 function Home() {
   const data = getData();
@@ -19,9 +20,15 @@ function Home() {
 
   return (
     <div>
-      <div style={{ display: "flex", marginTop: -30, marginLeft: 22}}>
-        <CloudQueueIcon sx={{ fontSize: 30 }} />
-        <Typography style={{ marginLeft: 6, fontSize: 22, fontFamily: "DMSans-Regular"}}>
+      <div style={{ display: "flex", marginTop: -30, marginLeft: 22 }}>
+        <Avatar
+          alt="Remy Sharp"
+          src={cloudlogo}
+          sx={{ width: 25, height: 25, marginTop: 1 }}
+        />
+        <Typography
+          style={{ marginLeft: 6, fontSize: 22, fontFamily: "DMSans-Regular" }}
+        >
           Your Thought Space
         </Typography>
       </div>
@@ -31,7 +38,7 @@ function Home() {
           deleteIcon={<CloseIcon style={{ fontSize: 20 }} />}
           label={item.title}
           onDelete={() => deleteItem(index)}
-          style={{ marginLeft: 22, marginTop: 12,fontFamily: "DMSans-Medium" }}
+          style={{ marginLeft: 22, marginTop: 14, fontFamily: "DMSans-Medium" }}
         />
       ))}
       <Stack direction="row" spacing={-2} marginTop={-2}>
