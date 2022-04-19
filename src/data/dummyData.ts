@@ -27,13 +27,13 @@ export const Data: DummyData[] = [
     title: "Netflix & Blockbuster",
     desc: [
       {
-        sub: "Netflix Recite what you know soa you can truly yesterday learn it.",
+        sub: "Netflix Recite what you know you can truly yesterday learn it.",
       },
       {
-        sub: "Netflix Recite what you know soa you can truly yesterday learn it.",
+        sub: "Netflix Recite what you know you can truly yesterday learn it.",
       },
       {
-        sub: "Netflix Recite what you know soa you can truly yesterday learn it.",
+        sub: "Netflix Recite what you know you can truly yesterday learn it.",
       },
     ],
     dateTime: "Thursday, Jan 22, 2021",

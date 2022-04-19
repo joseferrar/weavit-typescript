@@ -1,11 +1,13 @@
 import React, { Fragment } from "react";
 import Grid from "@mui/material/Grid";
 import Divider from "@mui/material/Divider";
-import MenuBookOutlinedIcon from "@mui/icons-material/MenuBookOutlined";
+import Avatar from "@mui/material/Avatar";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import SideLayout from "../Layouts/SideLayout";
+import notebook from "../../images/notebook.png";
+import ellipsis from "../../images/Ellipsis.png";
 import { getData } from "../../data/dummyData";
 
 function TimelineTab() {
@@ -39,33 +41,50 @@ function TimelineTab() {
           </Typography>
           {item.desc.map((sub, i) => (
             <Grid
-              width={300}
-              marginLeft={2}
-              marginRight={2}
-              marginTop={4}
-              style={{ borderColor: "gray", borderWidth: 1, borderRadius: 22 }}
-              key={i}
-            >
+            key={i}
+            style={{
+              boxShadow: "rgb(241 241 245) 5px 5px 5px 5px",
+              marginLeft: 12,
+              marginRight: 12,
+              borderStyle: "solid",
+              borderRadius: 12,
+              borderWidth: 4,
+              marginTop: 12,
+              backgroundColor: "#fff",
+              borderColor: "#fff",
+              padding: 4,
+            }}
+          >
               <Grid style={{ display: "flex", marginBottom: 10 }}>
                 <Typography
                   variant="body2"
-                  style={{ textAlign: "left", fontSize: 14, fontFamily: "DMSans-Medium" }}
+                  style={{
+                    textAlign: "left",
+                    fontSize: 14,
+                    fontFamily: "DMSans-Medium",
+                  }}
                 >
                   {Object.values(sub).map((a) => a)}
                 </Typography>
-                <MoreHorizIcon
-                  style={{
-                    marginLeft: "auto",
-                    backgroundColor: "#dde7e7",
-                    borderRadius: 12,
-                  }}
+                <Avatar
+                  alt="Remy Sharp"
+                  src={ellipsis}
+                  sx={{ width: 25, height: 25 }}
                 />
               </Grid>
               <Divider />
               <Button
+                onClick={() => alert("test click")}
                 variant="outlined"
-                startIcon={<MenuBookOutlinedIcon />}
+                startIcon={
+                  <Avatar
+                    alt="Remy Sharp"
+                    src={notebook}
+                    sx={{ width: 15, height: 15 }}
+                  />
+                }
                 style={{
+                  userSelect: "none",
                   borderRadius: 16,
                   color: "gray",
                   borderColor: "gray",
@@ -74,7 +93,10 @@ function TimelineTab() {
                   marginTop: 12,
                   height: 32,
                   marginBottom: 12,
-                  fontFamily: "DMSans-Regular"
+                  WebkitTouchCallout: "none",
+                  marginLeft: 8,
+                  fontSize: 12,
+                  fontFamily: "DMSans-Regular",
                 }}
               >
                 Note Block

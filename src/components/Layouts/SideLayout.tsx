@@ -8,6 +8,7 @@ function SideLayout(props: SideLayoutProps) {
   return (
     <div
       style={{
+        backgroundColor: "#F2F4F5",
         width: 380,
         position: "fixed",
         overflowY: "scroll",
