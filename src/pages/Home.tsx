@@ -7,7 +7,7 @@ import Stack from "@mui/material/Stack";
 import ThoughtCard from "../components/Cards/ThoughtCard";
 import { getData } from "../data/dummyData";
 import cloudlogo from "../images/Icon.png";
-import FindSection from "../components/sections/FindSection";
+import FindSection from "../components/NotFound/FindSection";
 
 function Home() {
   const data = getData();

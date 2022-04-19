@@ -2,7 +2,6 @@ import React, { Fragment } from "react";
 import Grid from "@mui/material/Grid";
 import Divider from "@mui/material/Divider";
 import Avatar from "@mui/material/Avatar";
-import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import SideLayout from "../Layouts/SideLayout";
@@ -41,20 +40,20 @@ function TimelineTab() {
           </Typography>
           {item.desc.map((sub, i) => (
             <Grid
-            key={i}
-            style={{
-              boxShadow: "rgb(241 241 245) 5px 5px 5px 5px",
-              marginLeft: 12,
-              marginRight: 12,
-              borderStyle: "solid",
-              borderRadius: 12,
-              borderWidth: 4,
-              marginTop: 12,
-              backgroundColor: "#fff",
-              borderColor: "#fff",
-              padding: 4,
-            }}
-          >
+              key={i}
+              style={{
+                boxShadow: "rgb(241 241 245) 5px 5px 5px 5px",
+                marginLeft: 12,
+                marginRight: 12,
+                borderStyle: "solid",
+                borderRadius: 12,
+                borderWidth: 4,
+                marginTop: 12,
+                backgroundColor: "#fff",
+                borderColor: "#fff",
+                padding: 4,
+              }}
+            >
               <Grid style={{ display: "flex", marginBottom: 10 }}>
                 <Typography
                   variant="body2"
