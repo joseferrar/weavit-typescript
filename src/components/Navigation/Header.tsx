@@ -12,9 +12,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import arrowleft from "../../images/arrow-left.png";
 import arrowright from "../../images/arrow-right.png";
-import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import MoreIcon from "@mui/icons-material/MoreVert";
-import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 
 const drawerWidth = 380;
 

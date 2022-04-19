@@ -23,6 +23,7 @@ function FindSection() {
         sx={{
           width: 150,
           height: 150,
+          marginLeft: 6,
         }}
         src={NoSearch}
         alt="NoSearch"
