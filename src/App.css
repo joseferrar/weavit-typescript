@@ -23,6 +23,18 @@
   src: url("./fonts/DMSans-Regular.ttf");
 }
 
+.css-bcskbc-MuiPaper-root {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+.css-v6wbn9-MuiAvatar-root{
+  margin-top: -51px !important;
+}
+.css-so23x5-MuiPaper-root{
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
 html {
   background-color: rgb(211, 219, 226);
   height: 100%;

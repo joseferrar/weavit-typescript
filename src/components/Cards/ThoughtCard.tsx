@@ -29,12 +29,18 @@ function ThoughtCard(props: any) {
             background:
               "linear-gradient(129.37deg, rgba(32, 0, 173, 0.5) -12.98%, rgba(57, 137, 238, 0.5) 91.72%)",
             marginTop: -16,
-            borderEndStartRadius: 60,
-            borderEndEndRadius: 60,
-            padding: 22,
+            borderTopLeftRadius: 14,
+            borderTopRightRadius: 14,
+            padding: 35,
+            clipPath: 'polygon(50% 0%, 100% 0, 100% 100%, 50% 70%, 0 100%, 0 0)'
+
+          
+            
           }}
         >
-          <Avatar
+        
+        </Grid>
+        <Avatar
             sx={{
               bgcolor: "#85CEFF",
               width: 80,
@@ -49,7 +55,8 @@ function ThoughtCard(props: any) {
             src={props.item.image}
             alt="B"
           />
-        </Grid>
+       
+     
         <Typography style={{ fontWeight: "bold", fontSize: 20, marginTop: 6, fontFamily: "DMSans-Medium" }}>
           {props.item.title}
         </Typography>
@@ -73,14 +80,18 @@ function ThoughtCard(props: any) {
         {props.item.desc.map((sub: any, i: any) => (
           <Grid key={i}>
             <Grid style={{ display: "flex", marginBottom: 10 }}>
-              <Typography variant="body2" style={{ textAlign: "left",fontFamily: "DMSans-Regular" }}>
+              <Typography variant="body2" style={{ textAlign: "left",paddingLeft: '12px',fontFamily: "DMSans-Regular" }}>
+             
                 {Object.values(sub).map((a: any) => a)}
               </Typography>
               <MoreHorizIcon
                 style={{
-                  marginLeft: "auto",
+                
                   backgroundColor: "#dde7e7",
                   borderRadius: 12,
+                  marginRight:12,
+                  marginLeft:8,
+                  
                 }}
               />
             </Grid>
@@ -99,6 +110,9 @@ function ThoughtCard(props: any) {
                 marginTop: 12,
                 height: 32,
                 marginBottom: 12,
+                WebkitTouchCallout: "none",
+                marginLeft:8,
+                
                 fontFamily: "DMSans-Regular",
               }}
             >
