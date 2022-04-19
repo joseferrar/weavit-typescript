@@ -1,22 +1,38 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Avatar from "@mui/material/Avatar";
+import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
 import List from "@mui/material/List";
 import MainPanel from "../Tabs/MainPanel";
-import logo from "../../images/logo.jpg";
+import logo from "../../images/Group.png";
 
 const Sidebar = () => {
   return (
-    <div>
+    <div style={{ backgroundColor: "#F2F4F5", height: "100%" }}>
       <Stack
-        direction="column"
+        direction="row"
         spacing={1}
-        marginTop={0}
+        marginTop={4}
         marginLeft={2}
         marginBottom={3}
       >
-        <Avatar alt="logo" src={logo} sx={{ width: 120, height: 120 }} />
+        <Avatar
+          alt="logo"
+          src={logo}
+          sx={{ width: 30, height: 30 }}
+          variant="square"
+        />
+        <Typography
+          style={{
+            fontWeight: "bold",
+            fontSize: 26,
+            
+            fontFamily: "DMSans-Medium",
+          }}
+        >
+          Weavit
+        </Typography>
       </Stack>
 
       <List>

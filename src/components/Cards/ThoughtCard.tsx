@@ -10,12 +10,12 @@ import notebook from "../../images/notebook.png";
 import ellipsis from "../../images/Ellipsis.png";
 
 const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
+  backgroundColor: "#f7f7fb",
   ...theme.typography.body2,
   padding: theme.spacing(2),
   textAlign: "center",
   borderRadius: 14,
-  width: 300,
+  width: 350,
   height: "600px",
 }));
 
@@ -98,7 +98,18 @@ function ThoughtCard(props: any) {
           </Typography>
         </Grid>
         {props.item.desc.map((sub: any, i: any) => (
-          <Grid key={i}>
+          <Grid
+            key={i}
+            style={{
+              borderStyle: "solid",
+              borderRadius: 12,
+              borderWidth: 4,
+              marginTop: 12,
+              backgroundColor: "#fff",
+              borderColor: "#fff",
+              padding: 4,
+            }}
+          >
             <Grid style={{ display: "flex", marginBottom: 10 }}>
               <Typography
                 variant="body2"

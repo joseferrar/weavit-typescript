@@ -41,13 +41,19 @@ function TimelineTab() {
           </Typography>
           {item.desc.map((sub, i) => (
             <Grid
-              width={300}
-              marginLeft={2}
-              marginRight={2}
-              marginTop={4}
-              style={{ borderColor: "gray", borderWidth: 1, borderRadius: 22 }}
-              key={i}
-            >
+            key={i}
+            style={{
+              marginLeft: 12,
+              marginRight: 12,
+              borderStyle: "solid",
+              borderRadius: 12,
+              borderWidth: 4,
+              marginTop: 12,
+              backgroundColor: "#fff",
+              borderColor: "#fff",
+              padding: 4,
+            }}
+          >
               <Grid style={{ display: "flex", marginBottom: 10 }}>
                 <Typography
                   variant="body2"

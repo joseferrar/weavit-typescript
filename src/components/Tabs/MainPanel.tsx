@@ -13,8 +13,7 @@ import TimelineTab from "./TimeLine";
 import InboxTab from "./Inbox";
 import SearchTab from "./Search";
 import ProfileTab from "./Profile";
-import timeline from "../../images/Ico.png";
-
+import TimelineIcon from "@mui/icons-material/Timeline";
 
 function TabPanel(props: any) {
   const { children, value, index, ...other } = props;
@@ -70,7 +69,15 @@ export default function MainPanel() {
       <TabPanel value={value} index={3}>
         <ProfileTab />
       </TabPanel>
-      <Box sx={{ width: 340, position: "fixed", left: 0, bottom: 10, marginLeft: 1.5 }}>
+      <Box
+        sx={{
+          width: 340,
+          position: "fixed",
+          left: 0,
+          bottom: 10,
+          marginLeft: 1.5,
+        }}
+      >
         <Box>
           <Tabs
             textColor="secondary"
@@ -83,23 +90,27 @@ export default function MainPanel() {
             <Tab
               label={
                 <Typography
-                  style={{ textTransform: "capitalize", fontSize: 14, fontFamily: "DMSans-Medium" }}
+                  style={{
+                    textTransform: "capitalize",
+                    fontSize: 14,
+                    fontFamily: "DMSans-Medium",
+                  }}
                 >
                   Timeline
                 </Typography>
               }
-              icon={  <Avatar
-                alt="Remy Sharp"
-                src={timeline}
-                sx={{ width: 25, height: 25 }}
-              />}
+              icon={<TimelineIcon style={{ width: 20 }} />}
               {...a11yProps(0)}
             />
             <Tab
               style={{ marginLeft: -10 }}
               label={
                 <Typography
-                  style={{ textTransform: "capitalize", fontSize: 14, fontFamily: "DMSans-Medium" }}
+                  style={{
+                    textTransform: "capitalize",
+                    fontSize: 14,
+                    fontFamily: "DMSans-Medium",
+                  }}
                 >
                   Inbox
                 </Typography>
@@ -111,7 +122,11 @@ export default function MainPanel() {
               style={{ marginLeft: -10 }}
               label={
                 <Typography
-                  style={{ textTransform: "capitalize", fontSize: 14, fontFamily: "DMSans-Medium" }}
+                  style={{
+                    textTransform: "capitalize",
+                    fontSize: 14,
+                    fontFamily: "DMSans-Medium",
+                  }}
                 >
                   Search
                 </Typography>
@@ -123,7 +138,11 @@ export default function MainPanel() {
               style={{ marginLeft: -10 }}
               label={
                 <Typography
-                  style={{ textTransform: "capitalize", fontSize: 14, fontFamily: "DMSans-Medium" }}
+                  style={{
+                    textTransform: "capitalize",
+                    fontSize: 14,
+                    fontFamily: "DMSans-Medium",
+                  }}
                 >
                   Profile
                 </Typography>

@@ -8,6 +8,7 @@ import ThoughtCard from "../components/Cards/ThoughtCard";
 import { getData } from "../data/dummyData";
 import cloudlogo from "../images/Icon.png";
 
+
 function Home() {
   const data = getData();
   const [post, setPost] = useState(data);

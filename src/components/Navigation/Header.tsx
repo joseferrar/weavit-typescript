@@ -79,7 +79,7 @@ function Header(props: Props) {
   return (
     <Box sx={{ display: "flex", backgroundColor: "#fff" }}>
       <AppBar
-      style={{height: 20}}
+        style={{ height: 0 }}
         elevation={0}
         sx={{
           bgcolor: "rgb(211, 219, 226)",
@@ -150,7 +150,6 @@ function Header(props: Props) {
         sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
         aria-label="mailbox folders"
       >
-
         <Drawer
           container={container}
           variant="temporary"
