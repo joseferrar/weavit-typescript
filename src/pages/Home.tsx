@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Grid from "@mui/material/Grid";
+import CloseIcon from "@mui/icons-material/Close";
 import Chip from "@mui/material/Chip";
 import Typography from "@mui/material/Typography";
 import CloudQueueIcon from "@mui/icons-material/CloudQueue";
@@ -20,22 +20,23 @@ function Home() {
   return (
     <div>
       <div style={{ display: "flex", marginTop: -30 }}>
-        <CloudQueueIcon sx={{fontSize: 30}}/>
-        <Typography style={{ marginLeft: 6, fontSize: 22 }}>Your Thought Space</Typography>
+        <CloudQueueIcon sx={{ fontSize: 30 }} />
+        <Typography style={{ marginLeft: 6, fontSize: 22 }}>
+          Your Thought Space
+        </Typography>
       </div>
-      <Stack direction="row" spacing={-2} marginTop={2}>
-        {post.map((item, index) => (
-          <div>
-            {index === 1 ? (
-              <Chip
-                label={item.title}
-                onDelete={() => deleteItem(index)}
-                style={{ marginLeft: -222 }}
-              />
-            ) : (
-              <Chip label={item.title} onDelete={() => deleteItem(index)} />
-            )}
 
+      {post.map((item, index) => (
+        <Chip
+          deleteIcon={<CloseIcon style={{ fontSize: 20 }} />}
+          label={item.title}
+          onDelete={() => deleteItem(index)}
+          style={{ marginLeft: 22, marginTop: 12 }}
+        />
+      ))}
+      <Stack direction="row" spacing={-2} marginTop={-2}>
+        {post.map((item, index) => (
+          <div key={index}>
             <ThoughtCard item={item} />
           </div>
         ))}

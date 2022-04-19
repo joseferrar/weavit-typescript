@@ -1,7 +1,5 @@
-import React, { useState } from "react";
-import DraggableList from "react-draggable-lists";
+import React from "react";
 import { experimentalStyled as styled } from "@mui/material/styles";
-import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import Avatar from "@mui/material/Avatar";
@@ -10,7 +8,6 @@ import Divider from "@mui/material/Divider";
 import Button from "@mui/material/Button";
 import MenuBookOutlinedIcon from "@mui/icons-material/MenuBookOutlined";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
-import { getData } from "../../data/dummyData";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -22,7 +19,6 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 function ThoughtCard(props: any) {
-  const data = getData();
   console.log(props);
   return (
     <Grid item xs={12} sm={4} md={4} marginTop={4} marginLeft={4}>

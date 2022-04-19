@@ -11,7 +11,7 @@ function SideLayout(props: SideLayoutProps) {
         width: 350,
         position: "fixed",
         overflowY: "scroll",
-        height: 580,
+        height: "80%",
         left: 0,
         top: 0,
         marginTop: 85,
