@@ -102,6 +102,7 @@ function ThoughtCard(props: any) {
           <Grid
             key={i}
             style={{
+              boxShadow: "rgb(241 241 245) 5px 5px 5px 5px",
               borderStyle: "solid",
               borderRadius: 12,
               borderWidth: 4,

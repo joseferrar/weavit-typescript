@@ -43,6 +43,7 @@ function TimelineTab() {
             <Grid
             key={i}
             style={{
+              boxShadow: "rgb(241 241 245) 5px 5px 5px 5px",
               marginLeft: 12,
               marginRight: 12,
               borderStyle: "solid",
