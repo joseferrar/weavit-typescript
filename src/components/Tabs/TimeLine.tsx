@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import Grid from "@mui/material/Grid";
 import Divider from "@mui/material/Divider";
 import Avatar from "@mui/material/Avatar";
@@ -10,7 +11,9 @@ import ellipsis from "../../images/Ellipsis.png";
 import { getData } from "../../data/dummyData";
 
 function TimelineTab() {
+  const navigate = useNavigate();
   const data = getData();
+
   return (
     <SideLayout>
       <Typography
@@ -73,7 +76,7 @@ function TimelineTab() {
               </Grid>
               <Divider />
               <Button
-                onClick={() => alert("test click")}
+                // onClick={() => navigate('about', {state: item.id})}
                 variant="outlined"
                 startIcon={
                   <Avatar
