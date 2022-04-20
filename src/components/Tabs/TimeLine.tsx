@@ -57,13 +57,14 @@ function TimelineTab() {
                 padding: 4,
               }}
             >
-              <Grid style={{ display: "flex", marginBottom: 10 }}>
+              <Grid style={{ display: "flex", marginBottom: 10, paddingLeft: 8 }}>
                 <Typography
                   variant="body2"
                   style={{
                     textAlign: "left",
-                    fontSize: 14,
+                    fontSize: 12,
                     fontFamily: "DMSans-Medium",
+                    width: 340
                   }}
                 >
                   {Object.values(sub).map((a) => a)}
@@ -71,12 +72,12 @@ function TimelineTab() {
                 <Avatar
                   alt="Remy Sharp"
                   src={ellipsis}
-                  sx={{ width: 25, height: 25 }}
+                  sx={{ width: 25, height: 25, marginLeft: "auto" }}
                 />
               </Grid>
               <Divider />
               <Button
-                // onClick={() => navigate('about', {state: item.id})}
+                onClick={() => navigate('about', {state: item.id})}
                 variant="outlined"
                 startIcon={
                   <Avatar

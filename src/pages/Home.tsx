@@ -3,7 +3,7 @@ import Avatar from "@mui/material/Avatar";
 import CloseIcon from "@mui/icons-material/Close";
 import Chip from "@mui/material/Chip";
 import Typography from "@mui/material/Typography";
-import Stack from "@mui/material/Stack";
+import Grid from "@mui/material/Grid";
 import ThoughtCard from "../components/Cards/ThoughtCard";
 import { getData } from "../data/dummyData";
 import spell from "../images/spell.png";
@@ -21,8 +21,8 @@ function Home() {
 
   return (
     <div>
-      <div style={{ marginTop: -30, position: "fixed" }}>
-        <div style={{ display: "flex" }}>
+      <div style={{ marginTop: -2 }}>
+        <Grid container spacing={2} marginLeft={-6}>
           <Avatar
             alt="Remy Sharp"
             src={spell}
@@ -37,28 +37,29 @@ function Home() {
           >
             Your Thought Space
           </Typography>
-        </div>
+        </Grid>
         {post.map((item, index) => (
           <Chip
             deleteIcon={<CloseIcon style={{ fontSize: 20 }} />}
             label={item.title}
             onDelete={() => deleteItem(index)}
             style={{
-              marginLeft: 12,
+              marginLeft: -40,
+              marginRight: 50,
               marginTop: 14,
               fontFamily: "DMSans-Medium",
             }}
           />
         ))}
       </div>
-      <Stack direction="row" spacing={-2.5} marginTop={-2}>
+      <Grid container spacing={8} marginTop={-6}>
         {post &&
           post.map((item, index) => (
             <div key={index} style={{ marginTop: 30, marginLeft: -22 }}>
               <ThoughtCard item={item} />
             </div>
           ))}
-      </Stack>
+      </Grid>
       {post.length === 0 && <FindSection />}
     </div>
   );

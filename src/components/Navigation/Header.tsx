@@ -14,7 +14,7 @@ import arrowleft from "../../images/arrow-left.png";
 import arrowright from "../../images/arrow-right.png";
 import MoreIcon from "@mui/icons-material/MoreVert";
 
-const drawerWidth = 380;
+const drawerWidth = 450;
 
 interface Props {
   window?: () => Window;

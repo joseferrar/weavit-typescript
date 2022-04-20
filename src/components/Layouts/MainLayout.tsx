@@ -15,7 +15,7 @@ export default function MainLayout(props: MainLayoutProps) {
         className="bodycontent"
         style={{
           padding: theme.spacing(3),
-          marginLeft: theme.spacing(8)
+          marginLeft: theme.spacing(6)
         }}
       >
         {props.children}
