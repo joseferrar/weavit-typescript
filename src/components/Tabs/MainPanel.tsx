@@ -76,7 +76,7 @@ export default function MainPanel() {
       </TabPanel>
       <Box
         sx={{
-          width: 340,
+          width: 438,
           position: "fixed",
           left: 0,
           bottom: 10,

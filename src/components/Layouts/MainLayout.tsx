@@ -12,13 +12,10 @@ export default function MainLayout(props: MainLayoutProps) {
     <div style={{ flexGrow: 1, display: "flex" }}>
       <Header />
       <div
+        className="bodycontent"
         style={{
-          width: "100%",
-          left: 0,
-          height: 880,
-          overflowX: "scroll",
-          marginTop: 30,
           padding: theme.spacing(3),
+          marginLeft: theme.spacing(8)
         }}
       >
         {props.children}

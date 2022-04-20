@@ -6,19 +6,7 @@ interface SideLayoutProps {
 
 function SideLayout(props: SideLayoutProps) {
   return (
-    <div
-      style={{
-        backgroundColor: "#F2F4F5",
-        width: 380,
-        position: "fixed",
-        overflowY: "scroll",
-        height: "80%",
-        left: 0,
-        top: 0,
-        marginTop: 85,
-        textAlign: "center",
-      }}
-    >
+    <div className="sidebarcontent" >
       {props.children}
     </div>
   );

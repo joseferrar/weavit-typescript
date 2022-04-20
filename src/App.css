@@ -48,3 +48,47 @@ html {
   padding-left: 0px !important;
   padding-right: 0px !important;
 }
+
+.MuiPaper-root ::-webkit-scrollbar {
+  width: 0;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+
+
+.css-uey1ih-MuiDrawer-docked .MuiDrawer-paper {
+  box-sizing: border-box;
+  width: 460px !important;
+  background-color: #fff;
+}
+
+.sidebarcontent{
+  background-color:#F2F4F5;
+  width: 460px;
+  position: fixed;
+  overflow-y: scroll;
+ height: 80%;
+  left: 0;
+  top: 0;
+ margin-top: 85px;
+ text-align: center;
+}
+.bodycontent{
+  width: 100%;
+  left: 0;
+  height: 880px;
+  overflow-x: scroll;
+margin-top: 30px;
+margin-left: 42px;
+}
+.css-wqvb4u-MuiPaper-root {
+ 
+  width: 454px !important;
+  height: 800px !important;
+}
+.css-66mln3-MuiButtonBase-root-MuiTab-root {
+
+  max-width: 360px;
+  min-width: 115px !important;
+ 
+}
