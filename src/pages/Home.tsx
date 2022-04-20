@@ -6,7 +6,7 @@ import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
 import ThoughtCard from "../components/Cards/ThoughtCard";
 import { getData } from "../data/dummyData";
-import cloudlogo from "../images/Icon.png";
+import spell from "../images/spell.png";
 import FindSection from "../components/NotFound/FindSection";
 
 function Home() {
@@ -25,8 +25,8 @@ function Home() {
         <div style={{ display: "flex" }}>
           <Avatar
             alt="Remy Sharp"
-            src={cloudlogo}
-            sx={{ width: 25, height: 25, marginTop: 1 }}
+            src={spell}
+            sx={{ width: 25, height: 25, marginTop: 0.5 }}
           />
           <Typography
             style={{
