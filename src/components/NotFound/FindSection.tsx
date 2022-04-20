@@ -6,7 +6,7 @@ import Typography from "@mui/material/Typography";
 import NoSearch from "../../images/No-Search-Results.png";
 import { theme } from "../../theme/default";
 
-function FindSection() {
+function NotFound() {
   return (
     <div
       style={{
@@ -64,4 +64,4 @@ function FindSection() {
   );
 }
 
-export default FindSection;
+export default NotFound;

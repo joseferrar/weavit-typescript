@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Paper from "@mui/material/Paper";
@@ -52,6 +53,7 @@ function a11yProps(index: any) {
 }
 
 export default function MainPanel() {
+  const navigate = useNavigate();
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event: any, newValue: any) => {
@@ -113,6 +115,7 @@ export default function MainPanel() {
             />
             <Tab
               style={{ marginLeft: -10 }}
+              onClick={() => navigate("/Inbox")}
               label={
                 <Typography
                   style={{
