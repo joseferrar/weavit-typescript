@@ -93,6 +93,11 @@ export default function MainPanel() {
             onChange={handleChange}
           >
             <Tab
+            onClick={() => {
+              setValue(0)
+              navigate(-1)
+          
+            }}
               label={
                 <Typography
                   style={{
