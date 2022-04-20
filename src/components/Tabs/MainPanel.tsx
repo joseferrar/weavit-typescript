@@ -76,7 +76,7 @@ export default function MainPanel() {
       </TabPanel>
       <Box
         sx={{
-          width: 438,
+          width: 425,
           position: "fixed",
           left: 0,
           bottom: 10,
@@ -88,16 +88,16 @@ export default function MainPanel() {
             textColor="secondary"
             component={Paper}
             elevation={4}
-            style={{ borderRadius: 20, marginLeft: 1, marginRight: 5 }}
+            style={{ borderRadius: 40, marginLeft: 1, marginRight: 5 }}
             value={value}
             onChange={handleChange}
           >
             <Tab
-            onClick={() => {
-              setValue(0)
-              navigate('/')
-          
-            }}
+              style={{ marginLeft: 10 }}
+              onClick={() => {
+                setValue(0);
+                navigate("/");
+              }}
               label={
                 <Typography
                   style={{
@@ -119,7 +119,7 @@ export default function MainPanel() {
               {...a11yProps(0)}
             />
             <Tab
-              style={{ marginLeft: -10 }}
+              style={{ marginLeft: 10 }}
               onClick={() => navigate("/Inbox")}
               label={
                 <Typography
@@ -142,12 +142,11 @@ export default function MainPanel() {
               {...a11yProps(1)}
             />
             <Tab
-               onClick={() => {
-                setValue(2)
-                navigate("/search")
-            
+              onClick={() => {
+                setValue(2);
+                navigate("/search");
               }}
-              style={{ marginLeft: -10 }}
+              style={{ marginLeft: 10 }}
               label={
                 <Typography
                   style={{
@@ -169,12 +168,11 @@ export default function MainPanel() {
               {...a11yProps(2)}
             />
             <Tab
-               onClick={() => {
-                setValue(3)
-                navigate("/profile")
-            
+              onClick={() => {
+                setValue(3);
+                navigate("/profile");
               }}
-              style={{ marginLeft: -10 }}
+              style={{ marginLeft: 10 }}
               label={
                 <Typography
                   style={{
