@@ -21,36 +21,40 @@ function Home() {
 
   return (
     <div>
-      <div style={{ display: "flex", marginTop: -30, marginLeft: 22 }}>
-        <Avatar
-          alt="Remy Sharp"
-          src={cloudlogo}
-          sx={{ width: 25, height: 25, marginTop: 1 }}
-        />
-        <Typography
-          style={{ marginLeft: 6, fontSize: 22, fontFamily: "DMSans-Regular" }}
-        >
-          Your Thought Space
-        </Typography>
-      </div>
-
-      {post &&
-        post.map((item, index) => (
+      <div style={{ marginTop: -30, position: "fixed" }}>
+        <div style={{ display: "flex" }}>
+          <Avatar
+            alt="Remy Sharp"
+            src={cloudlogo}
+            sx={{ width: 25, height: 25, marginTop: 1 }}
+          />
+          <Typography
+            style={{
+              marginLeft: 6,
+              fontSize: 22,
+              fontFamily: "DMSans-Regular",
+            }}
+          >
+            Your Thought Space
+          </Typography>
+        </div>
+        {post.map((item, index) => (
           <Chip
             deleteIcon={<CloseIcon style={{ fontSize: 20 }} />}
             label={item.title}
             onDelete={() => deleteItem(index)}
             style={{
-              marginLeft: 22,
+              marginLeft: 12,
               marginTop: 14,
               fontFamily: "DMSans-Medium",
             }}
           />
         ))}
-      <Stack direction="row" spacing={-2} marginTop={-2}>
+      </div>
+      <Stack direction="row" spacing={-2.5} marginTop={-2}>
         {post &&
           post.map((item, index) => (
-            <div key={index}>
+            <div key={index} style={{ marginTop: 30, marginLeft: -22 }}>
               <ThoughtCard item={item} />
             </div>
           ))}

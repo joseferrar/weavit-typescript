@@ -17,11 +17,12 @@ const Item = styled(Paper)(({ theme }) => ({
   textAlign: "center",
   borderRadius: 14,
   width: 350,
-  height: "630px",
+  height: 800,
+  marginBottom: 28
 }));
 
 function ThoughtCard(props: any) {
-  console.log(props);
+  const scrollToRef = (ref:any) => window.scrollTo(0, ref.current.offsetTop)   
   return (
     <Grid item xs={12} sm={4} md={4} marginTop={6} marginLeft={4}>
       <Item elevation={3}>
