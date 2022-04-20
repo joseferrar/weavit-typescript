@@ -95,7 +95,7 @@ export default function MainPanel() {
             <Tab
             onClick={() => {
               setValue(0)
-              navigate(-1)
+              navigate('/')
           
             }}
               label={
@@ -142,6 +142,11 @@ export default function MainPanel() {
               {...a11yProps(1)}
             />
             <Tab
+               onClick={() => {
+                setValue(2)
+                navigate("/search")
+            
+              }}
               style={{ marginLeft: -10 }}
               label={
                 <Typography
@@ -164,6 +169,11 @@ export default function MainPanel() {
               {...a11yProps(2)}
             />
             <Tab
+               onClick={() => {
+                setValue(3)
+                navigate("/profile")
+            
+              }}
               style={{ marginLeft: -10 }}
               label={
                 <Typography
