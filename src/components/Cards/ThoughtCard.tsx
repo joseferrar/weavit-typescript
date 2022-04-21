@@ -8,7 +8,10 @@ import Divider from "@mui/material/Divider";
 import Button from "@mui/material/Button";
 import notebook from "../../images/notebook.png";
 import ellipsis from "../../images/Ellipsis.png";
-import NoteCard from "./NoteCard";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemText from "@mui/material/ListItemText";
+import ListItemAvatar from "@mui/material/ListItemAvatar";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: "#f7f7fb",
@@ -98,8 +101,124 @@ function ThoughtCard(props: any) {
             {"<Status>"}
           </Typography>
         </Grid>
-        <div style={{ overflowY: "scroll", height: 550, }}>
-          <NoteCard />
+        <div style={{ overflowY: "scroll", height: 550 }}>
+          {props.item.desc.map((sub: any, i: any) => (
+            <Grid
+              key={i}
+              style={{
+                boxShadow: "rgb(241 241 245) 5px 5px 5px 5px",
+                borderStyle: "solid",
+                borderRadius: 12,
+                borderWidth: 4,
+                marginTop: 12,
+                marginLeft: 12,
+                marginRight: 12,
+                backgroundColor: "#fff",
+                borderColor: "#fff",
+                padding: 4,
+              }}
+            >
+              <List
+                sx={{
+                  width: "100%",
+                  borderStyle: "solid",
+                  borderWidth: 1,
+                  borderRadius: 6,
+                  height: 80,
+                  marginBottom: 1,
+                  backgroundColor: "#fff",
+                  borderColor: "#e9e7e7",
+                }}
+              >
+                <ListItem>
+                  <ListItemAvatar>
+                    <Avatar
+                      sx={{
+                        bgcolor: "#85CEFF",
+                        width: 50,
+                        height: 50,
+                        fontWeight: "bold",
+                        color: "blue",
+                        borderWidth: 2,
+                        borderStyle: "solid",
+                        borderColor: "#fff",
+                      }}
+                      src={props.item.image}
+                      alt="B"
+                    />
+                  </ListItemAvatar>
+                  <ListItemText
+                    primary={
+                      <Typography
+                        variant="body2"
+                        style={{
+                          textAlign: "left",
+                          paddingLeft: "2px",
+                          fontFamily: "DMSans-bold",
+                        }}
+                      >
+                        Getting thing Done
+                      </Typography>
+                    }
+                    secondary={
+                      <a
+                        href="https://www.npmjs.com/package/react-paginate"
+                        style={{ textDecoration: "none", color: "gray" }}
+                      >
+                        https://www.npmjs.com/package/react-paginate
+                      </a>
+                    }
+                  />
+                </ListItem>
+              </List>
+              <Grid style={{ display: "flex", marginBottom: 10 }}>
+                <Typography
+                  variant="body2"
+                  style={{
+                    textAlign: "left",
+                    paddingLeft: "8px",
+                    fontFamily: "DMSans-Regular",
+                  }}
+                >
+                  {Object.values(sub).map((a: any) => a)}
+                </Typography>
+                <Avatar
+                  alt="Remy Sharp"
+                  src={ellipsis}
+                  sx={{ width: 25, height: 25 }}
+                />
+              </Grid>
+              <Divider />
+              <Button
+                onClick={() => alert("test click")}
+                variant="outlined"
+                startIcon={
+                  <Avatar
+                    alt="Remy Sharp"
+                    src={notebook}
+                    sx={{ width: 15, height: 15 }}
+                  />
+                }
+                style={{
+                  userSelect: "none",
+                  borderRadius: 16,
+                  color: "gray",
+                  borderColor: "gray",
+                  textTransform: "capitalize",
+                  display: "flex",
+                  marginTop: 12,
+                  height: 32,
+                  marginBottom: 12,
+                  WebkitTouchCallout: "none",
+                  marginLeft: 8,
+                  fontSize: 12,
+                  fontFamily: "DMSans-Regular",
+                }}
+              >
+                Note Block
+              </Button>
+            </Grid>
+          ))}
         </div>
       </Item>
     </Grid>
