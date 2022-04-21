@@ -14,63 +14,82 @@ function ProfileTab() {
       <h2>Profile</h2>
       <div className="row">
         <Button
+          style={{ fontWeight: "bold" }}
           startIcon={<SettingsIcon />}
           className="sidebarbtn"
-          color="secondary"
-          variant="outlined"
+          color="inherit"
+          variant="text"
           endIcon={<ArrowRightAltIcon />}
         >
-          <span style={{ paddingRight: "140px" }}> Setting</span>
+          <span style={{ paddingRight: "140px", fontFamily: "DMSans-Regular" }}>
+            {" "}
+            Setting
+          </span>
         </Button>
       </div>
       <br></br>
       <div className="row">
         <Button
+          style={{ fontWeight: "bold" }}
           startIcon={<LockOpenIcon />}
           className="sidebarbtn"
-          color="secondary"
-          variant="outlined"
+          color="inherit"
+          variant="text"
           endIcon={<ArrowRightAltIcon />}
         >
-          <span style={{ paddingRight: "85px" }}> Privacy Policy</span>
+          <span style={{ paddingRight: "85px", fontFamily: "DMSans-Regular" }}>
+            {" "}
+            Privacy Policy
+          </span>
         </Button>
       </div>
       <br></br>
       <div className="row">
         <Button
+          style={{ fontWeight: "bold" }}
           startIcon={<InfoIcon />}
           className="sidebarbtn"
-          color="secondary"
-          variant="outlined"
+          color="inherit"
+          variant="text"
           endIcon={<ArrowRightAltIcon />}
         >
-          <span style={{ paddingRight: "96px" }}> About Weavit</span>
+          <span style={{ paddingRight: "96px", fontFamily: "DMSans-Regular" }}>
+            {" "}
+            About Weavit
+          </span>
         </Button>
       </div>
       <br></br>
       <div className="row">
         <Button
+          style={{ fontWeight: "bold" }}
           startIcon={<FeedIcon />}
           className="sidebarbtn"
-          color="secondary"
-          variant="outlined"
+          color="inherit"
+          variant="text"
           endIcon={<ArrowRightAltIcon />}
         >
-          <span style={{ paddingRight: "30px" }}> Terms and Conditions</span>
+          <span style={{ paddingRight: "30px", fontFamily: "DMSans-Regular" }}>
+            {" "}
+            Terms and Conditions
+          </span>
         </Button>
       </div>
       <br></br>
 
       <div className="row">
         <Button
+          style={{ fontWeight: "bold" }}
           startIcon={<ExitToAppIcon />}
-          style={{ border: "1px solid red" }}
           className="sidebarbtn"
-          color="secondary"
-          variant="outlined"
+          color="inherit"
+          variant="text"
           endIcon={<ArrowRightAltIcon />}
         >
-          <span style={{ paddingRight: "134px" }}> Sign Out</span>
+          <span style={{ paddingRight: "134px", fontFamily: "DMSans-Regular" }}>
+            {" "}
+            Sign Out
+          </span>
         </Button>
       </div>
     </div>
