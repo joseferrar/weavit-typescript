@@ -12,7 +12,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import MoreIcon from "@mui/icons-material/MoreVert";
 
-const drawerWidth = 380;
+const drawerWidth = 360;
 
 interface Props {
   window?: () => Window;

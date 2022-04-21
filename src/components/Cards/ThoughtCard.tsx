@@ -8,6 +8,7 @@ import Divider from "@mui/material/Divider";
 import Button from "@mui/material/Button";
 import notebook from "../../images/notebook.png";
 import ellipsis from "../../images/Ellipsis.png";
+import NoteCard from "./NoteCard";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: "#f7f7fb",
@@ -16,9 +17,8 @@ const Item = styled(Paper)(({ theme }) => ({
   paddingRight: theme.spacing(0),
   textAlign: "center",
   borderRadius: 14,
-  width: 350,
+  width: 360,
   height: 800,
-  // marginBottom: 28
 }));
 
 function ThoughtCard(props: any) {
@@ -98,70 +98,9 @@ function ThoughtCard(props: any) {
             {"<Status>"}
           </Typography>
         </Grid>
-        {props.item.desc.map((sub: any, i: any) => (
-          <Grid
-            key={i}
-            style={{
-              boxShadow: "rgb(241 241 245) 5px 5px 5px 5px",
-              borderStyle: "solid",
-              borderRadius: 12,
-              borderWidth: 4,
-              marginTop: 12,
-              marginLeft: 12,
-              marginRight: 12,
-              backgroundColor: "#fff",
-              borderColor: "#fff",
-              padding: 4,
-            }}
-          >
-            <Grid style={{ display: "flex", marginBottom: 10 }}>
-              <Typography
-                variant="body2"
-                style={{
-                  textAlign: "left",
-                  paddingLeft: "8px",
-                  fontFamily: "DMSans-Regular",
-                }}
-              >
-                {Object.values(sub).map((a: any) => a)}
-              </Typography>
-              <Avatar
-                alt="Remy Sharp"
-                src={ellipsis}
-                sx={{ width: 25, height: 25 }}
-              />
-            </Grid>
-            <Divider />
-            <Button
-              onClick={() => alert("test click")}
-              variant="outlined"
-              startIcon={
-                <Avatar
-                  alt="Remy Sharp"
-                  src={notebook}
-                  sx={{ width: 15, height: 15 }}
-                />
-              }
-              style={{
-                userSelect: "none",
-                borderRadius: 16,
-                color: "gray",
-                borderColor: "gray",
-                textTransform: "capitalize",
-                display: "flex",
-                marginTop: 12,
-                height: 32,
-                marginBottom: 12,
-                WebkitTouchCallout: "none",
-                marginLeft: 8,
-                fontSize: 12,
-                fontFamily: "DMSans-Regular",
-              }}
-            >
-              Note Block
-            </Button>
-          </Grid>
-        ))}
+        <div style={{ overflowY: "scroll", height: 550, }}>
+          <NoteCard />
+        </div>
       </Item>
     </Grid>
   );
