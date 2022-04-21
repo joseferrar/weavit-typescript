@@ -21,6 +21,7 @@
     "react-draggable": "^4.4.4",
     "react-draggable-list": "^4.0.4",
     "react-draggable-lists": "^1.0.1",
+    "react-paginate": "^8.1.3",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "styled-components": "^5.3.5",

@@ -76,7 +76,7 @@ export default function MainPanel() {
       </TabPanel>
       <Box
         sx={{
-          width: 425,
+          width: 360,
           position: "fixed",
           left: 0,
           bottom: 10,
@@ -119,7 +119,7 @@ export default function MainPanel() {
               {...a11yProps(0)}
             />
             <Tab
-              style={{ marginLeft: 10 }}
+            style={{ marginLeft: -8 }}
               onClick={() => navigate("/Inbox")}
               label={
                 <Typography
@@ -146,7 +146,7 @@ export default function MainPanel() {
                 setValue(2);
                 navigate("/search");
               }}
-              style={{ marginLeft: 10 }}
+              style={{ marginLeft: -8 }}
               label={
                 <Typography
                   style={{
@@ -172,7 +172,7 @@ export default function MainPanel() {
                 setValue(3);
                 navigate("/profile");
               }}
-              style={{ marginLeft: 10 }}
+              style={{ marginLeft: -8 }}
               label={
                 <Typography
                   style={{
@@ -188,7 +188,7 @@ export default function MainPanel() {
                 <Avatar
                   alt="Remy Sharp"
                   src={userlogo}
-                  sx={{ width: 25, height: 25, marginTop: 1, borderRadius: 0 }}
+                  sx={{ width: 28, height: 28, marginTop: 1, borderRadius: 0 }}
                 />
               }
               {...a11yProps(3)}

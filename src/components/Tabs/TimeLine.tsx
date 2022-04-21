@@ -63,8 +63,9 @@ function TimelineTab() {
                   style={{
                     textAlign: "left",
                     fontSize: 12,
+                    fontWeight: 500,
                     fontFamily: "DMSans-Medium",
-                    width: 340
+                    width: 300
                   }}
                 >
                   {Object.values(sub).map((a) => a)}
