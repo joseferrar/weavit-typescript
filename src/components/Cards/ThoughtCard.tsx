@@ -74,7 +74,7 @@ function ThoughtCard(props: any) {
               fontSize: 14,
               marginTop: 6,
               marginLeft: 6,
-              fontFamily: "DMSans-Medium",
+              fontFamily: "DMSans-Regular",
             }}
           >
             {"<Calender Name>"}

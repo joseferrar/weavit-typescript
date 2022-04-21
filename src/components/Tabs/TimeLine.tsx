@@ -78,7 +78,7 @@ function TimelineTab() {
               </Grid>
               <Divider />
               <Button
-                onClick={() => navigate('about', {state: item.id})}
+                // onClick={() => navigate('about', {state: item.id})}
                 variant="outlined"
                 startIcon={
                   <Avatar
