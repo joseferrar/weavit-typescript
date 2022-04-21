@@ -10,26 +10,26 @@ function Search() {
     <SideLayout>
       <SearchInput />
       <Stack direction="row" spacing={-2} marginTop={2}>
-      <Typography
-        style={{
-          fontSize: 22,
-          textAlign: "left",
-          marginLeft: 18,
-          marginTop: 12,
-          fontFamily: "DMSans-Medium",
-        }}
-      >
-        Result
-      </Typography>
-      <Chip
-            label={"See All (22)"}
-  
-            style={{
-              marginLeft: "auto",
-              marginTop: 14,
-              fontFamily: "DMSans-Medium",
-            }}
-          />
+        <Typography
+          style={{
+            fontSize: 22,
+            textAlign: "left",
+            marginLeft: 18,
+            marginTop: 12,
+            fontFamily: "DMSans-Medium",
+          }}
+        >
+          Result
+        </Typography>
+        <Chip
+          label={"See All (22)"}
+          style={{
+            marginLeft: "auto",
+            marginRight: 12,
+            marginTop: 14,
+            fontFamily: "DMSans-Medium",
+          }}
+        />
       </Stack>
     </SideLayout>
   );
