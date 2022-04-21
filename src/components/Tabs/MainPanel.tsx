@@ -59,7 +59,7 @@ export default function MainPanel() {
   const handleChange = (event: any, newValue: any) => {
     setValue(newValue);
   };
-  console.log(value);
+  
   return (
     <Fragment>
       <TabPanel value={value} index={0}>
@@ -76,11 +76,11 @@ export default function MainPanel() {
       </TabPanel>
       <Box
         sx={{
-          width: 360,
+          width: 350,
           position: "fixed",
           left: 0,
           bottom: 10,
-          marginLeft: 1.5,
+          marginLeft: 1,
         }}
       >
         <Box>
@@ -119,7 +119,7 @@ export default function MainPanel() {
               {...a11yProps(0)}
             />
             <Tab
-            style={{ marginLeft: -8 }}
+              style={{ marginLeft: -8 }}
               onClick={() => navigate("/Inbox")}
               label={
                 <Typography
