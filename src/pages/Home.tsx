@@ -43,21 +43,13 @@ function Home() {
   return (
     <div>
       <div style={{ marginTop: -2 }}>
-        <Grid container spacing={2} marginLeft={-6}>
-          <Avatar
-            alt="Remy Sharp"
-            src={spell}
-            sx={{ width: 25, height: 25, marginTop: 0.5 }}
-          />
-          <Typography
-            style={{
-              marginLeft: 6,
-              fontSize: 22,
-              fontFamily: "DMSans-Regular",
-            }}
-          >
-            Your Thought Space
-          </Typography>
+        <Grid
+          container
+          spacing={2}
+          marginLeft={-6}
+          style={{ position: "fixed", top: "3em", left: "1em" }}
+        >
+          
           <ReactPaginate
             nextLabel={
               <Avatar
@@ -83,6 +75,22 @@ function Home() {
             // activeClassName="pagenationActive"
           />
         </Grid>
+        <Grid container marginLeft={-4} marginTop={-2}>
+        <Avatar
+            alt="Remy Sharp"
+            src={spell}
+            sx={{ width: 25, height: 25, marginTop: 0.5 }}
+          />
+          <Typography
+            style={{
+              marginLeft: 6,
+              fontSize: 22,
+              fontFamily: "DMSans-Regular",
+            }}
+          >
+            Your Thought Space
+          </Typography>
+          </Grid>
         {post.map((item, index) => (
           <Chip
             deleteIcon={<CloseIcon style={{ fontSize: 20 }} />}
