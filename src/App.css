@@ -53,4 +53,34 @@ html {
   background: transparent;
 }
 
-/*  */
+/* pagenation */
+
+.pagenationBtts {
+  width: 100%;
+  list-style: none;
+  height: 0px;
+  display: flex;
+  justify-content: right;
+  margin-top: -38px;
+}
+
+.pagenationBtts a {
+  padding: 5px;
+
+  width: 400px;
+    top: 20;
+    left: 90%;
+  border-radius: 5px;
+  font-size: 1px;
+  color: "#2b2e2b";
+  cursor: pointer;
+}
+
+.pagenationBtts a:hover {
+  color: white;
+}
+
+.pagenationActive a {
+  color: white;
+  background-color: #2b2eff;
+}

@@ -5,13 +5,18 @@ import Chip from "@mui/material/Chip";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import ThoughtCard from "../components/Cards/ThoughtCard";
+import ReactPaginate from "react-paginate";
+
 import { getData } from "../data/dummyData";
 import spell from "../images/spell.png";
 import FindSection from "../components/NotFound/FindSection";
+import arrowleft from "../images/arrow-left.png";
+import arrowright from "../images/arrow-right.png";
 
 function Home() {
   const data = getData();
   const [post, setPost] = useState(data);
+  const [page, setPage] = useState(0);
 
   const deleteItem = (index: any) => {
     const newTodoItems = [...post];
@@ -19,6 +24,22 @@ function Home() {
     setPost(newTodoItems);
   };
 
+  const userPerpage = 4;
+  const pageVisited = page * userPerpage;
+
+  const displayUsers = post
+    .slice(pageVisited, pageVisited + userPerpage)
+    .map((item, index) => (
+      <div key={index} style={{ marginTop: 30, marginLeft: -22 }}>
+        <ThoughtCard item={item} />
+      </div>
+    ));
+
+  const pageCount = Math.ceil(post.length / userPerpage);
+
+  const handleChange = ({ selected }: any) => {
+    setPage(selected);
+  };
   return (
     <div>
       <div style={{ marginTop: -2 }}>
@@ -37,6 +58,30 @@ function Home() {
           >
             Your Thought Space
           </Typography>
+          <ReactPaginate
+            nextLabel={
+              <Avatar
+                alt="Remy Sharp"
+                src={arrowright}
+                sx={{ width: 20, height: 20 }}
+              />
+            }
+            onPageChange={handleChange}
+            pageRangeDisplayed={5}
+            pageCount={pageCount}
+            previousLabel={
+              <Avatar
+                alt="Remy Sharp"
+                src={arrowleft}
+                sx={{ width: 15, height: 15 }}
+              />
+            }
+            containerClassName="pagenationBtts"
+            previousClassName=""
+            nextLinkClassName=""
+            disabledClassName="pagenationDisabled"
+            // activeClassName="pagenationActive"
+          />
         </Grid>
         {post.map((item, index) => (
           <Chip
@@ -52,15 +97,12 @@ function Home() {
           />
         ))}
       </div>
+      {/* <h2>{page}</h2> */}
+
       <Grid container spacing={8} marginTop={-6}>
-        {post &&
-          post.map((item, index) => (
-            <div key={index} style={{ marginTop: 30, marginLeft: -22 }}>
-              <ThoughtCard item={item} />
-            </div>
-          ))}
+        {displayUsers}
       </Grid>
-      {post.length === 0 && <FindSection />}
+      {data.length === 0 && <FindSection />}
     </div>
   );
 }

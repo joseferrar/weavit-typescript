@@ -16,8 +16,8 @@ const Item = styled(Paper)(({ theme }) => ({
   paddingRight: theme.spacing(0),
   textAlign: "center",
   borderRadius: 14,
-  width: 460,
-  height: 850,
+  width: 350,
+  height: 800,
   // marginBottom: 28
 }));
 
@@ -74,7 +74,7 @@ function ThoughtCard(props: any) {
               fontSize: 14,
               marginTop: 6,
               marginLeft: 6,
-              fontFamily: "DMSans-Regular",
+              fontFamily: "DMSans-Medium",
             }}
           >
             {"<Calender Name>"}

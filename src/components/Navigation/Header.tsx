@@ -10,11 +10,9 @@ import Toolbar from "@mui/material/Toolbar";
 import Sidebar from "./Sidebar";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
-import arrowleft from "../../images/arrow-left.png";
-import arrowright from "../../images/arrow-right.png";
 import MoreIcon from "@mui/icons-material/MoreVert";
 
-const drawerWidth = 450;
+const drawerWidth = 380;
 
 interface Props {
   window?: () => Window;
@@ -88,69 +86,6 @@ function Header(props: Props) {
           ml: { sm: `${drawerWidth}px` },
         }}
       >
-        <Toolbar>
-          <IconButton
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "none" } }}
-          >
-            <MenuIcon />
-          </IconButton>
-
-          <Box sx={{ display: { xs: "none", md: "flex" }, marginLeft: "auto" }}>
-            {/* <IconButton
-              size="large"
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              onClick={handleProfileMenuOpen}
-              aria-haspopup="true"
-            >
-              <Avatar
-                alt="Remy Sharp"
-                src="http://assets.stickpng.com/images/59b5bc886dbe923c39853e04.png"
-                sx={{ width: 34, height: 34 }}
-              />
-            </IconButton> */}
-            <IconButton
-              size="large"
-              edge="end"
-              aria-label="account of current user"
-              aria-haspopup="true"
-            >
-              <Avatar
-                alt="Remy Sharp"
-                src={arrowleft}
-                sx={{ width: 15, height: 15 }}
-              />
-            </IconButton>
-            <IconButton
-              size="large"
-              edge="end"
-              aria-label="account of current user"
-              aria-haspopup="true"
-            >
-              <Avatar
-                alt="Remy Sharp"
-                src={arrowright}
-                sx={{ width: 20, height: 20 }}
-              />
-            </IconButton>
-          </Box>
-
-          <Box sx={{ display: { xs: "flex", md: "none" }, marginLeft: "auto" }}>
-            <IconButton
-              size="large"
-              aria-label="show more"
-              aria-controls={mobileMenuId}
-              onClick={handleMobileMenuOpen}
-              aria-haspopup="true"
-            >
-              <MoreIcon />
-            </IconButton>
-          </Box>
-        </Toolbar>
       </AppBar>
       {/* {renderMobileMenu} */}
       {renderMenu}
