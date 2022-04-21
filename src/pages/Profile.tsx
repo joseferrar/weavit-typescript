@@ -38,7 +38,8 @@ function Profile() {
         className="deletebtn"
         variant="outlined"
         endIcon={<SendIcon />}
-        color="secondary"
+        color="error"
+        style={{ borderRadius: 19 }}
       >
         Permanently Delete Button
       </Button>
