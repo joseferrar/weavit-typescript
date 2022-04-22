@@ -12,6 +12,7 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import ListItemAvatar from "@mui/material/ListItemAvatar";
+import filelogo from "../../images/filelogo.png";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: "#f7f7fb",
@@ -143,7 +144,7 @@ function ThoughtCard(props: any) {
                         borderStyle: "solid",
                         borderColor: "#fff",
                       }}
-                      src={props.item.image}
+                      src={filelogo}
                       alt="B"
                     />
                   </ListItemAvatar>
@@ -165,7 +166,7 @@ function ThoughtCard(props: any) {
                         href="https://www.npmjs.com/package/react-paginate"
                         style={{ textDecoration: "none", color: "gray" }}
                       >
-                        https://www.npmjs.com/package/react-paginate
+                        JPG file . 443.0 KB
                       </a>
                     }
                   />
