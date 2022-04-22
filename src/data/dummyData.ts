@@ -6,6 +6,7 @@ export interface DummyData {
   title: string;
   dateTime: string;
   desc: Array<object>;
+  extra: Array<object>;
 }
 
 export const Data: DummyData[] = [
@@ -14,6 +15,9 @@ export const Data: DummyData[] = [
     image: picture,
     title: "Jane Leforti",
     desc: [
+      { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
+    ],
+    extra: [
       { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
       { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
       { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
@@ -32,12 +36,14 @@ export const Data: DummyData[] = [
       {
         sub: "Netflix Recite what you know you can truly yesterday learn it.",
       },
-      {
-        sub: "Netflix Recite what you know you can truly yesterday learn it.",
-      },
-      {
-        sub: "Netflix Recite what you know you can truly yesterday learn it.",
-      },
+    ],
+    extra: [
+      { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
+      { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
+      { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
+      { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
+      { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
+      { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
     ],
     dateTime: "Thursday, Jan 22, 2021",
   },
@@ -50,12 +56,14 @@ export const Data: DummyData[] = [
       {
         sub: "NATO Allies agree to further strengthen and sustain support for Ukraine",
       },
-      {
-        sub: "NATO Allies agree to further strengthen and sustain support for Ukraine",
-      },
-      {
-        sub: "NATO Allies agree to further strengthen and sustain support for Ukraine",
-      },
+    ],
+    extra: [
+      { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
+      { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
+      { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
+      { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
+      { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
+      { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
     ],
     dateTime: "Thursday, Jan 22, 2021",
   },
@@ -63,17 +71,19 @@ export const Data: DummyData[] = [
     id: 4,
     image:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Flag_of_NATO.svg/800px-Flag_of_NATO.svg.png",
-    title: "Mini",
+    title: "Apex",
     desc: [
       {
         sub: "NATO Allies agree to further strengthen and sustain support for Ukraine",
       },
-      {
-        sub: "NATO Allies agree to further strengthen and sustain support for Ukraine",
-      },
-      {
-        sub: "NATO Allies agree to further strengthen and sustain support for Ukraine",
-      },
+    ],
+    extra: [
+      { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
+      { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
+      { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
+      { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
+      { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
+      { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
     ],
     dateTime: "Thursday, Jan 22, 2021",
   },
@@ -81,17 +91,19 @@ export const Data: DummyData[] = [
     id: 5,
     image:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Flag_of_NATO.svg/800px-Flag_of_NATO.svg.png",
-    title: "Apex",
+    title: "Mini",
     desc: [
       {
         sub: "NATO Allies agree to further strengthen and sustain support for Ukraine",
       },
-      {
-        sub: "NATO Allies agree to further strengthen and sustain support for Ukraine",
-      },
-      {
-        sub: "NATO Allies agree to further strengthen and sustain support for Ukraine",
-      },
+    ],
+    extra: [
+      { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
+      { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
+      { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
+      { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
+      { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
+      { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
     ],
     dateTime: "Thursday, Jan 22, 2021",
   },

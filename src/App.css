@@ -79,6 +79,10 @@ html {
   color: white;
 }
 
+.dragged .item {
+  opacity: 0;
+}
+
 .pagenationActive a {
   color: white;
   background-color: #2b2eff;

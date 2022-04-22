@@ -32,15 +32,11 @@ function NoteCard() {
             <Grid
               key={i}
               style={{
-                boxShadow: "rgb(241 241 245) 5px 5px 5px 5px",
                 marginLeft: 12,
                 marginRight: 12,
-                borderStyle: "solid",
-                borderRadius: 12,
-                borderWidth: 4,
+                borderRadius: 16,
                 marginTop: 12,
                 backgroundColor: "#fff",
-                borderColor: "#fff",
                 padding: 4,
               }}
             >
@@ -55,6 +51,7 @@ function NoteCard() {
                     fontWeight: 500,
                     fontFamily: "DMSans-Medium",
                     width: 300,
+                    marginTop: 4
                   }}
                 >
                   {Object.values(sub).map((a) => a)}
@@ -62,7 +59,7 @@ function NoteCard() {
                 <Avatar
                   alt="Remy Sharp"
                   src={ellipsis}
-                  sx={{ width: 25, height: 25, marginLeft: "auto" }}
+                  sx={{ width: 25, height: 25, marginLeft: "auto", marginRight: 1, top: 4}}
                 />
               </Grid>
               <Divider />
@@ -84,7 +81,7 @@ function NoteCard() {
                   textTransform: "capitalize",
                   display: "flex",
                   marginTop: 12,
-                  height: 32,
+                  height: 30,
                   marginBottom: 12,
                   WebkitTouchCallout: "none",
                   marginLeft: 8,

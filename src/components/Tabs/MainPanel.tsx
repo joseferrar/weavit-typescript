@@ -120,7 +120,7 @@ export default function MainPanel() {
             />
             <Tab
               style={{ marginLeft: -8 }}
-              onClick={() => navigate("/Inbox")}
+              onClick={() => navigate("/inbox")}
               label={
                 <Typography
                   style={{

@@ -16,6 +16,18 @@ function Search() {
   const data = getData();
   return (
     <SideLayout>
+      <Typography
+        fontSize={28}
+        textAlign="left"
+        marginLeft={2}
+        marginTop={2}
+        fontWeight="bold"
+        marginBottom={3}
+        fontFamily="DMSans-Bold"
+      >
+        Search
+      </Typography>
+
       <SearchInput />
       <Stack direction="row" spacing={-2} marginTop={2}>
         <Typography
@@ -42,21 +54,17 @@ function Search() {
 
       {data.map(
         (item, index) =>
-          index === 1 && (
+          index < 3 && (
             <Fragment key={index}>
               {item.desc.map((sub, i) => (
                 <Grid
                   key={i}
                   style={{
-                    boxShadow: "rgb(241 241 245) 5px 5px 5px 5px",
                     marginLeft: 12,
                     marginRight: 12,
-                    borderStyle: "solid",
                     borderRadius: 12,
-                    borderWidth: 4,
                     marginTop: 12,
                     backgroundColor: "#fff",
-                    borderColor: "#fff",
                     padding: 4,
                   }}
                 >
@@ -74,6 +82,7 @@ function Search() {
                         fontSize: 12,
                         fontFamily: "DMSans-Medium",
                         width: 340,
+                        marginTop: 4,
                       }}
                     >
                       {Object.values(sub).map((a) => a)}
@@ -102,7 +111,7 @@ function Search() {
                       textTransform: "capitalize",
                       display: "flex",
                       marginTop: 12,
-                      height: 32,
+                      height: 30,
                       marginBottom: 12,
                       WebkitTouchCallout: "none",
                       marginLeft: 8,
