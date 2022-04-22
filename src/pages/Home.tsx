@@ -49,13 +49,12 @@ function Home() {
           marginLeft={-6}
           style={{ position: "fixed", top: "3em", left: "1em" }}
         >
-          
           <ReactPaginate
             nextLabel={
               <Avatar
                 alt="Remy Sharp"
                 src={arrowright}
-                sx={{ width: 20, height: 20 }}
+                sx={{ width: 20, height: 20, paddingLeft: 5, marginTop: 3 }}
               />
             }
             onPageChange={handleChange}
@@ -65,7 +64,7 @@ function Home() {
               <Avatar
                 alt="Remy Sharp"
                 src={arrowleft}
-                sx={{ width: 15, height: 15 }}
+                sx={{ width: 20, height: 20, paddingLeft: 5, marginTop: 3 }}
               />
             }
             containerClassName="pagenationBtts"
@@ -76,7 +75,7 @@ function Home() {
           />
         </Grid>
         <Grid container marginLeft={-4} marginTop={-2}>
-        <Avatar
+          <Avatar
             alt="Remy Sharp"
             src={spell}
             sx={{ width: 25, height: 25, marginTop: 0.5 }}
@@ -85,12 +84,13 @@ function Home() {
             style={{
               marginLeft: 6,
               fontSize: 22,
+              width: 420,
               fontFamily: "DMSans-Regular",
             }}
           >
             Your Thought Space
           </Typography>
-          </Grid>
+        </Grid>
         {post.map((item, index) => (
           <Chip
             deleteIcon={<CloseIcon style={{ fontSize: 20 }} />}
