@@ -74,12 +74,7 @@ function Home() {
             // activeClassName="pagenationActive"
           />
         </Grid>
-        <Grid
-          container
-          marginLeft={-4}
-          marginTop={-2}
-          style={{ position: "fixed" }}
-        >
+        <Grid container marginLeft={-4} marginTop={-2}>
           <Avatar
             alt="Remy Sharp"
             src={spell}
@@ -104,7 +99,7 @@ function Home() {
             style={{
               marginLeft: -40,
               marginRight: 50,
-              marginTop: 20,
+              marginTop: 14,
               fontFamily: "DMSans-Medium",
             }}
           />
