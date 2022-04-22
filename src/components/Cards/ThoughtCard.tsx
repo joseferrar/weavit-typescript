@@ -27,7 +27,7 @@ const Item = styled(Paper)(({ theme }) => ({
 
 function ThoughtCard(props: any) {
   return (
-    <Grid item xs={12} sm={4} md={4} marginTop={6} marginLeft={3}>
+    <Grid item xs={12} sm={4} md={4} marginTop={6} marginLeft={4}>
       <Item elevation={3}>
         <Grid
           style={{
