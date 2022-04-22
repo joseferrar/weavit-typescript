@@ -8,11 +8,9 @@ import Divider from "@mui/material/Divider";
 import Button from "@mui/material/Button";
 import notebook from "../images/notebook.png";
 import ellipsis from "../images/Ellipsis.png";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemText from "@mui/material/ListItemText";
-import ListItemAvatar from "@mui/material/ListItemAvatar";
-import filelogo from "../images/filelogo.png";
+import add from "../images/add.png";
+import CloseIcon from "@mui/icons-material/Close";
+import Chip from "@mui/material/Chip";
 import { getData } from "../data/dummyData";
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -28,218 +26,195 @@ const Item = styled(Paper)(({ theme }) => ({
 
 function Search() {
   const data = getData();
+
   return (
     <div>
       {data.map(
         (item, index) =>
           index === 1 && (
-            <Grid item xs={12} sm={4} md={4} marginTop={6} marginLeft={4}>
-              <Item elevation={3}>
-                <Grid
-                  style={{
-                    background:
-                      "linear-gradient(129.37deg, rgba(32, 0, 173, 0.5) -12.98%, rgba(57, 137, 238, 0.5) 91.72%)",
-                    marginTop: -16,
-                    borderTopLeftRadius: 14,
-                    borderTopRightRadius: 14,
-                    padding: 35,
-                    clipPath:
-                      "polygon(50% 0%, 100% 0, 100% 100%, 50% 70%, 0 100%, 0 0)",
-                  }}
-                ></Grid>
-                <Avatar
-                  sx={{
-                    bgcolor: "#85CEFF",
-                    width: 80,
-                    display: "inline-flex",
-                    height: 80,
-                    fontWeight: "bold",
-                    color: "blue",
-                    borderWidth: 2,
-                    borderStyle: "solid",
-                    borderColor: "#fff",
-                  }}
-                  src={item.image}
-                  alt="B"
-                />
+            <>
+              <Chip
+                deleteIcon={<CloseIcon style={{ fontSize: 20 }} />}
+                label={item.title}
+                onDelete={() => console.warn("test")}
+                style={{
+                  marginLeft: -40,
+                  marginRight: 50,
+                  marginTop: 14,
+                  fontFamily: "DMSans-Medium",
+                }}
+              />
+              <Chip
+                variant="outlined"
+                deleteIcon={
+                  <Avatar
+                    alt="Remy Sharp"
+                    src={add}
+                    sx={{ width: 22, height: 22 }}
+                  />
+                }
+                label={"Clear All"}
+                onDelete={() => console.warn("test")}
+                style={{
+                  marginLeft: -40,
+                  marginRight: 50,
+                  marginTop: 14,
+                  fontFamily: "DMSans-Regular",
+                  color: "gray"
+                }}
+              />
+              <Grid item xs={12} sm={4} md={4} marginTop={6} marginLeft={-4}>
+                <Item elevation={3}>
+                  <Grid
+                    style={{
+                      background:
+                        "linear-gradient(129.37deg, rgba(32, 0, 173, 0.5) -12.98%, rgba(57, 137, 238, 0.5) 91.72%)",
+                      marginTop: -16,
+                      borderTopLeftRadius: 14,
+                      borderTopRightRadius: 14,
+                      padding: 35,
+                      clipPath:
+                        "polygon(50% 0%, 100% 0, 100% 100%, 50% 70%, 0 100%, 0 0)",
+                    }}
+                  ></Grid>
+                  <Avatar
+                    sx={{
+                      bgcolor: "#85CEFF",
+                      width: 80,
+                      display: "inline-flex",
+                      height: 80,
+                      fontWeight: "bold",
+                      color: "blue",
+                      borderWidth: 2,
+                      borderStyle: "solid",
+                      borderColor: "#fff",
+                    }}
+                    src={item.image}
+                    alt="B"
+                  />
 
-                <Typography
-                  style={{
-                    fontWeight: "bold",
-                    fontSize: 20,
-                    marginTop: 6,
-                    fontFamily: "DMSans-Medium",
-                  }}
-                >
-                  {item.title}
-                </Typography>
-                <Grid style={{ display: "inline-flex", color: "gray" }}>
                   <Typography
                     style={{
-                      fontSize: 14,
+                      fontWeight: "bold",
+                      fontSize: 20,
                       marginTop: 6,
-                      fontFamily: "DMSans-Regular",
+                      fontFamily: "DMSans-Medium",
                     }}
                   >
-                    {"<Time>"}
+                    {item.title}
                   </Typography>
-                  <Typography
-                    style={{
-                      fontSize: 14,
-                      marginTop: 6,
-                      marginLeft: 6,
-                      fontFamily: "DMSans-Regular",
-                    }}
-                  >
-                    {"<Calender Name>"}
-                  </Typography>
-                </Grid>
-                <br />
-                <Grid style={{ display: "inline-flex", color: "gray" }}>
-                  <Typography
-                    style={{
-                      fontSize: 14,
-                      marginTop: 6,
-                      fontFamily: "DMSans-Regular",
-                    }}
-                  >
-                    {"<Location>"}
-                  </Typography>
-                  <Typography
-                    style={{
-                      fontSize: 14,
-                      marginTop: 6,
-                      marginLeft: 6,
-                      fontFamily: "DMSans-Regular",
-                    }}
-                  >
-                    {"<Status>"}
-                  </Typography>
-                </Grid>
-                <div style={{ overflowY: "scroll", height: 550 }}>
-                  {item.desc.map((sub: any, i: any) => (
-                    <Grid
-                      key={i}
+                  <Grid style={{ display: "inline-flex", color: "gray" }}>
+                    <Typography
                       style={{
-                        boxShadow: "rgb(241 241 245) 5px 5px 5px 5px",
-                        borderStyle: "solid",
-                        borderRadius: 12,
-                        borderWidth: 4,
-                        marginTop: 12,
-                        marginLeft: 12,
-                        marginRight: 12,
-                        backgroundColor: "#fff",
-                        borderColor: "#fff",
-                        padding: 4,
+                        fontSize: 14,
+                        marginTop: 6,
+                        fontFamily: "DMSans-Regular",
                       }}
                     >
-                      <List
-                        sx={{
-                          width: "100%",
+                      {"<Time>"}
+                    </Typography>
+                    <Typography
+                      style={{
+                        fontSize: 14,
+                        marginTop: 6,
+                        marginLeft: 6,
+                        fontFamily: "DMSans-Regular",
+                      }}
+                    >
+                      {"<Calender Name>"}
+                    </Typography>
+                  </Grid>
+                  <br />
+                  <Grid style={{ display: "inline-flex", color: "gray" }}>
+                    <Typography
+                      style={{
+                        fontSize: 14,
+                        marginTop: 6,
+                        fontFamily: "DMSans-Regular",
+                      }}
+                    >
+                      {"<Location>"}
+                    </Typography>
+                    <Typography
+                      style={{
+                        fontSize: 14,
+                        marginTop: 6,
+                        marginLeft: 6,
+                        fontFamily: "DMSans-Regular",
+                      }}
+                    >
+                      {"<Status>"}
+                    </Typography>
+                  </Grid>
+                  <div style={{ overflowY: "scroll", height: 550 }}>
+                    {item.desc.map((sub: any, i: any) => (
+                      <Grid
+                        key={i}
+                        style={{
+                          boxShadow: "rgb(241 241 245) 5px 5px 5px 5px",
                           borderStyle: "solid",
-                          borderWidth: 1,
-                          borderRadius: 6,
-                          height: 80,
-                          marginBottom: 1,
+                          borderRadius: 12,
+                          borderWidth: 4,
+                          marginTop: 12,
+                          marginLeft: 12,
+                          marginRight: 12,
                           backgroundColor: "#fff",
-                          borderColor: "#e9e7e7",
+                          borderColor: "#fff",
+                          padding: 4,
                         }}
                       >
-                        <ListItem>
-                          <ListItemAvatar>
-                            <Avatar
-                              sx={{
-                                bgcolor: "#85CEFF",
-                                width: 50,
-                                height: 50,
-                                fontWeight: "bold",
-                                color: "blue",
-                                borderWidth: 2,
-                                borderStyle: "solid",
-                                borderColor: "#fff",
-                              }}
-                              src={filelogo}
-                              alt="B"
-                            />
-                          </ListItemAvatar>
-                          <ListItemText
-                            primary={
-                              <Typography
-                                variant="body2"
-                                style={{
-                                  textAlign: "left",
-                                  paddingLeft: "2px",
-                                  fontFamily: "DMSans-bold",
-                                }}
-                              >
-                                Getting thing Done
-                              </Typography>
-                            }
-                            secondary={
-                              <a
-                                href="https://www.npmjs.com/package/react-paginate"
-                                style={{
-                                  textDecoration: "none",
-                                  color: "gray",
-                                }}
-                              >
-                                JPG file . 443.0 KB
-                              </a>
-                            }
+                        <Grid style={{ display: "flex", marginBottom: 10 }}>
+                          <Typography
+                            variant="body2"
+                            style={{
+                              textAlign: "left",
+                              paddingLeft: "8px",
+                              fontFamily: "DMSans-Regular",
+                            }}
+                          >
+                            {Object.values(sub).map((a: any) => a)}
+                          </Typography>
+                          <Avatar
+                            alt="Remy Sharp"
+                            src={ellipsis}
+                            sx={{ width: 25, height: 25 }}
                           />
-                        </ListItem>
-                      </List>
-                      <Grid style={{ display: "flex", marginBottom: 10 }}>
-                        <Typography
-                          variant="body2"
+                        </Grid>
+                        <Divider />
+                        <Button
+                          onClick={() => alert("test click")}
+                          variant="outlined"
+                          startIcon={
+                            <Avatar
+                              alt="Remy Sharp"
+                              src={notebook}
+                              sx={{ width: 15, height: 15 }}
+                            />
+                          }
                           style={{
-                            textAlign: "left",
-                            paddingLeft: "8px",
+                            userSelect: "none",
+                            borderRadius: 16,
+                            color: "gray",
+                            borderColor: "gray",
+                            textTransform: "capitalize",
+                            display: "flex",
+                            marginTop: 12,
+                            height: 32,
+                            marginBottom: 12,
+                            WebkitTouchCallout: "none",
+                            marginLeft: 8,
+                            fontSize: 12,
                             fontFamily: "DMSans-Regular",
                           }}
                         >
-                          {Object.values(sub).map((a: any) => a)}
-                        </Typography>
-                        <Avatar
-                          alt="Remy Sharp"
-                          src={ellipsis}
-                          sx={{ width: 25, height: 25 }}
-                        />
+                          Note Block
+                        </Button>
                       </Grid>
-                      <Divider />
-                      <Button
-                        onClick={() => alert("test click")}
-                        variant="outlined"
-                        startIcon={
-                          <Avatar
-                            alt="Remy Sharp"
-                            src={notebook}
-                            sx={{ width: 15, height: 15 }}
-                          />
-                        }
-                        style={{
-                          userSelect: "none",
-                          borderRadius: 16,
-                          color: "gray",
-                          borderColor: "gray",
-                          textTransform: "capitalize",
-                          display: "flex",
-                          marginTop: 12,
-                          height: 32,
-                          marginBottom: 12,
-                          WebkitTouchCallout: "none",
-                          marginLeft: 8,
-                          fontSize: 12,
-                          fontFamily: "DMSans-Regular",
-                        }}
-                      >
-                        Note Block
-                      </Button>
-                    </Grid>
-                  ))}
-                </div>
-              </Item>
-            </Grid>
+                    ))}
+                  </div>
+                </Item>
+              </Grid>
+            </>
           )
       )}
     </div>

@@ -42,7 +42,7 @@ function Search() {
 
       {data.map(
         (item, index) =>
-          index > 2 && (
+          index === 1 && (
             <Fragment key={index}>
               {item.desc.map((sub, i) => (
                 <Grid
