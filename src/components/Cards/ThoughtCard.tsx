@@ -13,6 +13,7 @@ import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import ListItemAvatar from "@mui/material/ListItemAvatar";
 import filelogo from "../../images/filelogo.png";
+import imglogo from "../../images/imaglogo.png";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: "#f7f7fb",
@@ -123,28 +124,28 @@ function ThoughtCard(props: any) {
                 sx={{
                   width: "100%",
                   borderStyle: "solid",
-                  borderWidth: 1,
+                  borderWidth: 1.8,
                   borderRadius: 6,
                   height: 80,
                   marginBottom: 1,
                   backgroundColor: "#fff",
-                  borderColor: "#e9e7e7",
+                  borderColor: "#F0F3F6",
                 }}
               >
                 <ListItem>
                   <ListItemAvatar>
                     <Avatar
                       sx={{
-                        bgcolor: "#85CEFF",
+                        bgcolor: "#fff",
                         width: 50,
                         height: 50,
                         fontWeight: "bold",
                         color: "blue",
-                        borderWidth: 2,
+                        borderWidth: 0,
                         borderStyle: "solid",
                         borderColor: "#fff",
                       }}
-                      src={filelogo}
+                      src={props.item.id ===  2 ? imglogo : filelogo}
                       alt="B"
                     />
                   </ListItemAvatar>
