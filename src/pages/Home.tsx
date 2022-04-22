@@ -43,27 +43,18 @@ function Home() {
   return (
     <div>
       <div style={{ marginTop: -2 }}>
-        <Grid container spacing={2} marginLeft={-6}>
-          <Avatar
-            alt="Remy Sharp"
-            src={spell}
-            sx={{ width: 25, height: 25, marginTop: 0.5 }}
-          />
-          <Typography
-            style={{
-              marginLeft: 6,
-              fontSize: 22,
-              fontFamily: "DMSans-Regular",
-            }}
-          >
-            Your Thought Space
-          </Typography>
+        <Grid
+          container
+          spacing={2}
+          marginLeft={-6}
+          style={{ position: "fixed", top: "3em", left: "1em" }}
+        >
           <ReactPaginate
             nextLabel={
               <Avatar
                 alt="Remy Sharp"
                 src={arrowright}
-                sx={{ width: 20, height: 20 }}
+                sx={{ width: 22, height: 22, paddingLeft: 5, marginTop: 3 }}
               />
             }
             onPageChange={handleChange}
@@ -73,7 +64,7 @@ function Home() {
               <Avatar
                 alt="Remy Sharp"
                 src={arrowleft}
-                sx={{ width: 15, height: 15 }}
+                sx={{ width: 20, height: 20, paddingLeft: 5, marginTop: 3 }}
               />
             }
             containerClassName="pagenationBtts"
@@ -83,6 +74,23 @@ function Home() {
             // activeClassName="pagenationActive"
           />
         </Grid>
+        <Grid container marginLeft={-4} marginTop={-2}>
+          <Avatar
+            alt="Remy Sharp"
+            src={spell}
+            sx={{ width: 25, height: 25, marginTop: 0.5 }}
+          />
+          <Typography
+            style={{
+              marginLeft: 6,
+              fontSize: 22,
+            
+              fontFamily: "DMSans-Regular",
+            }}
+          >
+            Your Thought Space
+          </Typography>
+        </Grid>
         {post.map((item, index) => (
           <Chip
             deleteIcon={<CloseIcon style={{ fontSize: 20 }} />}
@@ -91,7 +99,7 @@ function Home() {
             style={{
               marginLeft: -40,
               marginRight: 50,
-              marginTop: 14,
+              marginTop: 28,
               fontFamily: "DMSans-Medium",
             }}
           />
@@ -108,3 +116,4 @@ function Home() {
 }
 
 export default Home;
+
