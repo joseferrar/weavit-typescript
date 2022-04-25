@@ -101,89 +101,103 @@ function ThoughtCard(props: any) {
           </Typography>
         </Grid>
         <div style={{ overflowY: "scroll", height: 588 }}>
-          {props.item.desc.map((sub: any, i: any) => (
-            <Grid
-              key={i}
-              style={{
-                borderStyle: "solid",
-                borderRadius: 16,
-                borderWidth: 4,
-                marginTop: 12,
-                marginLeft: 12,
-                marginRight: 12,
-                backgroundColor: "#fff",
-                borderColor: "#fff",
-                padding: 4,
-              }}
-            >
-              <List
-                sx={{
-                  width: "100%",
-                  borderStyle: "solid",
-                  borderWidth: 1.8,
-                  borderRadius: 6,
-                  height: 60,
-                  marginBottom: 1,
-                  backgroundColor: "#fff",
-                  borderColor: "#F0F3F6",
-                }}
-              >
-                <ListItem>
-                  <ListItemAvatar>
-                    <Avatar
-                      sx={{
-                        width: 50,
-                        height: 50,
-                        fontWeight: "bold",
-                        color: "blue",
-                      }}
-                      src={props.item.id === 2 ? imglogo : filelogo}
-                      alt="B"
-                    />
-                  </ListItemAvatar>
-                  <ListItemText
-                    primary={
-                      <Typography
-                        variant="body2"
-                        style={{
-                          textAlign: "left",
-                          paddingLeft: "2px",
-                          fontFamily: "DMSans-bold",
-                        }}
-                      >
-                        Getting thing Done
-                      </Typography>
-                    }
-                    secondary={
-                      <a
-                        href="https://www.npmjs.com/package/react-paginate"
-                        style={{ textDecoration: "none", color: "gray" }}
-                      >
-                        JPG file . 443.0 KB
-                      </a>
-                    }
-                  />
-                </ListItem>
-              </List>
-              <Grid style={{ display: "flex", marginBottom: 10 }}>
-                <Typography
-                  variant="body2"
+          {props.item.desc.map(
+            (sub: any, i: any) =>
+              props.item.id === 2 && (
+                <Grid
+                  key={i}
                   style={{
-                    textAlign: "left",
-                    paddingLeft: "8px",
-                    fontFamily: "DMSans-Regular",
+                    borderStyle: "solid",
+                    borderRadius: 16,
+                    borderWidth: 4,
+                    marginTop: 12,
+                    marginLeft: 12,
+                    marginRight: 12,
+                    backgroundColor: "#fff",
+                    borderColor: "#fff",
+                    padding: 4,
                   }}
                 >
-                  {Object.values(sub).map((a: any) => a)}
-                </Typography>
-                <Avatar
-                  alt="Remy Sharp"
-                  src={ellipsis}
-                  sx={{ width: 25, height: 25 }}
-                />
-              </Grid>
-            </Grid>
-          ))}
+                  <div style={{ display: "flex" }}>
+                    <List
+                      sx={{
+                        width: 288,
+                        borderStyle: "solid",
+                        borderWidth: 1.8,
+                        borderRadius: 6,
+                        height: 60,
+                        marginBottom: 1,
+                        backgroundColor: "#fff",
+                        borderColor: "#F0F3F6",
+                      }}
+                    >
+                      <ListItem style={{ marginTop: -10 }}>
+                        <ListItemAvatar>
+                          <Avatar
+                            sx={{
+                              width: 60,
+                              height: 60,
+                              fontWeight: "bold",
+                              color: "blue",
+                            }}
+                            src={imglogo}
+                            alt="B"
+                          />
+                        </ListItemAvatar>
+                        <ListItemText
+                          primary={
+                            <Typography
+                              variant="body2"
+                              style={{
+                                marginLeft: 8,
+                                textAlign: "left",
+                                paddingLeft: "2px",
+                                fontFamily: "DMSans-bold",
+                              }}
+                            >
+                              Getting thing Done
+                            </Typography>
+                          }
+                          secondary={
+                            <a
+                              href="https://www.goodreads.com/23 oijeoijwe.html"
+                              style={{
+                                textDecoration: "none",
+                                color: "gray",
+                                marginLeft: 8,
+                                width: 7,
+                             
+                                textAlign: "left",
+                                fontFamily: "DMSans-Regular",
+                              }}
+                            >
+                              https://www.goodreads.com/23 oijeoijwe.html
+                            </a>
+                          }
+                        />
+                      </ListItem>
+                    </List>
+                    <Avatar
+                      alt="Remy Sharp"
+                      src={ellipsis}
+                      sx={{ width: 25, height: 25, paddingLeft: 1 }}
+                    />
+                  </div>
+                  <Grid style={{ display: "flex", marginBottom: 10 }}>
+                    <Typography
+                      variant="body2"
+                      style={{
+                        textAlign: "left",
+                        paddingLeft: "8px",
+                        fontFamily: "DMSans-Regular",
+                      }}
+                    >
+                      {Object.values(sub).map((a: any) => a)}
+                    </Typography>
+                  </Grid>
+                </Grid>
+              )
+          )}
           <Typography
             variant="body2"
             style={{
@@ -200,7 +214,8 @@ function ThoughtCard(props: any) {
           </Typography>
           {props.item.extra.map(
             (sub: any, i: any) =>
-              props.item.id === 2 && (
+              props.item.id === 2 ||
+              (1 && (
                 <Grid
                   key={i}
                   style={{
@@ -241,7 +256,7 @@ function ThoughtCard(props: any) {
                     Note Block
                   </CustomButton>
                 </Grid>
-              )
+              ))
           )}
 
           {props.item.extra.map((sub: any, i: any) => (
@@ -278,6 +293,134 @@ function ThoughtCard(props: any) {
               </Grid>
             </Grid>
           ))}
+          {props.item.id === 2 && (
+            <Grid
+              style={{
+                borderStyle: "solid",
+                borderRadius: 16,
+                borderWidth: 4,
+                marginTop: 12,
+                marginLeft: 12,
+                marginRight: 12,
+                backgroundColor: "#fff",
+                borderColor: "#fff",
+                padding: 4,
+              }}
+            >
+              <div style={{ display: "flex" }}>
+                <List
+                  sx={{
+                    width: "100%",
+                    borderStyle: "solid",
+                    borderWidth: 1.8,
+                    borderRadius: 6,
+                    height: 50,
+                    marginBottom: 1,
+                    backgroundColor: "#fff",
+                    borderColor: "#F0F3F6",
+                  }}
+                >
+                  <ListItem style={{ marginTop: -8 }}>
+                    <ListItemAvatar>
+                      <Avatar
+                        sx={{
+                          width: 50,
+                          height: 50,
+                          fontWeight: "bold",
+                          color: "blue",
+                        }}
+                        src={filelogo}
+                        alt="B"
+                      />
+                    </ListItemAvatar>
+                    <ListItemText
+                      primary={
+                        <Typography
+                          variant="body2"
+                          style={{
+                            marginLeft: 8,
+                            textAlign: "left",
+                            paddingLeft: "2px",
+                            fontFamily: "DMSans-bold",
+                          }}
+                        >
+                          Getting thing Done
+                        </Typography>
+                      }
+                      secondary={
+                        <a
+                          href="https://www.npmjs.com/package/react-paginate"
+                          style={{
+                            textDecoration: "none",
+                            color: "gray",
+                            marginLeft: 8,
+                          }}
+                        >
+                          JPG file . 443.0 KB
+                        </a>
+                      }
+                    />
+                  </ListItem>
+                </List>
+                <Avatar
+                  alt="Remy Sharp"
+                  src={ellipsis}
+                  sx={{ width: 25, height: 25, paddingLeft: 1 }}
+                />
+              </div>
+              <Grid style={{ display: "flex", marginBottom: 10 }}>
+                <Typography
+                  variant="body2"
+                  style={{
+                    width: 280,
+                    textAlign: "left",
+                    paddingLeft: "8px",
+                    fontFamily: "DMSans-Regular",
+                  }}
+                >
+                  Recite what you know soa you can truly learn it. Jane agrees
+                </Typography>
+              </Grid>
+            </Grid>
+          )}
+
+          {props.item.extra.map(
+            (sub: any, i: any) =>
+              props.item.id === 2 && (
+                <Grid
+                  key={i}
+                  style={{
+                    borderStyle: "solid",
+                    borderRadius: 16,
+                    borderWidth: 4,
+                    marginTop: 12,
+                    marginLeft: 12,
+                    marginRight: 12,
+                    backgroundColor: "#fff",
+                    borderColor: "#fff",
+                    padding: 4,
+                  }}
+                >
+                  <Grid style={{ display: "flex", marginBottom: 10 }}>
+                    <Typography
+                      variant="body2"
+                      style={{
+                        textAlign: "left",
+                        paddingLeft: "8px",
+                        fontFamily: "DMSans-Regular",
+                      }}
+                    >
+                      {Object.values(sub).map((a: any) => a)}
+                    </Typography>
+                    <Avatar
+                      alt="Remy Sharp"
+                      src={ellipsis}
+                      sx={{ width: 25, height: 25 }}
+                    />
+                  </Grid>
+                </Grid>
+              )
+          )}
         </div>
       </Item>
     </Grid>

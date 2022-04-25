@@ -40,10 +40,6 @@ export const Data: DummyData[] = [
     extra: [
       { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
       { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
-      { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
-      { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
-      { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
-      { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
     ],
     dateTime: "Thursday, Jan 22, 2021",
   },
@@ -67,46 +63,46 @@ export const Data: DummyData[] = [
     ],
     dateTime: "Thursday, Jan 22, 2021",
   },
-  {
-    id: 4,
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Flag_of_NATO.svg/800px-Flag_of_NATO.svg.png",
-    title: "Apex",
-    desc: [
-      {
-        sub: "NATO Allies agree to further strengthen and sustain support for Ukraine",
-      },
-    ],
-    extra: [
-      { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
-      { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
-      { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
-      { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
-      { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
-      { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
-    ],
-    dateTime: "Thursday, Jan 22, 2021",
-  },
-  {
-    id: 5,
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Flag_of_NATO.svg/800px-Flag_of_NATO.svg.png",
-    title: "Mini",
-    desc: [
-      {
-        sub: "NATO Allies agree to further strengthen and sustain support for Ukraine",
-      },
-    ],
-    extra: [
-      { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
-      { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
-      { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
-      { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
-      { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
-      { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
-    ],
-    dateTime: "Thursday, Jan 22, 2021",
-  },
+  // {
+  //   id: 4,
+  //   image:
+  //     "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Flag_of_NATO.svg/800px-Flag_of_NATO.svg.png",
+  //   title: "Apex",
+  //   desc: [
+  //     {
+  //       sub: "NATO Allies agree to further strengthen and sustain support for Ukraine",
+  //     },
+  //   ],
+  //   extra: [
+  //     { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
+  //     { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
+  //     { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
+  //     { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
+  //     { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
+  //     { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
+  //   ],
+  //   dateTime: "Thursday, Jan 22, 2021",
+  // },
+  // {
+  //   id: 5,
+  //   image:
+  //     "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Flag_of_NATO.svg/800px-Flag_of_NATO.svg.png",
+  //   title: "Mini",
+  //   desc: [
+  //     {
+  //       sub: "NATO Allies agree to further strengthen and sustain support for Ukraine",
+  //     },
+  //   ],
+  //   extra: [
+  //     { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
+  //     { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
+  //     { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
+  //     { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
+  //     { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
+  //     { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
+  //   ],
+  //   dateTime: "Thursday, Jan 22, 2021",
+  // },
 ];
 
 function getData() {
