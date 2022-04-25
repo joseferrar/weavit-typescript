@@ -48,10 +48,9 @@ function NoteCard() {
                   variant="body2"
                   style={{
                     textAlign: "left",
-                    fontSize: 12,
                     fontWeight: 500,
-                    fontFamily: "DMSans-Medium",
-                    width: 300,
+                    fontFamily: "DMSans-Regular",
+                    width: 260,
                     marginTop: 4,
                   }}
                 >
@@ -72,6 +71,7 @@ function NoteCard() {
               <Divider />
               <CustomButton
                 // onClick={() => navigate('about', {state: item.id})}
+                color="inherit"
                 variant="outlined"
                 startIcon={<NoteIcon />}
               >

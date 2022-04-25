@@ -188,7 +188,11 @@ function InboxTab() {
           />
         </Grid>
         <Divider />
-        <CustomButton variant="outlined" startIcon={<NoteIcon />}>
+        <CustomButton
+          variant="outlined"
+          color="inherit"
+          startIcon={<NoteIcon />}
+        >
           Note Block
         </CustomButton>
       </Grid>

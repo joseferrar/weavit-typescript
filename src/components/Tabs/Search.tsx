@@ -78,9 +78,8 @@ function Search() {
                       variant="body2"
                       style={{
                         textAlign: "left",
-                        fontSize: 12,
-                        fontFamily: "DMSans-Medium",
-                        width: 340,
+                        fontFamily: "DMSans-Regular",
+                        width: 260,
                         marginTop: 4,
                       }}
                     >
@@ -93,7 +92,11 @@ function Search() {
                     />
                   </Grid>
                   <Divider />
-                  <CustomButton variant="outlined" startIcon={<NoteIcon />}>
+                  <CustomButton
+                    variant="outlined"
+                    color="inherit"
+                    startIcon={<NoteIcon />}
+                  >
                     Note Block
                   </CustomButton>
                 </Grid>
