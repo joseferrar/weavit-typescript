@@ -12,6 +12,9 @@ import spell from "../images/spell.png";
 import FindSection from "../components/NotFound/FindSection";
 import arrowleft from "../images/arrow-left.png";
 import arrowright from "../images/arrow-right.png";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 
 function Home() {
   const data = getData();
@@ -52,9 +55,12 @@ function Home() {
   const itemRenderer = (item: any, index: number): JSX.Element => {
     return (
       <div className="item">
-        <div key={index} style={{ marginTop: 30, marginLeft: -22 }}>
-          <ThoughtCard item={item} />
-        </div>
+    
+
+          <div key={index} style={{ marginTop: 30, marginLeft: -22 }}>
+            <ThoughtCard item={item} />
+          </div>
+      
       </div>
     );
   };
@@ -152,6 +158,11 @@ function Home() {
       {/* <h2>{page}</h2> */}
 
       <Grid container spacing={8} marginTop={-6}>
+      {/* <Slider
+          dots={false}
+          slidesToShow={4}
+          slidesToScroll={4}
+        > */}
         <RLDD
           cssClasses="example-list-container"
           layout="horizontal"
@@ -159,6 +170,7 @@ function Home() {
           itemRenderer={itemRenderer}
           onChange={handleRLDDChange}
         />
+        {/* </Slider> */}
       </Grid>
       {data.length === 0 && <FindSection />}
       {post.length === 0 && <FindSection />}
