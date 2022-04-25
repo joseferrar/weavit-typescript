@@ -161,6 +161,7 @@ function Home() {
         />
       </Grid>
       {data.length === 0 && <FindSection />}
+      {post.length === 0 && <FindSection />}
     </div>
   );
 }
