@@ -6,7 +6,7 @@ import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import ThoughtCard from "../components/Cards/ThoughtCard";
 import ReactPaginate from "react-paginate";
-import RLDD from 'react-list-drag-and-drop/lib/RLDD';
+import RLDD from "react-list-drag-and-drop/lib/RLDD";
 import { getData } from "../data/dummyData";
 import spell from "../images/spell.png";
 import FindSection from "../components/NotFound/FindSection";
@@ -16,11 +16,13 @@ import arrowright from "../images/arrow-right.png";
 function Home() {
   const data = getData();
   const [post, setPost] = useState(data);
+  const [fetch, getFetch] = useState(data);
   const [page, setPage] = useState(0);
 
   const deleteItem = (index: any) => {
-    const newTodoItems = [...post];
+    const newTodoItems = [...fetch];
     newTodoItems.splice(index, 1);
+    getFetch(newTodoItems);
     setPost(newTodoItems);
   };
 
@@ -44,9 +46,9 @@ function Home() {
   const itemRenderer = (item: any, index: number): JSX.Element => {
     return (
       <div className="item">
-       <div key={index} style={{ marginTop: 30, marginLeft: -22 }}>
-        <ThoughtCard item={item} />
-      </div>
+        <div key={index} style={{ marginTop: 30, marginLeft: -22 }}>
+          <ThoughtCard item={item} />
+        </div>
       </div>
     );
   };
@@ -100,14 +102,14 @@ function Home() {
             style={{
               marginLeft: 6,
               fontSize: 22,
-            
+
               fontFamily: "DMSans-Regular",
             }}
           >
             Your Thought Space
           </Typography>
         </Grid>
-        {data.map((item, index) => (
+        {fetch.map((item, index) => (
           <Chip
             deleteIcon={<CloseIcon style={{ fontSize: 20 }} />}
             label={item.title}
@@ -125,7 +127,6 @@ function Home() {
       {/* <h2>{page}</h2> */}
 
       <Grid container spacing={8} marginTop={-6}>
-       
         <RLDD
           cssClasses="example-list-container"
           layout="horizontal"
@@ -140,4 +141,3 @@ function Home() {
 }
 
 export default Home;
-
