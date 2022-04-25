@@ -5,12 +5,11 @@ import Stack from "@mui/material/Stack";
 import Grid from "@mui/material/Grid";
 import Divider from "@mui/material/Divider";
 import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
-import notebook from "../../images/notebook.png";
 import ellipsis from "../../images/Ellipsis.png";
 import { getData } from "../../data/dummyData";
 import SearchInput from "../Inputs/SearchInput";
 import SideLayout from "../Layouts/SideLayout";
+import { CustomButton, NoteIcon } from "../../theme/MuiComponents";
 
 function Search() {
   const data = getData();
@@ -94,33 +93,9 @@ function Search() {
                     />
                   </Grid>
                   <Divider />
-                  <Button
-                    variant="outlined"
-                    startIcon={
-                      <Avatar
-                        alt="Remy Sharp"
-                        src={notebook}
-                        sx={{ width: 15, height: 15 }}
-                      />
-                    }
-                    style={{
-                      userSelect: "none",
-                      borderRadius: 16,
-                      color: "gray",
-                      borderColor: "gray",
-                      textTransform: "capitalize",
-                      display: "flex",
-                      marginTop: 12,
-                      height: 30,
-                      marginBottom: 12,
-                      WebkitTouchCallout: "none",
-                      marginLeft: 8,
-                      fontSize: 12,
-                      fontFamily: "DMSans-Regular",
-                    }}
-                  >
+                  <CustomButton variant="outlined" startIcon={<NoteIcon />}>
                     Note Block
-                  </Button>
+                  </CustomButton>
                 </Grid>
               ))}
             </Fragment>

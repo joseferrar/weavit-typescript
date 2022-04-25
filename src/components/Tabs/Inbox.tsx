@@ -11,6 +11,7 @@ import notebook from "../../images/notebook.png";
 import circle from "../../images/circle.png";
 import ellipsis from "../../images/Ellipsis.png";
 import { getData } from "../../data/dummyData";
+import { CustomButton, NoteIcon } from "../../theme/MuiComponents";
 
 function InboxTab() {
   const data = getData();
@@ -187,33 +188,9 @@ function InboxTab() {
           />
         </Grid>
         <Divider />
-        <Button
-          variant="outlined"
-          startIcon={
-            <Avatar
-              alt="Remy Sharp"
-              src={notebook}
-              sx={{ width: 15, height: 15 }}
-            />
-          }
-          style={{
-            userSelect: "none",
-            borderRadius: 16,
-            color: "gray",
-            borderColor: "gray",
-            textTransform: "capitalize",
-            display: "flex",
-            marginTop: 12,
-            height: 30,
-            marginBottom: 12,
-            WebkitTouchCallout: "none",
-            marginLeft: 8,
-            fontSize: 12,
-            fontFamily: "DMSans-Regular",
-          }}
-        >
+        <CustomButton variant="outlined" startIcon={<NoteIcon />}>
           Note Block
-        </Button>
+        </CustomButton>
       </Grid>
     </SideLayout>
   );

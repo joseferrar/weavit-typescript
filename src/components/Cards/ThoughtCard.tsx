@@ -5,8 +5,6 @@ import Grid from "@mui/material/Grid";
 import Avatar from "@mui/material/Avatar";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
-import Button from "@mui/material/Button";
-import notebook from "../../images/notebook.png";
 import ellipsis from "../../images/Ellipsis.png";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
@@ -14,6 +12,7 @@ import ListItemText from "@mui/material/ListItemText";
 import ListItemAvatar from "@mui/material/ListItemAvatar";
 import filelogo from "../../images/filelogo.png";
 import imglogo from "../../images/imaglogo.png";
+import { CustomButton, NoteIcon } from "../../theme/MuiComponents";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: "#F2F4F5",
@@ -234,34 +233,13 @@ function ThoughtCard(props: any) {
                     />
                   </Grid>
                   <Divider />
-                  <Button
-                    onClick={() => alert("test click")}
+                  <CustomButton
                     variant="outlined"
-                    startIcon={
-                      <Avatar
-                        alt="Remy Sharp"
-                        src={notebook}
-                        sx={{ width: 15, height: 15 }}
-                      />
-                    }
-                    style={{
-                      userSelect: "none",
-                      borderRadius: 16,
-                      color: "gray",
-                      borderColor: "gray",
-                      textTransform: "capitalize",
-                      display: "flex",
-                      marginTop: 12,
-                      height: 30,
-                      marginBottom: 12,
-                      WebkitTouchCallout: "none",
-                      marginLeft: 8,
-                      fontSize: 12,
-                      fontFamily: "DMSans-Regular",
-                    }}
+                    color="inherit"
+                    startIcon={<NoteIcon />}
                   >
                     Note Block
-                  </Button>
+                  </CustomButton>
                 </Grid>
               )
           )}
