@@ -160,31 +160,32 @@ function ThoughtCard(props: any) {
                           }
                           secondary={
                             <div>
-                            <a
-                              href="https://www.goodreads.com/23 oijeoijwe.html"
-                              style={{
-                                textDecoration: "none",
-                                color: "gray",
-                                marginLeft: 8,
-                                textAlign: "left",
-                                fontFamily: "DMSans-Regular",
-                              }}
-                            >
-                              https://www.goodreads.com/
-                              <br/>
                               <a
-                              href="https://www.goodreads.com/23 oijeoijwe.html"
-                              style={{
-                                textDecoration: "none",
-                                color: "gray",
-                                marginLeft: 8,
-                                textAlign: "left",
-                                fontFamily: "DMSans-Regular",
-                              }}
-                            >23 oijeoijwe.html</a>
-
-                            </a>
-                            </div>  
+                                href="https://www.goodreads.com/23 oijeoijwe.html"
+                                style={{
+                                  textDecoration: "none",
+                                  color: "gray",
+                                  marginLeft: 8,
+                                  textAlign: "left",
+                                  fontFamily: "DMSans-Regular",
+                                }}
+                              >
+                                https://www.goodreads.com/
+                                <br />
+                                <a
+                                  href="https://www.goodreads.com/23 oijeoijwe.html"
+                                  style={{
+                                    textDecoration: "none",
+                                    color: "gray",
+                                    marginLeft: 8,
+                                    textAlign: "left",
+                                    fontFamily: "DMSans-Regular",
+                                  }}
+                                >
+                                  23 oijeoijwe.html
+                                </a>
+                              </a>
+                            </div>
                           }
                         />
                       </ListItem>
@@ -199,6 +200,7 @@ function ThoughtCard(props: any) {
                     <Typography
                       variant="body2"
                       style={{
+                        width: 260,
                         textAlign: "left",
                         paddingLeft: "8px",
                         fontFamily: "DMSans-Regular",
