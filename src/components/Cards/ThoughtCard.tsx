@@ -159,20 +159,32 @@ function ThoughtCard(props: any) {
                             </Typography>
                           }
                           secondary={
+                            <div>
                             <a
                               href="https://www.goodreads.com/23 oijeoijwe.html"
                               style={{
                                 textDecoration: "none",
                                 color: "gray",
                                 marginLeft: 8,
-                                width: 7,
-                             
                                 textAlign: "left",
                                 fontFamily: "DMSans-Regular",
                               }}
                             >
-                              https://www.goodreads.com/23 oijeoijwe.html
+                              https://www.goodreads.com/
+                              <br/>
+                              <a
+                              href="https://www.goodreads.com/23 oijeoijwe.html"
+                              style={{
+                                textDecoration: "none",
+                                color: "gray",
+                                marginLeft: 8,
+                                textAlign: "left",
+                                fontFamily: "DMSans-Regular",
+                              }}
+                            >23 oijeoijwe.html</a>
+
                             </a>
+                            </div>  
                           }
                         />
                       </ListItem>
