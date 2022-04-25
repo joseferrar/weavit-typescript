@@ -131,7 +131,7 @@ function ThoughtCard(props: any) {
                         borderColor: "#F0F3F6",
                       }}
                     >
-                      <ListItem style={{ marginTop: -10 }}>
+                      <ListItem style={{ marginTop: -12 }}>
                         <ListItemAvatar>
                           <Avatar
                             sx={{
