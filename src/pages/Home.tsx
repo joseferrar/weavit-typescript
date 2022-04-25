@@ -26,6 +26,12 @@ function Home() {
     setPost(newTodoItems);
   };
 
+  const ClearAll = () => {
+    const newTodoItems = [...fetch];
+    newTodoItems.splice(0);
+    getFetch(newTodoItems);
+    setPost(newTodoItems);
+  };
   const userPerpage = 4;
   const pageVisited = page * userPerpage;
 
@@ -128,6 +134,20 @@ function Home() {
             }}
           />
         ))}
+
+        <Chip
+          variant="outlined"
+          deleteIcon={<CloseIcon style={{ fontSize: 20 }} />}
+          label={"Clear All"}
+          onDelete={() => ClearAll()}
+          style={{
+            marginLeft: -40,
+            marginRight: 50,
+            marginTop: 28,
+            color: "gray",
+            fontFamily: "DMSans-Medium",
+          }}
+        />
       </div>
       {/* <h2>{page}</h2> */}
 
@@ -141,6 +161,7 @@ function Home() {
         />
       </Grid>
       {data.length === 0 && <FindSection />}
+      {post.length === 0 && <FindSection />}
     </div>
   );
 }
