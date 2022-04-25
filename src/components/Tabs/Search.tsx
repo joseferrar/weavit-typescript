@@ -5,17 +5,28 @@ import Stack from "@mui/material/Stack";
 import Grid from "@mui/material/Grid";
 import Divider from "@mui/material/Divider";
 import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
-import notebook from "../../images/notebook.png";
 import ellipsis from "../../images/Ellipsis.png";
 import { getData } from "../../data/dummyData";
 import SearchInput from "../Inputs/SearchInput";
 import SideLayout from "../Layouts/SideLayout";
+import { CustomButton, NoteIcon } from "../../theme/MuiComponents";
 
 function Search() {
   const data = getData();
   return (
     <SideLayout>
+      <Typography
+        fontSize={28}
+        textAlign="left"
+        marginLeft={2}
+        marginTop={2}
+        fontWeight="bold"
+        marginBottom={3}
+        fontFamily="DMSans-Bold"
+      >
+        Search
+      </Typography>
+
       <SearchInput />
       <Stack direction="row" spacing={-2} marginTop={2}>
         <Typography
@@ -42,21 +53,17 @@ function Search() {
 
       {data.map(
         (item, index) =>
-          index === 1 && (
+          index < 3 && (
             <Fragment key={index}>
               {item.desc.map((sub, i) => (
                 <Grid
                   key={i}
                   style={{
-                    boxShadow: "rgb(241 241 245) 5px 5px 5px 5px",
                     marginLeft: 12,
                     marginRight: 12,
-                    borderStyle: "solid",
                     borderRadius: 12,
-                    borderWidth: 4,
                     marginTop: 12,
                     backgroundColor: "#fff",
-                    borderColor: "#fff",
                     padding: 4,
                   }}
                 >
@@ -74,6 +81,7 @@ function Search() {
                         fontSize: 12,
                         fontFamily: "DMSans-Medium",
                         width: 340,
+                        marginTop: 4,
                       }}
                     >
                       {Object.values(sub).map((a) => a)}
@@ -85,33 +93,9 @@ function Search() {
                     />
                   </Grid>
                   <Divider />
-                  <Button
-                    variant="outlined"
-                    startIcon={
-                      <Avatar
-                        alt="Remy Sharp"
-                        src={notebook}
-                        sx={{ width: 15, height: 15 }}
-                      />
-                    }
-                    style={{
-                      userSelect: "none",
-                      borderRadius: 16,
-                      color: "gray",
-                      borderColor: "gray",
-                      textTransform: "capitalize",
-                      display: "flex",
-                      marginTop: 12,
-                      height: 32,
-                      marginBottom: 12,
-                      WebkitTouchCallout: "none",
-                      marginLeft: 8,
-                      fontSize: 12,
-                      fontFamily: "DMSans-Regular",
-                    }}
-                  >
+                  <CustomButton variant="outlined" startIcon={<NoteIcon />}>
                     Note Block
-                  </Button>
+                  </CustomButton>
                 </Grid>
               ))}
             </Fragment>

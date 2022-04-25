@@ -7,6 +7,7 @@ import Typography from "@mui/material/Typography";
 import notebook from "../../images/notebook.png";
 import ellipsis from "../../images/Ellipsis.png";
 import { getData } from "../../data/dummyData";
+import { CustomButton, NoteIcon } from "../../theme/MuiComponents";
 
 function NoteCard() {
   const data = getData();
@@ -32,15 +33,11 @@ function NoteCard() {
             <Grid
               key={i}
               style={{
-                boxShadow: "rgb(241 241 245) 5px 5px 5px 5px",
                 marginLeft: 12,
                 marginRight: 12,
-                borderStyle: "solid",
-                borderRadius: 12,
-                borderWidth: 4,
+                borderRadius: 16,
                 marginTop: 12,
                 backgroundColor: "#fff",
-                borderColor: "#fff",
                 padding: 4,
               }}
             >
@@ -55,6 +52,7 @@ function NoteCard() {
                     fontWeight: 500,
                     fontFamily: "DMSans-Medium",
                     width: 300,
+                    marginTop: 4,
                   }}
                 >
                   {Object.values(sub).map((a) => a)}
@@ -62,38 +60,23 @@ function NoteCard() {
                 <Avatar
                   alt="Remy Sharp"
                   src={ellipsis}
-                  sx={{ width: 25, height: 25, marginLeft: "auto" }}
+                  sx={{
+                    width: 25,
+                    height: 25,
+                    marginLeft: "auto",
+                    marginRight: 1,
+                    top: 4,
+                  }}
                 />
               </Grid>
               <Divider />
-              <Button
+              <CustomButton
                 // onClick={() => navigate('about', {state: item.id})}
                 variant="outlined"
-                startIcon={
-                  <Avatar
-                    alt="Remy Sharp"
-                    src={notebook}
-                    sx={{ width: 15, height: 15 }}
-                  />
-                }
-                style={{
-                  userSelect: "none",
-                  borderRadius: 16,
-                  color: "gray",
-                  borderColor: "gray",
-                  textTransform: "capitalize",
-                  display: "flex",
-                  marginTop: 12,
-                  height: 32,
-                  marginBottom: 12,
-                  WebkitTouchCallout: "none",
-                  marginLeft: 8,
-                  fontSize: 12,
-                  fontFamily: "DMSans-Regular",
-                }}
+                startIcon={<NoteIcon />}
               >
                 Note Block
-              </Button>
+              </CustomButton>
             </Grid>
           ))}
         </Fragment>

@@ -14,7 +14,7 @@ import Chip from "@mui/material/Chip";
 import { getData } from "../data/dummyData";
 
 const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: "#f7f7fb",
+  backgroundColor: "#F2F4F5",
   ...theme.typography.body2,
   paddingLeft: theme.spacing(0),
   paddingRight: theme.spacing(0),
@@ -60,11 +60,11 @@ function Search() {
                   marginRight: 50,
                   marginTop: 14,
                   fontFamily: "DMSans-Regular",
-                  color: "gray"
+                  color: "gray",
                 }}
               />
               <Grid item xs={12} sm={4} md={4} marginTop={6} marginLeft={-4}>
-                <Item elevation={3}>
+                <Item elevation={0}>
                   <Grid
                     style={{
                       background:
@@ -79,15 +79,10 @@ function Search() {
                   ></Grid>
                   <Avatar
                     sx={{
-                      bgcolor: "#85CEFF",
                       width: 80,
                       display: "inline-flex",
                       height: 80,
-                      fontWeight: "bold",
-                      color: "blue",
-                      borderWidth: 2,
-                      borderStyle: "solid",
-                      borderColor: "#fff",
+                      marginTop: -6,
                     }}
                     src={item.image}
                     alt="B"
@@ -199,7 +194,7 @@ function Search() {
                             textTransform: "capitalize",
                             display: "flex",
                             marginTop: 12,
-                            height: 32,
+                            height: 30,
                             marginBottom: 12,
                             WebkitTouchCallout: "none",
                             marginLeft: 8,
@@ -209,6 +204,41 @@ function Search() {
                         >
                           Note Block
                         </Button>
+                      </Grid>
+                    ))}
+
+                    {item.extra.map((sub: any, i: any) => (
+                      <Grid
+                        key={i}
+                        style={{
+                          borderStyle: "solid",
+                          borderRadius: 16,
+                          borderWidth: 4,
+                          marginTop: 12,
+                          marginLeft: 12,
+                          marginRight: 12,
+                          backgroundColor: "#fff",
+                          borderColor: "#fff",
+                          padding: 4,
+                        }}
+                      >
+                        <Grid style={{ display: "flex", marginBottom: 10 }}>
+                          <Typography
+                            variant="body2"
+                            style={{
+                              textAlign: "left",
+                              paddingLeft: "8px",
+                              fontFamily: "DMSans-Regular",
+                            }}
+                          >
+                            {Object.values(sub).map((a: any) => a)}
+                          </Typography>
+                          <Avatar
+                            alt="Remy Sharp"
+                            src={ellipsis}
+                            sx={{ width: 25, height: 25 }}
+                          />
+                        </Grid>
                       </Grid>
                     ))}
                   </div>

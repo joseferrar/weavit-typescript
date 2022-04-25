@@ -6,7 +6,7 @@ import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import ThoughtCard from "../components/Cards/ThoughtCard";
 import ReactPaginate from "react-paginate";
-
+import RLDD from 'react-list-drag-and-drop/lib/RLDD';
 import { getData } from "../data/dummyData";
 import spell from "../images/spell.png";
 import FindSection from "../components/NotFound/FindSection";
@@ -40,6 +40,22 @@ function Home() {
   const handleChange = ({ selected }: any) => {
     setPage(selected);
   };
+
+  const itemRenderer = (item: any, index: number): JSX.Element => {
+    return (
+      <div className="item">
+       <div key={index} style={{ marginTop: 30, marginLeft: -22 }}>
+        <ThoughtCard item={item} />
+      </div>
+      </div>
+    );
+  };
+
+  const handleRLDDChange = (reorderedItems: any) => {
+    // console.log('Example.handleRLDDChange');
+    setPost(reorderedItems);
+  };
+
   return (
     <div>
       <div style={{ marginTop: -2 }}>
@@ -91,7 +107,7 @@ function Home() {
             Your Thought Space
           </Typography>
         </Grid>
-        {post.map((item, index) => (
+        {data.map((item, index) => (
           <Chip
             deleteIcon={<CloseIcon style={{ fontSize: 20 }} />}
             label={item.title}
@@ -100,6 +116,7 @@ function Home() {
               marginLeft: -40,
               marginRight: 50,
               marginTop: 28,
+              backgroundColor: "#DADDE2",
               fontFamily: "DMSans-Medium",
             }}
           />
@@ -108,7 +125,14 @@ function Home() {
       {/* <h2>{page}</h2> */}
 
       <Grid container spacing={8} marginTop={-6}>
-        {displayUsers}
+       
+        <RLDD
+          cssClasses="example-list-container"
+          layout="horizontal"
+          items={post}
+          itemRenderer={itemRenderer}
+          onChange={handleRLDDChange}
+        />
       </Grid>
       {data.length === 0 && <FindSection />}
     </div>
