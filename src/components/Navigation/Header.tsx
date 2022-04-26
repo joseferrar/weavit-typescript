@@ -110,10 +110,12 @@ function Header(props: Props) {
               backgroundColor: "#fff",
             },
           }}
+          style={{width: drawerWidth}}
         >
           {<Sidebar setMobileOpen={setMobileOpen} />}
         </Drawer>
         <Drawer
+             style={{width: drawerWidth}}
           variant="permanent"
           sx={{
             display: { xs: "none", sm: "block" },
