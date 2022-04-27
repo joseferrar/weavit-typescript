@@ -168,6 +168,7 @@ export default function MainPanel() {
               {...a11yProps(2)}
             />
             <Tab
+            disabled={true}
               onClick={() => {
                 setValue(3);
                 navigate("/profile");
