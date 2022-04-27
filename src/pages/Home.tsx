@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useRef, useState } from "react";
 import Avatar from "@mui/material/Avatar";
 import CloseIcon from "@mui/icons-material/Close";
 import Chip from "@mui/material/Chip";
@@ -9,14 +9,15 @@ import ReactPaginate from "react-paginate";
 import RLDD from "react-list-drag-and-drop/lib/RLDD";
 import { getData } from "../data/dummyData";
 import spell from "../images/spell.png";
+import IconButton from "@mui/material/IconButton";
 import FindSection from "../components/NotFound/FindSection";
 import arrowleft from "../images/arrow-left.png";
 import arrowright from "../images/arrow-right.png";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
+import NotFound from "../components/NotFound/FindSection";
 
-function Home() {
+const ScrollComponent = () => {
   const data = getData();
   const [post, setPost] = useState(data);
   const [fetch, getFetch] = useState(data);
@@ -35,32 +36,13 @@ function Home() {
     getFetch(newTodoItems);
     setPost(newTodoItems);
   };
-  const userPerpage = 4;
-  const pageVisited = page * userPerpage;
-
-  const displayUsers = post
-    .slice(pageVisited, pageVisited + userPerpage)
-    .map((item, index) => (
-      <div key={index} style={{ marginTop: 30, marginLeft: -22 }}>
-        <ThoughtCard item={item} />
-      </div>
-    ));
-
-  const pageCount = Math.ceil(post.length / userPerpage);
-
-  const handleChange = ({ selected }: any) => {
-    setPage(selected);
-  };
 
   const itemRenderer = (item: any, index: number): JSX.Element => {
     return (
       <div className="item">
-    
-
-          <div key={index} style={{ marginTop: 30, marginLeft: -22 }}>
-            <ThoughtCard item={item} />
-          </div>
-      
+        <div key={index} style={{ marginTop: -60, marginLeft: -20 }}>
+          <ThoughtCard item={item} />
+        </div>
       </div>
     );
   };
@@ -70,16 +52,67 @@ function Home() {
     setPost(reorderedItems);
   };
 
+  const elementRef = useRef(null);
+  const [arrowDisable, setArrowDisable] = useState(true);
+  const unsplashed = "https://source.unsplash.com/200x200/";
+
+  const handleHorizantalScroll = (
+    element: any,
+    speed: any,
+    distance: any,
+    step: any
+  ) => {
+    let scrollAmount = -800;
+    const slideTimer = setInterval(() => {
+      element.scrollLeft += step;
+      scrollAmount += Math.abs(step);
+      if (scrollAmount >= distance) {
+        clearInterval(slideTimer);
+      }
+      if (element.scrollLeft === -800) {
+        setArrowDisable(true);
+      } else {
+        setArrowDisable(false);
+      }
+    }, speed);
+  };
+
   return (
-    <div>
-      <div style={{ marginTop: -2 }}>
+    <>
+      <div className="button-contianer">
+        <IconButton
+          onClick={() => {
+            handleHorizantalScroll(elementRef.current, 25, 100, -10);
+          }}
+          disabled={arrowDisable}
+        >
+          <Avatar
+            alt="Remy Sharp"
+            src={arrowleft}
+            sx={{ width: 20, height: 20, paddingLeft: 2, marginTop: 0 }}
+          />
+        </IconButton>
+
+        <IconButton
+          onClick={() => {
+            handleHorizantalScroll(elementRef.current, 25, 100, 10);
+          }}
+        >
+          <Avatar
+            alt="Remy Sharp"
+            src={arrowright}
+            sx={{ width: 25, height: 25, paddingLeft: 1, marginTop: 0 }}
+          />
+        </IconButton>
+      </div>
+      <div style={{ marginTop: -2, marginLeft: 26 }}>
         <Grid
           container
-          spacing={2}
-          marginLeft={-6}
-          style={{ position: "fixed", top: "3em", left: "1em" }}
+          spacing={1}
+          marginLeft={16}
+          style={{ position: "fixed", top: "3em", left: "2em" }}
         >
-          <ReactPaginate
+          {/* <ReactPaginate
             nextLabel={
               <Avatar
                 alt="Remy Sharp"
@@ -102,12 +135,12 @@ function Home() {
             nextLinkClassName=""
             disabledClassName="pagenationDisabled"
             // activeClassName="pagenationActive"
-          />
+          /> */}
         </Grid>
         <Grid
           container
-          marginLeft={-4}
-          marginTop={-2}
+          marginLeft={-3}
+          marginTop={-6}
           style={{ display: "flex", width: 500, height: "100%" }}
         >
           <Avatar
@@ -140,42 +173,37 @@ function Home() {
             }}
           />
         ))}
-
-        <Chip
-          variant="outlined"
-          deleteIcon={<CloseIcon style={{ fontSize: 20 }} />}
-          label={"Clear All"}
-          onDelete={() => ClearAll()}
-          style={{
-            marginLeft: -40,
-            marginRight: 50,
-            marginTop: 28,
-            color: "gray",
-            fontFamily: "DMSans-Medium",
-          }}
-        />
+        {post.length !== 0 && (
+          <Chip
+            variant="outlined"
+            deleteIcon={<CloseIcon style={{ fontSize: 20 }} />}
+            label={"Clear All"}
+            onDelete={() => ClearAll()}
+            style={{
+              marginLeft: -40,
+              marginRight: 50,
+              marginTop: 28,
+              color: "gray",
+              fontFamily: "DMSans-Medium",
+            }}
+          />
+        )}
       </div>
-      {/* <h2>{page}</h2> */}
 
-      <Grid container spacing={8} marginTop={-6}>
-      {/* <Slider
-          dots={false}
-          slidesToShow={4}
-          slidesToScroll={4}
-        > */}
+      <div
+        className="img-container"
+        ref={elementRef}
+        style={{ marginLeft: -40 }}
+      >
         <RLDD
-          cssClasses="example-list-container"
           layout="horizontal"
           items={post}
           itemRenderer={itemRenderer}
           onChange={handleRLDDChange}
         />
-        {/* </Slider> */}
-      </Grid>
-      {data.length === 0 && <FindSection />}
-      {post.length === 0 && <FindSection />}
-    </div>
+        {post.length === 0 && <NotFound />}
+      </div>
+    </>
   );
-}
-
-export default Home;
+};
+export default ScrollComponent;

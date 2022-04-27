@@ -9,13 +9,16 @@ interface MainLayoutProps {
 
 export default function MainLayout(props: MainLayoutProps) {
   return (
-    <div style={{ flexGrow: 1, display: "flex" }}>
+    <div style={{ display: "flex" }}>
       <Header />
       <div
-        className="bodycontent"
-        style={{
+      
+        style={{ 
+          width: "100%",
           padding: theme.spacing(3),
-          marginLeft: theme.spacing(6)
+          marginLeft: theme.spacing(6),
+          overflow: "hidden",
+          height: "auto",
         }}
       >
         {props.children}

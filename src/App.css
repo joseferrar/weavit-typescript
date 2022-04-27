@@ -87,3 +87,21 @@ html {
   color: white;
   background-color: #2b2eff;
 }
+
+.button-contianer {
+  display: flex;
+  justify-content: end;
+}
+
+.img-container {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  border: 5px solid #ffffff;
+  border-radius: 10px;
+}
+
+.dl-list {
+  display: flex;
+  position: relative;
+}

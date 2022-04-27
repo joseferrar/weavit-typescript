@@ -1,8 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
 import { experimentalStyled as styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import Avatar from "@mui/material/Avatar";
+import IconButton from '@mui/material/IconButton';
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import ellipsis from "../../images/Ellipsis.png";
@@ -13,6 +14,7 @@ import ListItemAvatar from "@mui/material/ListItemAvatar";
 import filelogo from "../../images/filelogo.png";
 import imglogo from "../../images/imaglogo.png";
 import { CustomButton, NoteIcon } from "../../theme/MuiComponents";
+import OptionModal from "../Modals/OptionModal";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: "#F2F4F5",
@@ -26,6 +28,16 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 function ThoughtCard(props: any) {
+  const [open, setOpen] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <Grid item xs={12} sm={4} md={4} marginTop={10} marginLeft={4}>
       <Item elevation={0}>
@@ -255,11 +267,14 @@ function ThoughtCard(props: any) {
                     >
                       {Object.values(sub).map((a: any) => a)}
                     </Typography>
+                    <IconButton onClick={handleClickOpen}>
                     <Avatar
                       alt="Remy Sharp"
                       src={ellipsis}
                       sx={{ width: 25, height: 25 }}
                     />
+                    </IconButton>
+                    <OptionModal open={open} handleClickOpen={handleClickOpen} handleClose={handleClose}/>
                   </Grid>
                   <Divider />
                   <CustomButton
