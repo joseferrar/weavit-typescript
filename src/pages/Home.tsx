@@ -15,6 +15,7 @@ import arrowleft from "../images/arrow-left.png";
 import arrowright from "../images/arrow-right.png";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import NotFound from "../components/NotFound/FindSection";
 
 const ScrollComponent = () => {
   const data = getData();
@@ -172,30 +173,35 @@ const ScrollComponent = () => {
             }}
           />
         ))}
-
-        <Chip
-          variant="outlined"
-          deleteIcon={<CloseIcon style={{ fontSize: 20 }} />}
-          label={"Clear All"}
-          onDelete={() => ClearAll()}
-          style={{
-            marginLeft: -40,
-            marginRight: 50,
-            marginTop: 28,
-            color: "gray",
-            fontFamily: "DMSans-Medium",
-          }}
-        />
+        {post.length !== 0 && (
+          <Chip
+            variant="outlined"
+            deleteIcon={<CloseIcon style={{ fontSize: 20 }} />}
+            label={"Clear All"}
+            onDelete={() => ClearAll()}
+            style={{
+              marginLeft: -40,
+              marginRight: 50,
+              marginTop: 28,
+              color: "gray",
+              fontFamily: "DMSans-Medium",
+            }}
+          />
+        )}
       </div>
 
-      <div className="img-container" ref={elementRef} style={{marginLeft: -40}}>
+      <div
+        className="img-container"
+        ref={elementRef}
+        style={{ marginLeft: -40 }}
+      >
         <RLDD
-  
           layout="horizontal"
           items={post}
           itemRenderer={itemRenderer}
           onChange={handleRLDDChange}
         />
+        {post.length === 0 && <NotFound />}
       </div>
     </>
   );

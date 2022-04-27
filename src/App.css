@@ -94,9 +94,14 @@ html {
 }
 
 .img-container {
-display: flex;
+  display: flex;
   overflow: hidden;
   width: 100%;
   border: 5px solid #ffffff;
   border-radius: 10px;
+}
+
+.dl-list {
+  display: flex;
+  position: relative;
 }
