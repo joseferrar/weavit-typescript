@@ -105,3 +105,11 @@ html {
   display: flex;
   position: relative;
 }
+
+/* tale card avator border */
+.backgroundimges {
+  background-image: url(./images/top-img-new2.png);
+  height: 106px;
+  background-repeat: no-repeat;
+}
+

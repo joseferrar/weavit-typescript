@@ -5,12 +5,12 @@ import Chip from "@mui/material/Chip";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import ThoughtCard from "../components/Cards/ThoughtCard";
-import ReactPaginate from "react-paginate";
 import RLDD from "react-list-drag-and-drop/lib/RLDD";
 import { getData } from "../data/dummyData";
 import spell from "../images/spell.png";
 import IconButton from "@mui/material/IconButton";
-import FindSection from "../components/NotFound/FindSection";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import arrowleft from "../images/arrow-left.png";
 import arrowright from "../images/arrow-right.png";
 import "slick-carousel/slick/slick.css";
@@ -21,7 +21,6 @@ const ScrollComponent = () => {
   const data = getData();
   const [post, setPost] = useState(data);
   const [fetch, getFetch] = useState(data);
-  const [page, setPage] = useState(0);
 
   const deleteItem = (index: any) => {
     const newTodoItems = [...fetch];
@@ -54,7 +53,6 @@ const ScrollComponent = () => {
 
   const elementRef = useRef(null);
   const [arrowDisable, setArrowDisable] = useState(true);
-  const unsplashed = "https://source.unsplash.com/200x200/";
 
   const handleHorizantalScroll = (
     element: any,
@@ -71,8 +69,11 @@ const ScrollComponent = () => {
       }
       if (element.scrollLeft === -800) {
         setArrowDisable(true);
+        console.log(arrowDisable);
+      } else if (element.scrollLeft === 800) {
+        setArrowDisable(true);
       } else {
-        setArrowDisable(false);
+        setArrowDisable(true);
       }
     }, speed);
   };
@@ -82,64 +83,40 @@ const ScrollComponent = () => {
       <div className="button-contianer">
         <IconButton
           onClick={() => {
-            handleHorizantalScroll(elementRef.current, 25, 100, -10);
+            handleHorizantalScroll(elementRef.current, 25, 100, -30);
           }}
-          disabled={arrowDisable}
         >
-          <Avatar
+          {/* <Avatar
             alt="Remy Sharp"
             src={arrowleft}
             sx={{ width: 20, height: 20, paddingLeft: 2, marginTop: 0 }}
-          />
+          /> */}
+          <ArrowBackIcon style={{ color: arrowDisable ? "gray" : "#000" }} />
         </IconButton>
 
         <IconButton
           onClick={() => {
-            handleHorizantalScroll(elementRef.current, 25, 100, 10);
+            handleHorizantalScroll(elementRef.current, 25, 100, 30);
           }}
         >
-          <Avatar
+          {/* <Avatar
             alt="Remy Sharp"
             src={arrowright}
             sx={{ width: 25, height: 25, paddingLeft: 1, marginTop: 0 }}
-          />
+          /> */}
+          <ArrowForwardIcon style={{ color: arrowDisable ? "#000" : "gray" }} />
         </IconButton>
       </div>
-      <div style={{ marginTop: -2, marginLeft: 26 }}>
+      <div style={{ marginTop: -2, marginLeft: 24 }}>
         <Grid
           container
           spacing={1}
           marginLeft={16}
           style={{ position: "fixed", top: "3em", left: "2em" }}
-        >
-          {/* <ReactPaginate
-            nextLabel={
-              <Avatar
-                alt="Remy Sharp"
-                src={arrowright}
-                sx={{ width: 22, height: 22, paddingLeft: 5, marginTop: 3 }}
-              />
-            }
-            onPageChange={handleChange}
-            pageRangeDisplayed={5}
-            pageCount={pageCount}
-            previousLabel={
-              <Avatar
-                alt="Remy Sharp"
-                src={arrowleft}
-                sx={{ width: 20, height: 20, paddingLeft: 5, marginTop: 3 }}
-              />
-            }
-            containerClassName="pagenationBtts"
-            previousClassName=""
-            nextLinkClassName=""
-            disabledClassName="pagenationDisabled"
-            // activeClassName="pagenationActive"
-          /> */}
-        </Grid>
+        ></Grid>
         <Grid
           container
-          marginLeft={-3}
+          marginLeft={-5}
           marginTop={-6}
           style={{ display: "flex", width: 500, height: "100%" }}
         >
@@ -161,11 +138,16 @@ const ScrollComponent = () => {
         </Grid>
         {fetch.map((item, index) => (
           <Chip
+            onClick={() => {
+              if (item.id) {
+                handleHorizantalScroll(elementRef.current, 25, 100, -28);
+              }
+            }}
             deleteIcon={<CloseIcon style={{ fontSize: 20 }} />}
             label={item.title}
             onDelete={() => deleteItem(index)}
             style={{
-              marginLeft: -40,
+              marginLeft: -42,
               marginRight: 50,
               marginTop: 28,
               backgroundColor: "#DADDE2",
