@@ -67,13 +67,11 @@ const ScrollComponent = () => {
       if (scrollAmount >= distance) {
         clearInterval(slideTimer);
       }
-      if (element.scrollLeft === -800) {
+      if (element.scrollLeft === 0) {
         setArrowDisable(true);
         console.log(arrowDisable);
-      } else if (element.scrollLeft === 800) {
-        setArrowDisable(true);
       } else {
-        setArrowDisable(true);
+        setArrowDisable(false);
       }
     }, speed);
   };
@@ -85,6 +83,7 @@ const ScrollComponent = () => {
           onClick={() => {
             handleHorizantalScroll(elementRef.current, 25, 100, -30);
           }}
+          disabled={arrowDisable}
         >
           {/* <Avatar
             alt="Remy Sharp"
@@ -95,6 +94,7 @@ const ScrollComponent = () => {
         </IconButton>
 
         <IconButton
+          disabled={!arrowDisable}
           onClick={() => {
             handleHorizantalScroll(elementRef.current, 25, 100, 30);
           }}
