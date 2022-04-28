@@ -1,9 +1,9 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { experimentalStyled as styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import Avatar from "@mui/material/Avatar";
-import IconButton from '@mui/material/IconButton';
+import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import ellipsis from "../../images/Ellipsis.png";
@@ -41,18 +41,7 @@ function ThoughtCard(props: any) {
   return (
     <Grid item xs={12} sm={4} md={4} marginTop={10} marginLeft={4}>
       <Item elevation={0}>
-        <Grid
-          style={{
-            background:
-              "linear-gradient(129.37deg, rgba(32, 0, 173, 0.5) -12.98%, rgba(57, 137, 238, 0.5) 91.72%)",
-            marginTop: -16,
-            borderTopLeftRadius: 14,
-            borderTopRightRadius: 14,
-            padding: 35,
-            clipPath:
-              "polygon(50% 0%, 100% 0, 100% 100%, 50% 70%, 0 100%, 0 0)",
-          }}
-        ></Grid>
+        <Grid className="backgroundimges"></Grid>
         <Avatar
           sx={{
             bgcolor: "#85CEFF",
@@ -61,7 +50,7 @@ function ThoughtCard(props: any) {
             height: 80,
             fontWeight: "bold",
             color: "blue",
-            marginTop: -6,
+            marginTop: -26,
           }}
           src={props.item.image}
           alt="B"
@@ -268,13 +257,17 @@ function ThoughtCard(props: any) {
                       {Object.values(sub).map((a: any) => a)}
                     </Typography>
                     <IconButton onClick={handleClickOpen}>
-                    <Avatar
-                      alt="Remy Sharp"
-                      src={ellipsis}
-                      sx={{ width: 25, height: 25 }}
-                    />
+                      <Avatar
+                        alt="Remy Sharp"
+                        src={ellipsis}
+                        sx={{ width: 25, height: 25 }}
+                      />
                     </IconButton>
-                    <OptionModal open={open} handleClickOpen={handleClickOpen} handleClose={handleClose}/>
+                    <OptionModal
+                      open={open}
+                      handleClickOpen={handleClickOpen}
+                      handleClose={handleClose}
+                    />
                   </Grid>
                   <Divider />
                   <CustomButton

@@ -101,6 +101,7 @@ export default function MainPanel() {
               label={
                 <Typography
                   style={{
+                    color:value !== 0 ? "#000" : "#2000AD",
                     textTransform: "capitalize",
                     fontSize: 14,
                     fontFamily: "DMSans-Medium",
@@ -124,6 +125,7 @@ export default function MainPanel() {
               label={
                 <Typography
                   style={{
+                    color:value !== 1 ? "#000" : "#2000AD",
                     textTransform: "capitalize",
                     fontSize: 14,
                     fontFamily: "DMSans-Medium",
@@ -150,6 +152,7 @@ export default function MainPanel() {
               label={
                 <Typography
                   style={{
+                    color:value !== 2 ? "#000" : "#2000AD",
                     textTransform: "capitalize",
                     fontSize: 14,
                     fontFamily: "DMSans-Medium",
