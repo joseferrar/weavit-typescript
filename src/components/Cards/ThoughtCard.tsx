@@ -101,7 +101,7 @@ function ThoughtCard(props: any) {
             {"<Status>"}
           </Typography>
         </Grid>
-        <div style={{ overflowY: "scroll", height: 588 }}>
+        <div style={{ overflowY: "scroll", height: 570 }}>
           {props.item.desc.map(
             (sub: any, i: any) =>
               props.item.id === 2 && (
