@@ -24,7 +24,7 @@ const Item = styled(Paper)(({ theme }) => ({
   textAlign: "center",
   borderRadius: 14,
   width: 360,
-  height: 830,
+  height: 840,
 }));
 
 function ThoughtCard(props: any) {
@@ -225,9 +225,8 @@ function ThoughtCard(props: any) {
             style={{
               marginLeft: 18,
               textAlign: "left",
-              fontSize: 14,
-              fontWeight: "bold",
-              fontFamily: "DMSans-Medium",
+              fontSize: 16,
+              fontFamily: "DMSans-bold",
               marginTop: 20,
               marginBottom: 2,
             }}
