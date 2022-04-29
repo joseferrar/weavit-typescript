@@ -136,8 +136,8 @@ function ThoughtCard(props: any) {
                         <ListItemAvatar>
                           <Avatar
                             sx={{
-                              width: 60,
-                              height: 60,
+                              width: 50,
+                              height: 50,
                               fontWeight: "bold",
                               color: "blue",
                             }}
@@ -195,7 +195,7 @@ function ThoughtCard(props: any) {
                       <Avatar
                         alt="Remy Sharp"
                         src={ellipsis}
-                        sx={{ width: 25, height: 25, marginTop: -8}}
+                        sx={{ width: 25, height: 25, marginTop: -6}}
                       />
                     </IconButton>
                     <OptionModal
@@ -401,7 +401,7 @@ function ThoughtCard(props: any) {
                   <Avatar
                     alt="Remy Sharp"
                     src={ellipsis}
-                    sx={{ width: 25, height: 25 }}
+                    sx={{ width: 25, height: 25, marginTop: -6 }}
                   />
                 </IconButton>
                 <OptionModal
