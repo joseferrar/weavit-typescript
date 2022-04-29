@@ -23,7 +23,7 @@ const Item = styled(Paper)(({ theme }) => ({
   textAlign: "center",
   borderRadius: 14,
   width: 360,
-  height: 830,
+  height: 840,
 }));
 
 function Search() {
