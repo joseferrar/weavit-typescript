@@ -114,10 +114,10 @@ function OptionModal(props: any) {
               <EditOutlinedIcon
                 sx={{
                   fontSize: 30,
-                  backgroundColor: "pink",
+                  backgroundColor: "#e5daf3",
                   padding: 1.5,
                   borderRadius: 20,
-                  color: theme.palette.secondary.main,
+                  color: "#2714a8"
                 }}
               />
               <Typography
@@ -132,10 +132,10 @@ function OptionModal(props: any) {
               <ShareOutlinedIcon
                 sx={{
                   fontSize: 30,
-                  backgroundColor: "pink",
+                  backgroundColor: "#e5daf3",
                   padding: 1.5,
                   borderRadius: 20,
-                  color: theme.palette.secondary.main,
+                  color: "#2714a8"
                 }}
               />
               <Typography
@@ -150,10 +150,10 @@ function OptionModal(props: any) {
               <ContentCopyOutlinedIcon
                 sx={{
                   fontSize: 30,
-                  backgroundColor: "pink",
+                  backgroundColor: "#e5daf3",
                   padding: 1.5,
                   borderRadius: 20,
-                  color: theme.palette.secondary.main,
+                  color: "#2714a8"
                 }}
               />
               <Typography
@@ -168,7 +168,7 @@ function OptionModal(props: any) {
               <DeleteOutlineOutlinedIcon
                 sx={{
                   fontSize: 30,
-                  backgroundColor: "pink",
+                  backgroundColor: "#e5daf3",
                   padding: 1.5,
                   borderRadius: 20,
                   color: "red",
