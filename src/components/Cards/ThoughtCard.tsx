@@ -24,7 +24,7 @@ const Item = styled(Paper)(({ theme }) => ({
   textAlign: "center",
   borderRadius: 14,
   width: 360,
-  height: 788,
+  height: 830,
 }));
 
 function ThoughtCard(props: any) {
@@ -39,7 +39,7 @@ function ThoughtCard(props: any) {
   };
 
   return (
-    <Grid item xs={12} sm={4} md={4} marginTop={10} marginLeft={4}>
+    <Grid item xs={12} sm={4} md={4} marginTop={9} marginLeft={4}>
       <Item elevation={0}>
         <Grid className="backgroundimges"></Grid>
         <Avatar
@@ -101,7 +101,7 @@ function ThoughtCard(props: any) {
             {"<Status>"}
           </Typography>
         </Grid>
-        <div style={{ overflowY: "scroll", height: 570 }}>
+        <div style={{ overflowY: "scroll", height: 600 }}>
           {props.item.desc.map(
             (sub: any, i: any) =>
               props.item.id === 2 && (
@@ -191,10 +191,17 @@ function ThoughtCard(props: any) {
                         />
                       </ListItem>
                     </List>
-                    <Avatar
-                      alt="Remy Sharp"
-                      src={ellipsis}
-                      sx={{ width: 25, height: 25, paddingLeft: 1 }}
+                    <IconButton onClick={handleClickOpen}>
+                      <Avatar
+                        alt="Remy Sharp"
+                        src={ellipsis}
+                        sx={{ width: 25, height: 25, marginTop: -8}}
+                      />
+                    </IconButton>
+                    <OptionModal
+                      open={open}
+                      handleClickOpen={handleClickOpen}
+                      handleClose={handleClose}
                     />
                   </div>
                   <Grid style={{ display: "flex", marginBottom: 10 }}>
@@ -307,10 +314,17 @@ function ThoughtCard(props: any) {
                 >
                   {Object.values(sub).map((a: any) => a)}
                 </Typography>
-                <Avatar
-                  alt="Remy Sharp"
-                  src={ellipsis}
-                  sx={{ width: 25, height: 25 }}
+                <IconButton onClick={handleClickOpen}>
+                  <Avatar
+                    alt="Remy Sharp"
+                    src={ellipsis}
+                    sx={{ width: 25, height: 25 }}
+                  />
+                </IconButton>
+                <OptionModal
+                  open={open}
+                  handleClickOpen={handleClickOpen}
+                  handleClose={handleClose}
                 />
               </Grid>
             </Grid>
@@ -384,10 +398,17 @@ function ThoughtCard(props: any) {
                     />
                   </ListItem>
                 </List>
-                <Avatar
-                  alt="Remy Sharp"
-                  src={ellipsis}
-                  sx={{ width: 25, height: 25, paddingLeft: 1 }}
+                <IconButton onClick={handleClickOpen}>
+                  <Avatar
+                    alt="Remy Sharp"
+                    src={ellipsis}
+                    sx={{ width: 25, height: 25 }}
+                  />
+                </IconButton>
+                <OptionModal
+                  open={open}
+                  handleClickOpen={handleClickOpen}
+                  handleClose={handleClose}
                 />
               </div>
               <Grid style={{ display: "flex", marginBottom: 10 }}>
@@ -434,10 +455,17 @@ function ThoughtCard(props: any) {
                     >
                       {Object.values(sub).map((a: any) => a)}
                     </Typography>
-                    <Avatar
-                      alt="Remy Sharp"
-                      src={ellipsis}
-                      sx={{ width: 25, height: 25 }}
+                    <IconButton onClick={handleClickOpen}>
+                      <Avatar
+                        alt="Remy Sharp"
+                        src={ellipsis}
+                        sx={{ width: 25, height: 25 }}
+                      />
+                    </IconButton>
+                    <OptionModal
+                      open={open}
+                      handleClickOpen={handleClickOpen}
+                      handleClose={handleClose}
                     />
                   </Grid>
                 </Grid>
