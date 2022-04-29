@@ -1,18 +1,32 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import Typography from "@mui/material/Typography";
 import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
 import Grid from "@mui/material/Grid";
 import Divider from "@mui/material/Divider";
 import Avatar from "@mui/material/Avatar";
+import IconButton from "@mui/material/IconButton";
 import ellipsis from "../../images/Ellipsis.png";
 import { getData } from "../../data/dummyData";
 import SearchInput from "../Inputs/SearchInput";
 import SideLayout from "../Layouts/SideLayout";
 import { CustomButton, NoteIcon } from "../../theme/MuiComponents";
+import OptionModal from "../Modals/OptionModal";
 
 function Search() {
   const data = getData();
+
+  const [open, setOpen] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+
   return (
     <SideLayout>
       <Typography
@@ -85,10 +99,17 @@ function Search() {
                     >
                       {Object.values(sub).map((a) => a)}
                     </Typography>
-                    <Avatar
-                      alt="Remy Sharp"
-                      src={ellipsis}
-                      sx={{ width: 25, height: 25, marginLeft: "auto" }}
+                    <IconButton onClick={handleClickOpen} style={{marginLeft: "auto"}}>
+                      <Avatar
+                        alt="Remy Sharp"
+                        src={ellipsis}
+                        sx={{ width: 25, height: 25 }}
+                      />
+                    </IconButton>
+                    <OptionModal
+                      open={open}
+                      handleClickOpen={handleClickOpen}
+                      handleClose={handleClose}
                     />
                   </Grid>
                   <Divider />
