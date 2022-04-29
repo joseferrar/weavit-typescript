@@ -33,8 +33,7 @@ function NoteCard() {
               marginLeft: 18,
               textAlign: "left",
               fontSize: 16,
-              fontWeight: "bold",
-              fontFamily: "DMSans-Medium",
+              fontFamily: "DMSans-Bold",
               marginTop: 20,
               marginBottom: 2,
             }}
@@ -45,8 +44,8 @@ function NoteCard() {
             <Grid
               key={i}
               style={{
-                marginLeft: 12,
-                marginRight: 12,
+                marginLeft: 10,
+                marginRight: 10,
                 borderRadius: 16,
                 marginTop: 12,
                 backgroundColor: "#fff",
@@ -83,7 +82,6 @@ function NoteCard() {
               </Grid>
               <Divider />
               <CustomButton
-                // onClick={() => navigate('about', {state: item.id})}
                 color="inherit"
                 variant="outlined"
                 startIcon={<NoteIcon />}
