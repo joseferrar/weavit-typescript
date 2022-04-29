@@ -42,7 +42,7 @@ html {
   padding-right: 0px !important;
 }
 .css-v6wbn9-MuiAvatar-root {
-  margin-top: -51px !important;
+  margin-top: -61px !important;
 }
 .css-so23x5-MuiPaper-root {
   padding-left: 0px !important;
@@ -81,8 +81,9 @@ html {
 
 /* tale card avator border */
 .backgroundimges {
-  background-image: url(./images/top-img-new2.png);
+  background-image: url(./images/top-img-new5.png);
   height: 106px;
+  border-radius: 14px;
   background-repeat: no-repeat;
 }
 

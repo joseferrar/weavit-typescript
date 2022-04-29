@@ -41,21 +41,21 @@ function ThoughtCard(props: any) {
   return (
     <Grid item xs={12} sm={4} md={4} marginTop={9} marginLeft={4}>
       <Item elevation={0}>
-        <Grid className="backgroundimges"></Grid>
-        <Avatar
-          sx={{
-            bgcolor: "#85CEFF",
-            width: 80,
-            display: "inline-flex",
-            height: 80,
-            fontWeight: "bold",
-            color: "blue",
-            marginTop: -26,
-          }}
-          src={props.item.image}
-          alt="B"
-        />
-
+        <Grid className="backgroundimges">
+          <Avatar
+            sx={{
+              bgcolor: "#85CEFF",
+              width: 80,
+              display: "inline-flex",
+              height: 80,
+              fontWeight: "bold",
+              color: "blue",
+              marginTop: 3,
+            }}
+            src={props.item.image}
+            alt="B"
+          />
+        </Grid>
         <Typography
           style={{
             fontWeight: "bold",
@@ -195,7 +195,7 @@ function ThoughtCard(props: any) {
                       <Avatar
                         alt="Remy Sharp"
                         src={ellipsis}
-                        sx={{ width: 25, height: 25, marginTop: -6}}
+                        sx={{ width: 25, height: 25, marginTop: -6 }}
                       />
                     </IconButton>
                     <OptionModal
