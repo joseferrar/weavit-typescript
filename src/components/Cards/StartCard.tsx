@@ -81,10 +81,9 @@ function StartCard() {
 
                   <Typography
                     style={{
-                      fontWeight: "bold",
-                      fontSize: 20,
+                      fontSize: 22,
                       marginTop: 6,
-                      fontFamily: "DMSans-Medium",
+                      fontFamily: "DMSans-Bold",
                     }}
                   >
                     ✨ Getting Started
@@ -110,129 +109,192 @@ function StartCard() {
                       {"<Date Created>"}
                     </Typography>
                   </Grid>
-              
+
                   <div style={{ overflowY: "scroll", height: 550 }}>
-                    {item.desc.map((sub: any, i: any) => (
-                      <Grid
-                        key={i}
-                        style={{
-                          boxShadow: "rgb(241 241 245) 5px 5px 5px 5px",
-                          borderStyle: "solid",
-                          borderRadius: 12,
-                          borderWidth: 4,
-                          marginTop: 12,
-                          marginLeft: 12,
-                          marginRight: 12,
-                          backgroundColor: "#fff",
-                          borderColor: "#fff",
-                          padding: 4,
-                        }}
-                      >
-                        <Typography
-                          style={{
-                            textAlign: "left",
-                            fontWeight: "bold",
-                            fontSize: 20,
-                            marginBottom: 12,
-                            fontFamily: "DMSans-Medium",
-                          }}
-                        >
-                          ✨ Getting Started
-                        </Typography>
-                        <Grid style={{ display: "flex", marginBottom: 10 }}>
-                          <Typography
-                            variant="body2"
-                            style={{
-                              textAlign: "left",
-                              paddingLeft: "8px",
-                              fontFamily: "DMSans-Regular",
-                            }}
-                          >
-                            {Object.values(sub).map((a: any) => a)}
-                          </Typography>
-                          <Avatar
-                            alt="Remy Sharp"
-                            src={ellipsis}
-                            sx={{ width: 25, height: 25 }}
-                          />
-                        </Grid>
-                      </Grid>
-                    ))}
+                    <div>
+                      <ul className="tree">
+                        <li>
+                          <div className="sticky">
+                            <Grid
+                              style={{
+                                borderRadius: 12,
+                                borderWidth: 4,
+                                marginTop: -20,
+                                marginLeft: 6,
+                                marginRight: 6,
+                                backgroundColor: "#fff",
+                                borderColor: "#fff",
+                                padding: 4,
+                                width: 330,
+                              }}
+                            >
+                              <Grid style={{ display: "flex" }}>
+                                <Typography
+                                  style={{
+                                    textAlign: "left",
+                                    fontSize: 18,
+                                    marginBottom: 12,
+                                    fontFamily: "DMSans-Medium",
+                                  }}
+                                >
+                                  ✨ Getting Started
+                                </Typography>
+                                <Avatar
+                                  alt="Remy Sharp"
+                                  src={ellipsis}
+                                  style={{
+                                    width: 25,
+                                    height: 25,
+                                    marginLeft: "auto",
+                                  }}
+                                />
+                              </Grid>
+                              <Grid style={{ marginBottom: 10 }}>
+                                <Typography
+                                  variant="body2"
+                                  style={{
+                                    textAlign: "left",
+                                    paddingLeft: "8px",
+                                    fontFamily: "DMSans-Regular",
+                                  }}
+                                >
+                                  Netflix Recite what you know you can truly
+                                  yesterday learn it.
+                                </Typography>
+                              </Grid>
+                            </Grid>
+                          </div>
+                          <ul>
+                            <li>
+                              <div className="sticky">
+                                <Grid
+                                  style={{
+                                    borderStyle: "solid",
+                                    borderRadius: 16,
+                                    borderWidth: 4,
+                                    marginLeft: 6,
+                                    marginRight: 6,
+                                    backgroundColor: "#fff",
+                                    borderColor: "#fff",
+                                    padding: 4,
+                                    width: 300,
+                                  }}
+                                >
+                                  <Grid
+                                    style={{
+                                      display: "flex",
+                                      marginBottom: 0,
+                                    }}
+                                  >
+                                    <Typography
+                                      variant="body2"
+                                      style={{
+                                        color: "#000",
+                                        textAlign: "left",
+                                        paddingLeft: "8px",
+                                        fontFamily: "DMSans-Regular",
+                                      }}
+                                    >
+                                      Recite what you know soa you can truly
+                                      learn it. Jane agrees
+                                    </Typography>
+                                    <Avatar
+                                      alt="Remy Sharp"
+                                      src={ellipsis}
+                                      sx={{ width: 25, height: 25 }}
+                                    />
+                                  </Grid>
+                                </Grid>
+                              </div>
+                            </li>
+                            <li>
+                              <div className="sticky">
+                                <Grid
+                                  style={{
+                                    borderStyle: "solid",
+                                    borderRadius: 16,
+                                    borderWidth: 4,
+                                    marginLeft: 6,
+                                    marginRight: 6,
+                                    backgroundColor: "#fff",
+                                    borderColor: "#fff",
+                                    padding: 4,
+                                    width: 300,
+                                  }}
+                                >
+                                  <Grid
+                                    style={{
+                                      display: "flex",
+                                      marginBottom: 0,
+                                    }}
+                                  >
+                                    <Typography
+                                      variant="body2"
+                                      style={{
+                                        color: "#000",
+                                        textAlign: "left",
+                                        paddingLeft: "8px",
+                                        fontFamily: "DMSans-Regular",
+                                      }}
+                                    >
+                                      Recite what you know soa you can truly
+                                      learn it. Jane agrees
+                                    </Typography>
+                                    <Avatar
+                                      alt="Remy Sharp"
+                                      src={ellipsis}
+                                      sx={{ width: 25, height: 25 }}
+                                    />
+                                  </Grid>
+                                </Grid>
+                              </div>
+                            </li>
 
-                    <div style={{ marginLeft: 14 }}>
-                      <Divider
-                        orientation="vertical"
-                        style={{ display: "initial" }}
-                      />
-
-                      <Grid
-                        style={{
-                          borderStyle: "solid",
-                          borderRadius: 16,
-                          borderWidth: 4,
-                          marginLeft: 12,
-                          marginRight: 12,
-                          backgroundColor: "#fff",
-                          borderColor: "#fff",
-                          padding: 4,
-                        }}
-                      >
-                        <Grid style={{ display: "flex", marginBottom: 10 }}>
-                          <Typography
-                            variant="body2"
-                            style={{
-                              textAlign: "left",
-                              paddingLeft: "8px",
-                              fontFamily: "DMSans-Regular",
-                            }}
-                          >
-                            Recite what you know soa you can truly learn it.
-                            Jane agrees
-                          </Typography>
-                          <Avatar
-                            alt="Remy Sharp"
-                            src={ellipsis}
-                            sx={{ width: 25, height: 25 }}
-                          />
-                        </Grid>
-                      </Grid>
-
-                      <Divider
-                        orientation="vertical"
-                        style={{ display: "initial" }}
-                      />
-
-                      <Grid
-                        style={{
-                          borderStyle: "solid",
-                          borderRadius: 16,
-                          borderWidth: 4,
-                          marginLeft: 12,
-                          marginRight: 12,
-                          backgroundColor: "#fff",
-                          borderColor: "#fff",
-                          padding: 4,
-                        }}
-                      >
-                        <Grid style={{ display: "flex", marginBottom: 10 }}>
-                          <Typography
-                            variant="body2"
-                            style={{
-                              textAlign: "left",
-                              paddingLeft: "8px",
-                              fontFamily: "DMSans-Regular",
-                            }}
-                          >
-                            Recite what you know soa you can truly learn it.
-                            Jane agrees
-                          </Typography>
-                          <Avatar
-                            alt="Remy Sharp"
-                            src={ellipsis}
-                            sx={{ width: 25, height: 25 }}
-                          />
-                        </Grid>
-                      </Grid>
+                            <li>
+                              <div className="sticky">
+                                <Grid
+                                  style={{
+                                    borderStyle: "solid",
+                                    borderRadius: 16,
+                                    borderWidth: 4,
+                                    marginLeft: 6,
+                                    marginRight: 6,
+                                    backgroundColor: "#fff",
+                                    borderColor: "#fff",
+                                    padding: 4,
+                                    width: 300,
+                                  }}
+                                >
+                                  <Grid
+                                    style={{
+                                      display: "flex",
+                                      marginBottom: 0,
+                                    }}
+                                  >
+                                    <Typography
+                                      variant="body2"
+                                      style={{
+                                        color: "#000",
+                                        textAlign: "left",
+                                        paddingLeft: "8px",
+                                        fontFamily: "DMSans-Regular",
+                                      }}
+                                    >
+                                      Recite what you know soa you can truly
+                                      learn it. Jane agrees
+                                    </Typography>
+                                    <Avatar
+                                      alt="Remy Sharp"
+                                      src={ellipsis}
+                                      sx={{ width: 25, height: 25 }}
+                                    />
+                                  </Grid>
+                                </Grid>
+                              </div>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
                     </div>
                   </div>
                 </Item>
