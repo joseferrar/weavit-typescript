@@ -1,17 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { experimentalStyled as styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import Avatar from "@mui/material/Avatar";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
+import IconButton from "@mui/material/IconButton";
 import Button from "@mui/material/Button";
 import notebook from "../images/notebook.png";
 import ellipsis from "../images/Ellipsis.png";
-import add from "../images/add.png";
+import spell from "../images/spell.png";
 import CloseIcon from "@mui/icons-material/Close";
 import Chip from "@mui/material/Chip";
 import { getData } from "../data/dummyData";
+import OptionModal from "../components/Modals/OptionModal";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: "#F2F4F5",
@@ -21,68 +23,84 @@ const Item = styled(Paper)(({ theme }) => ({
   textAlign: "center",
   borderRadius: 14,
   width: 360,
-  height: 800,
+  height: 830,
 }));
 
 function Search() {
   const data = getData();
+  const [open, setOpen] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   return (
-    <div>
+    <div style={{ marginLeft: 10 }}>
       {data.map(
         (item, index) =>
           index === 1 && (
             <>
-              <Chip
-                deleteIcon={<CloseIcon style={{ fontSize: 20 }} />}
-                label={item.title}
-                onDelete={() => console.warn("test")}
-                style={{
-                  marginLeft: -40,
-                  marginRight: 50,
-                  marginTop: 14,
-                  fontFamily: "DMSans-Medium",
-                }}
-              />
-              <Chip
-                variant="outlined"
-                deleteIcon={
-                  <Avatar
-                    alt="Remy Sharp"
-                    src={add}
-                    sx={{ width: 22, height: 22 }}
-                  />
-                }
-                label={"Clear All"}
-                onDelete={() => console.warn("test")}
-                style={{
-                  marginLeft: -40,
-                  marginRight: 50,
-                  marginTop: 14,
-                  fontFamily: "DMSans-Regular",
-                  color: "gray",
-                }}
-              />
-              <Grid item xs={12} sm={4} md={4} marginTop={6} marginLeft={-4}>
+              <Grid
+                container
+                marginLeft={-2}
+                marginTop={-1}
+                style={{ display: "flex", width: 500, height: "100%" }}
+              >
+                <Avatar
+                  alt="Remy Sharp"
+                  src={spell}
+                  sx={{ width: 25, height: 25, marginTop: 0.5 }}
+                />
+                <Typography
+                  style={{
+                    marginLeft: 6,
+                    fontSize: 22,
+                    width: 400,
+                    fontFamily: "DMSans-Regular",
+                  }}
+                >
+                  Your Thought Space
+                </Typography>
+              </Grid>
+              <Grid marginLeft={2}>
+                <Chip
+                  deleteIcon={<CloseIcon style={{ fontSize: 20 }} />}
+                  label={item.title}
+                  onDelete={() => console.warn("test")}
+                  style={{
+                    marginLeft: -40,
+                    marginRight: 50,
+                    marginTop: 14,
+                    fontFamily: "DMSans-Medium",
+                  }}
+                />
+                <Chip
+                  variant="outlined"
+                  deleteIcon={<CloseIcon style={{ fontSize: 20 }} />}
+                  label={"Clear All"}
+                  onDelete={() => console.warn("test")}
+                  style={{
+                    marginLeft: -40,
+                    marginRight: 50,
+                    marginTop: 14,
+                    fontFamily: "DMSans-Regular",
+                    color: "gray",
+                  }}
+                />
+              </Grid>
+              <Grid item xs={12} sm={4} md={4} marginTop={2} marginLeft={-4}>
                 <Item elevation={0}>
-                  <Grid
-                    style={{
-                      background:
-                        "linear-gradient(129.37deg, rgba(32, 0, 173, 0.5) -12.98%, rgba(57, 137, 238, 0.5) 91.72%)",
-                      marginTop: -16,
-                      borderTopLeftRadius: 14,
-                      borderTopRightRadius: 14,
-                      padding: 35,
-                      clipPath:
-                        "polygon(50% 0%, 100% 0, 100% 100%, 50% 70%, 0 100%, 0 0)",
-                    }}
-                  ></Grid>
+                  <Grid className="backgroundimges"></Grid>
                   <Avatar
                     sx={{
                       width: 80,
                       display: "inline-flex",
                       height: 80,
-                      marginTop: -6,
+                      marginTop: -26,
                     }}
                     src={item.image}
                     alt="B"
@@ -169,10 +187,17 @@ function Search() {
                           >
                             {Object.values(sub).map((a: any) => a)}
                           </Typography>
-                          <Avatar
-                            alt="Remy Sharp"
-                            src={ellipsis}
-                            sx={{ width: 25, height: 25 }}
+                          <IconButton onClick={handleClickOpen}>
+                            <Avatar
+                              alt="Remy Sharp"
+                              src={ellipsis}
+                              sx={{ width: 25, height: 25 }}
+                            />
+                          </IconButton>
+                          <OptionModal
+                            open={open}
+                            handleClickOpen={handleClickOpen}
+                            handleClose={handleClose}
                           />
                         </Grid>
                         <Divider />
@@ -233,11 +258,13 @@ function Search() {
                           >
                             {Object.values(sub).map((a: any) => a)}
                           </Typography>
-                          <Avatar
-                            alt="Remy Sharp"
-                            src={ellipsis}
-                            sx={{ width: 25, height: 25 }}
-                          />
+                          <IconButton onClick={handleClickOpen}>
+                            <Avatar
+                              alt="Remy Sharp"
+                              src={ellipsis}
+                              sx={{ width: 25, height: 25 }}
+                            />
+                          </IconButton>
                         </Grid>
                       </Grid>
                     ))}
