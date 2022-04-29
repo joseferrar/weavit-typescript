@@ -23,7 +23,7 @@ const Item = styled(Paper)(({ theme }) => ({
   textAlign: "center",
   borderRadius: 14,
   width: 360,
-  height: 800,
+  height: 850,
 }));
 
 function StartCard() {
@@ -35,7 +35,7 @@ function StartCard() {
         (item, index) =>
           index === 1 && (
             <>
-              {/* <Chip
+              <Chip
                 deleteIcon={<CloseIcon style={{ fontSize: 20 }} />}
                 label={item.title}
                 onDelete={() => console.warn("test")}
@@ -64,7 +64,7 @@ function StartCard() {
                   fontFamily: "DMSans-Regular",
                   color: "gray",
                 }}
-              /> */}
+              />
               <Grid item xs={12} sm={4} md={4} marginTop={4} marginLeft={4}>
                 <Item elevation={0}>
                   <Grid className="backgroundimges"></Grid>
@@ -239,6 +239,49 @@ function StartCard() {
                                     >
                                       Recite what you know soa you can truly
                                       learn it. Jane agrees
+                                    </Typography>
+                                    <Avatar
+                                      alt="Remy Sharp"
+                                      src={ellipsis}
+                                      sx={{ width: 25, height: 25 }}
+                                    />
+                                  </Grid>
+                                </Grid>
+                              </div>
+                            </li>
+                            <li>
+                              <div className="sticky">
+                                <Grid
+                                  style={{
+                                    borderStyle: "solid",
+                                    borderRadius: 16,
+                                    borderWidth: 4,
+                                    marginLeft: 6,
+                                    marginRight: 6,
+                                    backgroundColor: "#fff",
+                                    borderColor: "#fff",
+                                    padding: 4,
+                                    width: 300,
+                                  }}
+                                >
+                                  <Grid
+                                    style={{
+                                      display: "flex",
+                                      marginBottom: 0,
+                                    }}
+                                  >
+                                    <Typography
+                                      variant="body2"
+                                      style={{
+                                        color: "#000",
+                                        textAlign: "left",
+                                        paddingLeft: "8px",
+                                        fontFamily: "DMSans-Regular",
+                                      }}
+                                    >
+                                      React.DOM elements support the above
+                                      properties by default, so you may use
+                                      those elements.
                                     </Typography>
                                     <Avatar
                                       alt="Remy Sharp"
