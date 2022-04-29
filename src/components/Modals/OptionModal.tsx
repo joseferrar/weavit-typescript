@@ -2,51 +2,53 @@ import React from "react";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
+import IconButton from "@mui/material/IconButton";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import Divider from "@mui/material/Divider";
-import IconButton from "@mui/material/IconButton";
+import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 import EditIcon from "@mui/icons-material/Edit";
-import ShareIcon from "@mui/icons-material/Share";
-import DeleteIcon from "@mui/icons-material/Delete";
-import AlarmIcon from "@mui/icons-material/Alarm";
+import ShareOutlinedIcon from "@mui/icons-material/ShareOutlined";
+import ContentCopyOutlinedIcon from "@mui/icons-material/ContentCopyOutlined";
+import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
+import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import Grid from "@mui/material/Grid";
 import DialogTitle from "@mui/material/DialogTitle";
 import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
+import { theme } from "../../theme/default";
 
 function OptionModal(props: any) {
-  const [open, setOpen] = React.useState(false);
-
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
 
   return (
     <div>
       <Dialog
-        hideBackdrop={true}
+      hideBackdrop={true}
         open={props.open}
         onClose={props.handleClose}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
-        <DialogTitle id="alert-dialog-title">
-          <Typography
-            fontSize={25}
-            fontFamily="DMSans-Medium"
-            textAlign="center"
-          >
-            More Information
-          </Typography>
-        </DialogTitle>
+        <Grid container marginTop={2}>
+          <Grid>
+            <Typography
+              fontSize={25}
+              fontFamily="DMSans-Medium"
+              textAlign="center"
+              marginLeft={3}
+            >
+              More Information
+            </Typography>
+          </Grid>
+          <Grid marginLeft="auto" marginRight={2}>
+            <IconButton onClick={props.handleClose}>
+              <CloseOutlinedIcon />
+            </IconButton>
+          </Grid>
+        </Grid>
         <DialogContent>
           <Stack direction="row" spacing={1} marginBottom={2}>
             <Chip
@@ -109,26 +111,74 @@ function OptionModal(props: any) {
           <Divider />
           <Stack direction="row" spacing={3} marginTop={1}>
             <IconButton aria-label="delete" style={{ flexDirection: "column" }}>
-              <EditIcon sx={{ fontSize: 30 }} />
-              <Typography fontSize={14} fontFamily="DMSans-Medium">
+              <EditOutlinedIcon
+                sx={{
+                  fontSize: 30,
+                  backgroundColor: "pink",
+                  padding: 1.5,
+                  borderRadius: 20,
+                  color: theme.palette.secondary.main,
+                }}
+              />
+              <Typography
+                fontSize={14}
+                fontFamily="DMSans-Medium"
+                color="secondary"
+              >
                 Edit
               </Typography>
             </IconButton>
             <IconButton aria-label="delete" style={{ flexDirection: "column" }}>
-              <ShareIcon sx={{ fontSize: 30 }} />
-              <Typography fontSize={14} fontFamily="DMSans-Medium">
+              <ShareOutlinedIcon
+                sx={{
+                  fontSize: 30,
+                  backgroundColor: "pink",
+                  padding: 1.5,
+                  borderRadius: 20,
+                  color: theme.palette.secondary.main,
+                }}
+              />
+              <Typography
+                fontSize={14}
+                fontFamily="DMSans-Medium"
+                color="secondary"
+              >
                 Share
               </Typography>
             </IconButton>
             <IconButton aria-label="delete" style={{ flexDirection: "column" }}>
-              <ContentCopyIcon sx={{ fontSize: 30 }} />
-              <Typography fontSize={14} fontFamily="DMSans-Medium">
+              <ContentCopyOutlinedIcon
+                sx={{
+                  fontSize: 30,
+                  backgroundColor: "pink",
+                  padding: 1.5,
+                  borderRadius: 20,
+                  color: theme.palette.secondary.main,
+                }}
+              />
+              <Typography
+                fontSize={14}
+                fontFamily="DMSans-Medium"
+                color="secondary"
+              >
                 Copy
               </Typography>
             </IconButton>
             <IconButton aria-label="delete" style={{ flexDirection: "column" }}>
-              <DeleteIcon sx={{ fontSize: 30 }} />
-              <Typography fontSize={14} fontFamily="DMSans-Medium">
+              <DeleteOutlineOutlinedIcon
+                sx={{
+                  fontSize: 30,
+                  backgroundColor: "pink",
+                  padding: 1.5,
+                  borderRadius: 20,
+                  color: "red",
+                }}
+              />
+              <Typography
+                fontSize={14}
+                fontFamily="DMSans-Medium"
+                color="secondary"
+              >
                 Delete
               </Typography>
             </IconButton>

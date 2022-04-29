@@ -24,7 +24,7 @@ const Item = styled(Paper)(({ theme }) => ({
   textAlign: "center",
   borderRadius: 14,
   width: 360,
-  height: 800,
+  height: 788,
 }));
 
 function ThoughtCard(props: any) {
