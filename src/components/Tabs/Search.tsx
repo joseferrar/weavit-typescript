@@ -26,7 +26,6 @@ function Search() {
     setOpen(false);
   };
 
-
   return (
     <SideLayout>
       <Typography
@@ -99,7 +98,10 @@ function Search() {
                     >
                       {Object.values(sub).map((a) => a)}
                     </Typography>
-                    <IconButton onClick={handleClickOpen} style={{marginLeft: "auto"}}>
+                    <IconButton
+                      onClick={handleClickOpen}
+                      style={{ marginLeft: "auto" }}
+                    >
                       <Avatar
                         alt="Remy Sharp"
                         src={ellipsis}
