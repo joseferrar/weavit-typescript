@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import Avatar from "@mui/material/Avatar";
 import CloseIcon from "@mui/icons-material/Close";
 import Chip from "@mui/material/Chip";
@@ -21,7 +22,7 @@ const ScrollComponent = () => {
   const data = getData();
   const [post, setPost] = useState(data);
   const [fetch, getFetch] = useState(data);
-
+  const [previousIndex, setPreviousIndex] = useState(0);
   const deleteItem = (index: any) => {
     const newTodoItems = [...fetch];
     newTodoItems.splice(index, 1);
@@ -76,6 +77,30 @@ const ScrollComponent = () => {
     }, speed);
   };
 
+  const pagescroll = (element: any, index: any) => {
+    console.log("previousIndex", previousIndex, index, previousIndex > index);
+    if (previousIndex <= index) {
+      const scrollAmount = (index + post.length) * 392;
+      element.scrollLeft += scrollAmount;
+      setPreviousIndex(index);
+      if (index === post?.length) {
+        setArrowDisable(true); //right arrow true
+      }
+    } else {
+      let scrollAmount = (index - post.length) * 392;
+      element.scrollLeft += scrollAmount;
+      setPreviousIndex(index);
+      if (index === 0) {
+        setArrowDisable(true); // left arrow
+        console.log("index");
+      }
+    }
+  };
+
+  // const scrollmethod = (index: any) => {
+  //   document && document.getElementById("scrolltoLeft").scrollLeft = index * 360;
+
+  // };
   return (
     <>
       <div className="button-contianer">
@@ -94,7 +119,6 @@ const ScrollComponent = () => {
         </IconButton>
 
         <IconButton
-          disabled={!arrowDisable}
           onClick={() => {
             handleHorizantalScroll(elementRef.current, 25, 100, 30);
           }}
@@ -137,23 +161,21 @@ const ScrollComponent = () => {
           </Typography>
         </Grid>
         {fetch.map((item, index) => (
+      <Link to={`/post/${item.title}`} state={item} style={{textDecoration: "none"}}>
           <Chip
-            onClick={() => {
-              if (item.id) {
-                handleHorizantalScroll(elementRef.current, 25, 100, -28);
-              }
-            }}
+            // onClick={() => pagescroll(elementRef.current, index)}
             deleteIcon={<CloseIcon style={{ fontSize: 20 }} />}
             label={item.title}
             onDelete={() => deleteItem(index)}
             style={{
               marginLeft: -42,
               marginRight: 50,
-              marginTop: 28,
+              marginTop: 14,
               backgroundColor: "#DADDE2",
               fontFamily: "DMSans-Medium",
             }}
           />
+       </Link>
         ))}
         {post.length !== 0 && (
           <Chip
@@ -164,7 +186,7 @@ const ScrollComponent = () => {
             style={{
               marginLeft: -40,
               marginRight: 50,
-              marginTop: 28,
+              marginTop: 14,
               color: "gray",
               fontFamily: "DMSans-Medium",
             }}
@@ -173,6 +195,7 @@ const ScrollComponent = () => {
       </div>
 
       <div
+        id={"scrolltoLeft"}
         className="img-container"
         ref={elementRef}
         style={{ marginLeft: -40 }}
