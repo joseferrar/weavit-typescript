@@ -48,13 +48,7 @@ function StartCard() {
               />
               <Chip
                 variant="outlined"
-                deleteIcon={
-                  <Avatar
-                    alt="Remy Sharp"
-                    src={add}
-                    sx={{ width: 22, height: 22 }}
-                  />
-                }
+                deleteIcon={<CloseIcon style={{ fontSize: 20 }} />}
                 label={"Clear All"}
                 onDelete={() => console.warn("test")}
                 style={{
