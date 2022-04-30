@@ -2,6 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import About from "../../pages/About";
 import Home from "../../pages/Home";
+import PostList from "../../pages/PostList";
 import Profile from "../../pages/Profile";
 import Search from "../../pages/Search";
 import DrawerLayout from "../Layouts/DrawerLayout"
@@ -12,6 +13,7 @@ function RouteComponent() {
       <Routes>
       <Route element={<DrawerLayout />}>
         <Route path="/" element={<Home />} />
+        <Route  path="/post/:id" element={<PostList/>} />
         <Route path="/about" element={<About />} />
         <Route path='/profile' element={<Profile />} />
         <Route path='/search' element={<Search />} />
