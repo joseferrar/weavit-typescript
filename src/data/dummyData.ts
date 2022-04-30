@@ -70,7 +70,7 @@ export const Data: DummyData[] = [
     title: "Disney",
     desc: [
       {
-        sub: "Discover all you need to know about Disney movies, live shows, holidays, parks and the latest products from Disney.",
+        sub: "Discover all you need to know about Disney movies, live shows, holidays.",
       },
     ],
     extra: [
