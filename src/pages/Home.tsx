@@ -1,5 +1,11 @@
 import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import {
+  DragDropContext,
+  Draggable,
+  Droppable,
+  DropResult,
+} from "react-beautiful-dnd";
 import Avatar from "@mui/material/Avatar";
 import CloseIcon from "@mui/icons-material/Close";
 import Chip from "@mui/material/Chip";
@@ -35,6 +41,17 @@ const ScrollComponent = () => {
     newTodoItems.splice(0);
     getFetch(newTodoItems);
     setPost(newTodoItems);
+  };
+
+  const onDragEnd = (result: any) => {
+    const { source, destination } = result;
+    if (!destination) return;
+
+    const items = Array.from(post);
+    const [newOrder] = items.splice(source.index, 1);
+    items.splice(destination.index, 0, newOrder);
+    console.log("todo");
+    setPost(items);
   };
 
   const itemRenderer = (item: any, index: number): JSX.Element => {
@@ -161,21 +178,25 @@ const ScrollComponent = () => {
           </Typography>
         </Grid>
         {fetch.map((item, index) => (
-      <Link to={`/post/${item.title}`} state={item} style={{textDecoration: "none"}}>
-          <Chip
-            // onClick={() => pagescroll(elementRef.current, index)}
-            deleteIcon={<CloseIcon style={{ fontSize: 20 }} />}
-            label={item.title}
-            onDelete={() => deleteItem(index)}
-            style={{
-              marginLeft: -42,
-              marginRight: 50,
-              marginTop: 14,
-              backgroundColor: "#DADDE2",
-              fontFamily: "DMSans-Medium",
-            }}
-          />
-       </Link>
+          // <Link
+          //   to={`/post/${item.title}`}
+          //   state={item}
+          //   style={{ textDecoration: "none" }}
+          // >
+            <Chip
+              // onClick={() => pagescroll(elementRef.current, index)}
+              deleteIcon={<CloseIcon style={{ fontSize: 20 }} />}
+              label={item.title}
+              onDelete={() => deleteItem(index)}
+              style={{
+                marginLeft: -42,
+                marginRight: 50,
+                marginTop: 14,
+                backgroundColor: "#DADDE2",
+                fontFamily: "DMSans-Medium",
+              }}
+            />
+          // </Link>
         ))}
         {post.length !== 0 && (
           <Chip
@@ -200,14 +221,51 @@ const ScrollComponent = () => {
         ref={elementRef}
         style={{ marginLeft: -40 }}
       >
-        <RLDD
+        {/* <RLDD
           layout="horizontal"
           items={post}
           itemRenderer={itemRenderer}
           onChange={handleRLDDChange}
-        />
+        /> */}
+
+        
+            <DragDropContext onDragEnd={onDragEnd}>
+              <Droppable droppableId="todo" direction="horizontal">
+                {(provided) => (
+                  <div
+                    className="todo"
+                    {...provided.droppableProps}
+                    ref={provided.innerRef}
+                  >
+                    {post.map((item, index) => {
+                      return (
+                        <Draggable
+                          key={item.id}
+                          draggableId={item.id}
+                          index={index}
+                        >
+                          {(provided, snapshot) => (
+                            <div
+                              ref={provided.innerRef}
+                              {...provided.draggableProps}
+                              {...provided.dragHandleProps}
+                            >
+                              <div style={{ marginTop: -60, marginLeft: -20 }}>
+                                <ThoughtCard item={item} />
+                              </div>
+                            </div>
+                          )}
+                        </Draggable>
+                      );
+                    })}
+                  </div>
+                )}
+              </Droppable>
+            </DragDropContext>
+          </div>
+    
         {post.length === 0 && <NotFound />}
-      </div>
+     
     </>
   );
 };
