@@ -1,7 +1,7 @@
 import picture from "../images/Avatars.png";
 
 export interface DummyData {
-  id: number;
+  id: string;
   image: string;
   title: string;
   dateTime: string;
@@ -11,7 +11,7 @@ export interface DummyData {
 
 export const Data: DummyData[] = [
   {
-    id: 1,
+    id: "1",
     image: picture,
     title: "Jane Leforti",
     desc: [
@@ -28,7 +28,7 @@ export const Data: DummyData[] = [
     dateTime: " Monday, Nov 22, 2021",
   },
   {
-    id: 2,
+    id: "2",
     image:
       "https://cdn.vox-cdn.com/thumbor/Yq1Vd39jCBGpTUKHUhEx5FfxvmM=/39x0:3111x2048/1200x800/filters:focal(39x0:3111x2048)/cdn.vox-cdn.com/uploads/chorus_image/image/49901753/netflixlogo.0.0.png",
     title: "Netflix & Blockbuster",
@@ -44,7 +44,7 @@ export const Data: DummyData[] = [
     dateTime: "Thursday, Jan 22, 2021",
   },
   {
-    id: 3,
+    id: "3",
     image:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Flag_of_NATO.svg/800px-Flag_of_NATO.svg.png",
     title: "NATO",
@@ -64,7 +64,7 @@ export const Data: DummyData[] = [
     dateTime: "Thursday, Jan 22, 2021",
   },
   {
-    id: 4,
+    id: "4",
     image:
       "https://yt3.ggpht.com/Ym_5TAhe4-1DON2kALAJfVstTrddNxXcBYzstI51AeOeed-gaYXh0t2aZx1wqCecEJzJkoI1WA=s900-c-k-c0x00ffffff-no-rj",
     title: "Disney",
@@ -84,7 +84,7 @@ export const Data: DummyData[] = [
     dateTime: "Thursday, Jan 22, 2021",
   },
   {
-    id: 5,
+    id: "5",
     image: "https://miro.medium.com/max/1400/1*Yikr4F6MwXCn6tUWqLgpPA.png",
     title: "Need for Speed",
     desc: [

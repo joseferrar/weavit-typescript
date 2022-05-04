@@ -153,3 +153,7 @@ ul.tree:before {
   top: 0px;
   width: 100%;
 }
+.todo {
+  display: flex;
+
+}
