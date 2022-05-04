@@ -15,7 +15,14 @@ export const Data: DummyData[] = [
     image: picture,
     title: "Jane Leforti",
     desc: [
-      { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
+      {
+        id: "meme1",
+        sub: "Recite what you know soa you can truly learn it. Jane agrees",
+      },
+      {
+        id: "meme2",
+        sub: "Recite what you know soa you can truly learn it. Jane agrees 2",
+      },
     ],
     extra: [
       { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
@@ -34,8 +41,13 @@ export const Data: DummyData[] = [
     title: "Netflix & Blockbuster",
     desc: [
       {
+        id: "meme3",
         sub: "Netflix Recite what you know you can truly yesterday learn it.",
       },
+      {
+        id: "meme4",
+        sub: "Netflix Recite what you know you can truly yesterday learn it. 4",
+      },
     ],
     extra: [
       { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
@@ -43,77 +55,77 @@ export const Data: DummyData[] = [
     ],
     dateTime: "Thursday, Jan 22, 2021",
   },
-  {
-    id: "3",
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Flag_of_NATO.svg/800px-Flag_of_NATO.svg.png",
-    title: "NATO",
-    desc: [
-      {
-        sub: "NATO Allies agree to further strengthen and sustain support for Ukraine",
-      },
-    ],
-    extra: [
-      { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
-      { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
-      { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
-      { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
-      { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
-      { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
-    ],
-    dateTime: "Thursday, Jan 22, 2021",
-  },
-  {
-    id: "4",
-    image:
-      "https://yt3.ggpht.com/Ym_5TAhe4-1DON2kALAJfVstTrddNxXcBYzstI51AeOeed-gaYXh0t2aZx1wqCecEJzJkoI1WA=s900-c-k-c0x00ffffff-no-rj",
-    title: "Disney",
-    desc: [
-      {
-        sub: "Discover all you need to know about Disney movies, live shows, holidays.",
-      },
-    ],
-    extra: [
-      { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
-      { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
-      { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
-      { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
-      { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
-      { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
-    ],
-    dateTime: "Thursday, Jan 22, 2021",
-  },
-  {
-    id: "5",
-    image: "https://miro.medium.com/max/1400/1*Yikr4F6MwXCn6tUWqLgpPA.png",
-    title: "Need for Speed",
-    desc: [
-      {
-        sub: "Hit the gas and tear up the roads in this legendary action-driving series",
-      },
-    ],
-    extra: [
-      {
-        sub: "Hit the gas and tear up the roads in this legendary action-driving series.",
-      },
-      {
-        sub: "Hit the gas and tear up the roads in this legendary action-driving series.",
-      },
-      {
-        sub: "Hit the gas and tear up the roads in this legendary action-driving series.",
-      },
-      {
-        sub: "Hit the gas and tear up the roads in this legendary action-driving series.",
-      },
-      {
-        sub: "Hit the gas and tear up the roads in this legendary action-driving series.",
-      },
-      {
-        sub: "Hit the gas and tear up the roads in this legendary action-driving series.",
-      },
-    ],
-    dateTime: "Thursday, Jan 22, 2021",
-  },
+  // {
+  //   id: "3",
+  //   image:
+  //     "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Flag_of_NATO.svg/800px-Flag_of_NATO.svg.png",
+  //   title: "NATO",
+  //   desc: [
+  //     {
+  //       sub: "NATO Allies agree to further strengthen and sustain support for Ukraine",
+  //     },
+  //   ],
+  //   extra: [
+  //     { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
+  //     { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
+  //     { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
+  //     { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
+  //     { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
+  //     { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
+  //   ],
+  //   dateTime: "Thursday, Jan 22, 2021",
+  // },
+  // {
+  //   id: "4",
+  //   image:
+  //     "https://yt3.ggpht.com/Ym_5TAhe4-1DON2kALAJfVstTrddNxXcBYzstI51AeOeed-gaYXh0t2aZx1wqCecEJzJkoI1WA=s900-c-k-c0x00ffffff-no-rj",
+  //   title: "Disney",
+  //   desc: [
+  //     {
+  //       sub: "Discover all you need to know about Disney movies, live shows, holidays.",
+  //     },
+  //   ],
+  //   extra: [
+  //     { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
+  //     { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
+  //     { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
+  //     { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
+  //     { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
+  //     { sub: "Recite what you know soa you can truly learn it. Jane agrees" },
+  //   ],
+  //   dateTime: "Thursday, Jan 22, 2021",
+  // },
+  // {
+  //   id: "5",
+  //   image: "https://miro.medium.com/max/1400/1*Yikr4F6MwXCn6tUWqLgpPA.png",
+  //   title: "Need for Speed",
+  //   desc: [
+  //     {
+  //       sub: "Hit the gas and tear up the roads in this legendary action-driving series",
+  //     },
+  //   ],
+  //   extra: [
+  //     {
+  //       sub: "Hit the gas and tear up the roads in this legendary action-driving series.",
+  //     },
+  //     {
+  //       sub: "Hit the gas and tear up the roads in this legendary action-driving series.",
+  //     },
+  //     {
+  //       sub: "Hit the gas and tear up the roads in this legendary action-driving series.",
+  //     },
+  //     {
+  //       sub: "Hit the gas and tear up the roads in this legendary action-driving series.",
+  //     },
+  //     {
+  //       sub: "Hit the gas and tear up the roads in this legendary action-driving series.",
+  //     },
+  //     {
+  //       sub: "Hit the gas and tear up the roads in this legendary action-driving series.",
+  //     },
+  //   ],
+  //   dateTime: "Thursday, Jan 22, 2021",
+  // },
 ];
 
 function getData() {

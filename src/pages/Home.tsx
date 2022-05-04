@@ -237,7 +237,7 @@ const ScrollComponent = () => {
                     {...provided.droppableProps}
                     ref={provided.innerRef}
                   >
-                    {post.map((item, index) => {
+                    {post && post.map((item, index) => {
                       return (
                         <Draggable
                           key={item.id}
@@ -251,7 +251,7 @@ const ScrollComponent = () => {
                               {...provided.dragHandleProps}
                             >
                               <div style={{ marginTop: -60, marginLeft: -20 }}>
-                                <ThoughtCard item={item} />
+                                <ThoughtCard item={item}/>
                               </div>
                             </div>
                           )}

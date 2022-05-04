@@ -157,3 +157,16 @@ ul.tree:before {
   display: flex;
 
 }
+
+/* font radius changes  */
+.css-o97vsb-MuiButtonBase-root-MuiButton-root {
+  color: #B2B4B8 !important;
+  border-color: #B2B4B8 !important;
+
+}
+.css-9mgopn-MuiDivider-root {
+ 
+  border-color: #DADDE2 !important;
+  border: 0.5px solid #DADDE2;
+ 
+}
