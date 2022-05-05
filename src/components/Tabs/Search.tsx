@@ -92,6 +92,11 @@ function Search() {
                       style={{
                         textAlign: "left",
                         fontFamily: "DMSans-Regular",
+                        fontSize:'12px',
+                        fontWeight:'400',
+                        lineHeight:'18px',
+                        margin: '0 2px',
+                        color:'black',
                         width: 260,
                         marginTop: 4,
                       }}

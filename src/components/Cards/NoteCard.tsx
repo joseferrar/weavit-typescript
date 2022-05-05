@@ -30,11 +30,11 @@ function NoteCard() {
           <Typography
             variant="body2"
             style={{
-              marginLeft: 18,
+              marginLeft: 20,
               textAlign: "left",
               fontSize: 16,
               fontFamily: "DMSans-Bold",
-              marginTop: 20,
+              marginTop: 21,
               marginBottom: 2,
             }}
           >
@@ -59,26 +59,33 @@ function NoteCard() {
                   variant="body2"
                   style={{
                     textAlign: "left",
-                    fontWeight: 500,
                     fontFamily: "DMSans-Regular",
+                    fontSize: "12px",
+                    fontWeight: "400",
+                    lineHeight: "18px",
+                    margin: "0 2px",
+                    color: "black",
                     width: 260,
                     marginTop: 4,
                   }}
                 >
                   {Object.values(sub).map((a) => a)}
                 </Typography>
-                <IconButton onClick={handleClickOpen} style={{marginLeft: "auto"}}>
-                      <Avatar
-                        alt="Remy Sharp"
-                        src={ellipsis}
-                        sx={{ width: 25, height: 25 }}
-                      />
-                    </IconButton>
-                    <OptionModal
-                      open={open}
-                      handleClickOpen={handleClickOpen}
-                      handleClose={handleClose}
-                    />
+                <IconButton
+                  onClick={handleClickOpen}
+                  style={{ marginLeft: "auto" }}
+                >
+                  <Avatar
+                    alt="Remy Sharp"
+                    src={ellipsis}
+                    sx={{ width: 25, height: 25 }}
+                  />
+                </IconButton>
+                <OptionModal
+                  open={open}
+                  handleClickOpen={handleClickOpen}
+                  handleClose={handleClose}
+                />
               </Grid>
               <Divider />
               <CustomButton

@@ -316,8 +316,12 @@ function ThoughtCard(props: any) {
                   variant="body2"
                   style={{
                     textAlign: "left",
-                    paddingLeft: "8px",
                     fontFamily: "DMSans-Regular",
+                    fontSize:'12px',
+                    fontWeight:'400',
+                    lineHeight:'18px',
+                    margin: '0 2px',
+                    color:'black'
                   }}
                 >
                   {Object.values(sub).map((a: any) => a)}
@@ -384,8 +388,12 @@ function ThoughtCard(props: any) {
                           style={{
                             marginLeft: 8,
                             textAlign: "left",
-                            paddingLeft: "2px",
-                            fontFamily: "DMSans-bold",
+                            fontFamily: "DMSans-Regular",
+                        fontSize:'12px',
+                        fontWeight:'400',
+                        lineHeight:'18px',
+                        margin: '0 2px',
+                        color:'black'
                           }}
                         >
                           Getting thing Done
@@ -425,8 +433,12 @@ function ThoughtCard(props: any) {
                   style={{
                     width: 280,
                     textAlign: "left",
-                    paddingLeft: "8px",
                     fontFamily: "DMSans-Regular",
+                    fontSize:'12px',
+                    fontWeight:'400',
+                    lineHeight:'18px',
+                    margin: '0 2px',
+                    color:'black'
                   }}
                 >
                   Recite what you know soa you can truly learn it. Jane agrees
@@ -457,8 +469,12 @@ function ThoughtCard(props: any) {
                       variant="body2"
                       style={{
                         textAlign: "left",
-                        paddingLeft: "8px",
                         fontFamily: "DMSans-Regular",
+                        fontSize:'12px',
+                        fontWeight:'400',
+                        lineHeight:'18px',
+                        margin: '0 2px',
+                        color:'black'
                       }}
                     >
                       {Object.values(sub).map((a: any) => a)}

@@ -188,8 +188,12 @@ function Search() {
                             variant="body2"
                             style={{
                               textAlign: "left",
-                              paddingLeft: "8px",
                               fontFamily: "DMSans-Regular",
+                              fontSize: "12px",
+                              fontWeight: "400",
+                              lineHeight: "18px",
+                              margin: "0 2px",
+                              color: "black",
                             }}
                           >
                             {Object.values(sub).map((a: any) => a)}
@@ -259,8 +263,12 @@ function Search() {
                             variant="body2"
                             style={{
                               textAlign: "left",
-                              paddingLeft: "8px",
                               fontFamily: "DMSans-Regular",
+                              fontSize: "12px",
+                              fontWeight: "400",
+                              lineHeight: "18px",
+                              margin: "0 2px",
+                              color: "black",
                             }}
                           >
                             {Object.values(sub).map((a: any) => a)}
