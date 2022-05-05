@@ -94,17 +94,23 @@ const ScrollComponent = () => {
     }, speed);
   };
 
+    const [idx, setIdx] = useState()
+  const eventClick = (event: any) => {
+
+    setIdx(event)
+  };
+  console.log('idx', idx)
   const pagescroll = (element: any, index: any) => {
     console.log("previousIndex", previousIndex, index, previousIndex > index);
     if (previousIndex <= index) {
-      const scrollAmount = (index + post.length) * 392;
+      const scrollAmount = (index + post.length) * 360;
       element.scrollLeft += scrollAmount;
       setPreviousIndex(index);
       if (index === post?.length) {
         setArrowDisable(true); //right arrow true
       }
     } else {
-      let scrollAmount = (index - post.length) * 392;
+      let scrollAmount = (index - post.length) * 360;
       element.scrollLeft += scrollAmount;
       setPreviousIndex(index);
       if (index === 0) {
@@ -118,6 +124,7 @@ const ScrollComponent = () => {
   //   document && document.getElementById("scrolltoLeft").scrollLeft = index * 360;
 
   // };
+
   return (
     <>
       <div className="button-contianer">
@@ -183,19 +190,22 @@ const ScrollComponent = () => {
           //   state={item}
           //   style={{ textDecoration: "none" }}
           // >
-            <Chip
-              // onClick={() => pagescroll(elementRef.current, index)}
-              deleteIcon={<CloseIcon style={{ fontSize: 20 }} />}
-              label={item.title}
-              onDelete={() => deleteItem(index)}
-              style={{
-                marginLeft: -42,
-                marginRight: 50,
-                marginTop: 14,
-                backgroundColor: "#DADDE2",
-                fontFamily: "DMSans-Medium",
-              }}
-            />
+          <Chip
+            onClick={() => { eventClick(item.title)
+              pagescroll(elementRef.current, index)
+        }
+          }
+            deleteIcon={<CloseIcon style={{ fontSize: 20 }} />}
+            label={item.title}
+            onDelete={() => deleteItem(index)}
+            style={{
+              marginLeft: -42,
+              marginRight: 50,
+              marginTop: 14,
+              backgroundColor: "#DADDE2",
+              fontFamily: "DMSans-Medium",
+            }}
+          />
           // </Link>
         ))}
         {post.length !== 0 && (
@@ -228,44 +238,43 @@ const ScrollComponent = () => {
           onChange={handleRLDDChange}
         /> */}
 
-        
-            <DragDropContext onDragEnd={onDragEnd}>
-              <Droppable droppableId="todo" direction="horizontal">
-                {(provided) => (
-                  <div
-                    className="todo"
-                    {...provided.droppableProps}
-                    ref={provided.innerRef}
-                  >
-                    {post && post.map((item, index) => {
-                      return (
-                        <Draggable
-                          key={item.id}
-                          draggableId={item.id}
-                          index={index}
-                        >
-                          {(provided, snapshot) => (
-                            <div
-                              ref={provided.innerRef}
-                              {...provided.draggableProps}
-                              {...provided.dragHandleProps}
-                            >
-                              <div style={{ marginTop: -60, marginLeft: -20 }}>
-                                <ThoughtCard item={item}/>
-                              </div>
+        <DragDropContext onDragEnd={onDragEnd}>
+          <Droppable droppableId="todo" direction="horizontal">
+            {(provided) => (
+              <div
+                className="todo"
+                {...provided.droppableProps}
+                ref={provided.innerRef}
+              >
+                {post &&
+                  post.map((item, index) => {
+                    return (
+                      <Draggable
+                        key={item.id}
+                        draggableId={item.id}
+                        index={index}
+                      >
+                        {(provided, snapshot) => (
+                          <div
+                            ref={provided.innerRef}
+                            {...provided.draggableProps}
+                            {...provided.dragHandleProps}
+                          >
+                            <div style={{ marginTop: -60, marginLeft: -20 }}>
+                              <ThoughtCard item={item} idx={idx}/>
                             </div>
-                          )}
-                        </Draggable>
-                      );
-                    })}
-                  </div>
-                )}
-              </Droppable>
-            </DragDropContext>
-          </div>
-    
-        {post.length === 0 && <NotFound />}
-     
+                          </div>
+                        )}
+                      </Draggable>
+                    );
+                  })}
+              </div>
+            )}
+          </Droppable>
+        </DragDropContext>
+      </div>
+
+      {post.length === 0 && <NotFound />}
     </>
   );
 };

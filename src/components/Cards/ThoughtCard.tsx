@@ -16,16 +16,7 @@ import imglogo from "../../images/imaglogo.png";
 import { CustomButton, NoteIcon } from "../../theme/MuiComponents";
 import OptionModal from "../Modals/OptionModal";
 
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: "#F2F4F5",
-  ...theme.typography.body2,
-  paddingLeft: theme.spacing(0),
-  paddingRight: theme.spacing(0),
-  textAlign: "center",
-  borderRadius: 14,
-  width: 360,
-  height: 840,
-}));
+
 
 function ThoughtCard(props: any) {
   const [open, setOpen] = useState(false);
@@ -38,8 +29,22 @@ function ThoughtCard(props: any) {
     setOpen(false);
   };
 
+  const Item = styled(Paper)(({ theme }) => ({
+    backgroundColor: "#F2F4F5",
+    ...theme.typography.body2,
+    paddingLeft: theme.spacing(0),
+    paddingRight: theme.spacing(0),
+    textAlign: "center",
+    borderRadius: 14,
+    width: 360,
+    height: 840,
+    marginBottom: 20,
+    boxShadow: props.idx === props.item.title ? "0 8px 16px 0 rgb(0 0 0 / 198%)" : "none",
+    // borderStyle: props.idx === props.item.title ? "solid" : "none",
+  }));
+
   return (
-    <Grid item xs={12} sm={4} md={4} marginTop={9} marginLeft={4}>
+    <Grid item xs={12} sm={4} md={4} marginTop={9} marginLeft={props.item.id === "1" ? 6 : 4}>
       <Item elevation={0}>
         <Grid className="backgroundimges">
           <Avatar
@@ -66,7 +71,7 @@ function ThoughtCard(props: any) {
             fontWeight:'500'
           }}
         >
-          {props.item.title}
+          {props.item.title} 
         </Typography>
         <Grid style={{ display: "inline-flex", color: "gray" }}>
           <Typography
