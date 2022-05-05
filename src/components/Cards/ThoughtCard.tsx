@@ -58,10 +58,12 @@ function ThoughtCard(props: any) {
         </Grid>
         <Typography
           style={{
-            fontWeight: "bold",
-            fontSize: 20,
+           
+            fontSize: 22,
             marginTop: 6,
             fontFamily: "DMSans-Medium",
+            color:"black",
+            fontWeight:'500'
           }}
         >
           {props.item.title}
@@ -92,7 +94,7 @@ function ThoughtCard(props: any) {
           </Typography>
           <Typography
             style={{
-              fontSize: 14,
+              fontSize: 12,
               marginTop: 6,
               marginLeft: 6,
               fontFamily: "DMSans-Regular",
@@ -225,10 +227,12 @@ function ThoughtCard(props: any) {
             style={{
               marginLeft: 18,
               textAlign: "left",
-              fontSize: 16,
-              fontFamily: "DMSans-bold",
+              fontSize: 14,
+              fontFamily: "DMSans-Medium",
               marginTop: 20,
               marginBottom: 2,
+              color:"black",
+              fontWeight:'500',
             }}
           >
             {props.item.dateTime}
@@ -256,8 +260,13 @@ function ThoughtCard(props: any) {
                       variant="body2"
                       style={{
                         textAlign: "left",
-                        paddingLeft: "8px",
+                        
                         fontFamily: "DMSans-Regular",
+                        fontSize:'12px',
+                        fontWeight:'400',
+                        lineHeight:'18px',
+                        margin: '0 2px',
+                        color:'black'
                       }}
                     >
                       {Object.values(sub).map((a: any) => a)}
