@@ -28,6 +28,7 @@ const Item = styled(Paper)(({ theme }) => ({
 
 function Search() {
   const data = getData();
+  const [post, setPost] = useState(data);
   const [open, setOpen] = useState(false);
 
   const handleClickOpen = () => {
@@ -38,39 +39,45 @@ function Search() {
     setOpen(false);
   };
 
+  const deleteItem = () => {
+    const newTodoItems = [...post];
+    newTodoItems.splice(1);
+    setPost(newTodoItems);
+  };
+
   return (
     <div style={{ marginLeft: 10 }}>
-      {data.map(
+      <Grid
+        container
+        marginLeft={-2}
+        marginTop={-1}
+        style={{ display: "flex", width: 500, height: "100%" }}
+      >
+        <Avatar
+          alt="Remy Sharp"
+          src={spell}
+          sx={{ width: 25, height: 25, marginTop: 0.5 }}
+        />
+        <Typography
+          style={{
+            marginLeft: 6,
+            fontSize: 22,
+            width: 400,
+            fontFamily: "DMSans-Regular",
+          }}
+        >
+          Your Thought Space
+        </Typography>
+      </Grid>
+      {post.map(
         (item, index) =>
           index === 1 && (
             <>
-              <Grid
-                container
-                marginLeft={-2}
-                marginTop={-1}
-                style={{ display: "flex", width: 500, height: "100%" }}
-              >
-                <Avatar
-                  alt="Remy Sharp"
-                  src={spell}
-                  sx={{ width: 25, height: 25, marginTop: 0.5 }}
-                />
-                <Typography
-                  style={{
-                    marginLeft: 6,
-                    fontSize: 22,
-                    width: 400,
-                    fontFamily: "DMSans-Regular",
-                  }}
-                >
-                  Your Thought Space
-                </Typography>
-              </Grid>
               <Grid marginLeft={2}>
                 <Chip
                   deleteIcon={<CloseIcon style={{ fontSize: 20 }} />}
                   label={item.title}
-                  onDelete={() => console.warn("test")}
+                  onDelete={() => deleteItem()}
                   style={{
                     marginLeft: -40,
                     marginRight: 50,
@@ -82,7 +89,7 @@ function Search() {
                   variant="outlined"
                   deleteIcon={<CloseIcon style={{ fontSize: 20 }} />}
                   label={"Clear All"}
-                  onDelete={() => console.warn("test")}
+                  onDelete={() => deleteItem()}
                   style={{
                     marginLeft: -40,
                     marginRight: 50,
