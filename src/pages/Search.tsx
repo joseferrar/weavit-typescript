@@ -82,6 +82,7 @@ function Search() {
                     marginLeft: -40,
                     marginRight: 50,
                     marginTop: 14,
+                    backgroundColor: "#DADDE2",
                     fontFamily: "DMSans-Medium",
                   }}
                 />
@@ -101,18 +102,21 @@ function Search() {
               </Grid>
               <Grid item xs={12} sm={4} md={4} marginTop={2} marginLeft={-4}>
                 <Item elevation={0}>
-                  <Grid className="backgroundimges"></Grid>
-                  <Avatar
-                    sx={{
-                      width: 80,
-                      display: "inline-flex",
-                      height: 80,
-                      marginTop: -26,
-                    }}
-                    src={item.image}
-                    alt="B"
-                  />
-
+                  <Grid className="backgroundimges">
+                    <Avatar
+                      sx={{
+                        bgcolor: "#85CEFF",
+                        width: 80,
+                        display: "inline-flex",
+                        height: 80,
+                        fontWeight: "bold",
+                        color: "blue",
+                        marginTop: 3,
+                      }}
+                      src={item.image}
+                      alt="B"
+                    />
+                  </Grid>
                   <Typography
                     style={{
                       fontWeight: "bold",
