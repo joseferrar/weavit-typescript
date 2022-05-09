@@ -40,6 +40,7 @@ function ThoughtCard(props: any) {
     height: 840,
     marginBottom: 20,
     boxShadow: props.idx === props.item.title ? "0 8px 16px 0 rgb(0 0 0 / 198%)" : "none",
+    opacity: props.idx === props.item.title ? "8.8": "3.5"
     // borderStyle: props.idx === props.item.title ? "solid" : "none",
   }));
 
